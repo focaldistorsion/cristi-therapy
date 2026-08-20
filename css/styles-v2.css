@@ -3,11 +3,11 @@
    Architecture: 1:1 7-Chakra Spectrum & Full Black CTA System
    Palette: Full Black (#000000) Primary CTAs, Outline Black Secondary CTAs
             7 Chakra Color Tokens (Red, Orange, Yellow, Green, Royal Blue, Purple, Teal)
-   Stylesheet: styles-v2.css
+   Stylesheet: styles-v2.css (Light & Airy StoryBrand Hero System)
    ========================================================================== */
 
 :root {
-  /* Base Neutral & Obsidian Dark Mode */
+  /* Base Neutral & Luminous Soft Dark */
   --color-navy: #121212;        /* Obsidian Soft Black */
   --color-slate-blue: #18181B;  /* Zinc Soft Black */
   --color-dark: #09090B;        /* Deep Soft Black */
@@ -134,8 +134,8 @@ a {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(250, 250, 250, 0.95);
-  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -300,7 +300,7 @@ a {
   background: #000000 !important;
   color: #FFFFFF !important;
   font-weight: 800;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.15);
   text-shadow: none;
 }
@@ -309,7 +309,7 @@ a {
   background: #18181B !important;
   color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* OUTLINE BLACK SECONDARY CTA BUTTON */
@@ -334,77 +334,82 @@ a {
   margin-top: 0.75rem;
 }
 
-/* SECTION 1: HERO */
-.hero {
-  padding: 5rem 0 4rem;
-  background: linear-gradient(135deg, rgba(18, 18, 18, 0.03) 0%, rgba(5, 150, 105, 0.06) 100%);
+/* STORYBRAND LIGHT HERO SYSTEM FOR T7 */
+.hero-storybrand-light {
+  position: relative;
+  padding: 5.5rem 0 3.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(244, 244, 245, 0.9) 50%, rgba(236, 253, 245, 0.75) 100%),
+              url('../assets/images/hero_therapy_session.png') center/cover no-repeat;
+  overflow: hidden;
 }
 
-.subpage-hero {
-  padding: 3.5rem 0 3rem;
-}
-
-.hero-grid {
+.hero-grid-storybrand {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 3.5rem;
   align-items: center;
+  margin-bottom: 3rem;
 }
 
-.badge-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
+.hero-text-storybrand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.badge-tag-t7 {
   background: rgba(5, 150, 105, 0.12);
   color: var(--t4-green);
   font-family: var(--font-sans-heading);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 0.85rem;
-  padding: 0.35rem 0.85rem;
+  padding: 0.4rem 0.95rem;
   border-radius: var(--radius-pill);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(5, 150, 105, 0.25);
+}
+
+.hero-headline-storybrand {
+  font-family: var(--font-sans-heading);
+  font-weight: 800;
+  font-size: 2.8rem;
+  line-height: 1.15;
+  color: #09090B;
+  letter-spacing: -0.5px;
   margin-bottom: 1.25rem;
   text-transform: uppercase;
 }
 
-.hero-text h1 {
-  font-size: 3.2rem;
-  color: var(--color-navy);
-  margin-bottom: 1.25rem;
-  letter-spacing: -0.5px;
+.hero-headline-storybrand .highlight-t7 {
+  color: #E53E3E; /* T1-T7 Chakra Spectrum Red / Highlight */
+  display: inline;
 }
 
-.hero-text h1 span {
-  color: var(--t4-green);
-  font-style: italic;
-}
-
-.hero-subhead {
-  font-size: 1.18rem;
-  color: var(--color-body);
-  margin-bottom: 2.25rem;
+.hero-subhead-storybrand {
+  font-size: 1.15rem;
+  color: #3F3F46;
   line-height: 1.65;
-  max-width: 640px;
+  margin-bottom: 2rem;
+  max-width: 620px;
 }
 
-.hero-actions {
-  display: flex;
-  gap: 1.25rem;
-  flex-wrap: wrap;
+.hero-actions-storybrand {
+  margin-bottom: 1.75rem;
 }
 
-/* STORYBRAND-INSPIRED HERO "NOT SURE?" TRANSITIONAL CARD */
-.hero-notsure-card {
-  margin-top: 1.5rem;
-  background: rgba(18, 18, 18, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+.hero-notsure-card-storybrand {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-pill);
+  padding: 0.75rem 1.35rem;
   display: inline-flex;
   align-items: center;
   gap: 1.25rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
 }
 
 .notsure-text {
@@ -437,53 +442,147 @@ a {
   transform: translateY(-1px);
 }
 
-.notsure-btn i {
-  font-size: 0.75rem;
-}
-
-.hero-image-wrap {
+.hero-storybrand-portrait-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 20px 45px rgba(18, 18, 18, 0.14);
 }
 
-.hero-img {
-  width: 100%;
-  height: 480px;
+.storybrand-circle-bg {
+  position: relative;
+  width: 310px;
+  height: 310px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FEF08A 0%, #FDE047 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 45px rgba(234, 179, 8, 0.25);
+  border: 6px solid #FFFFFF;
+}
+
+.storybrand-portrait-img {
+  width: 285px;
+  height: 285px;
+  border-radius: 50%;
   object-fit: cover;
+}
+
+.storybrand-badge-seal {
+  position: absolute;
+  top: 10px;
+  left: -15px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #09090B;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem;
+  border: 3px solid #FDE047;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.storybrand-badge-seal i {
+  font-size: 1.1rem;
+  color: #FDE047;
+  margin-bottom: 2px;
+}
+
+.storybrand-badge-seal span {
+  font-family: var(--font-sans-heading);
+  font-weight: 800;
+  font-size: 0.55rem;
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.storybrand-badge-seal small {
+  font-size: 0.5rem;
+  color: #34D399;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+.storybrand-portrait-info {
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+.storybrand-portrait-info strong {
+  font-family: var(--font-sans-heading);
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: #09090B;
   display: block;
+}
+
+.storybrand-portrait-info p {
+  font-size: 0.92rem;
+  color: var(--t4-green);
+  font-weight: 700;
+}
+
+/* STORYBRAND FLOATING BOTTOM CARDS */
+.hero-bottom-bar-container {
+  margin-top: 1.5rem;
+}
+
+.hero-bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.hero-bottom-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
   transition: var(--transition);
 }
 
-.hero-image-wrap:hover .hero-img {
-  transform: scale(1.03);
+.hero-bottom-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.09);
+  border-color: #000000;
 }
 
-.hero-image-badge {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 1.5rem;
-  right: 1.5rem;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 0.85rem 1.25rem;
-  border-radius: var(--radius-md);
+.hero-bottom-card i {
+  font-size: 1.6rem;
+  color: var(--t4-green);
+  background: rgba(5, 150, 105, 0.08);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 0.85rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.hero-profile-circle {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--t4-green);
-  flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+.hero-bottom-card strong {
+  font-family: var(--font-sans-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #09090B;
+  display: block;
+}
+
+.hero-bottom-card p {
+  font-size: 0.84rem;
+  color: var(--color-body);
+  margin: 0;
 }
 
 /* 7 THERAPY BANNERS & ACCENTS (1:1 CHAKRA SPECTRUM) */
@@ -536,7 +635,7 @@ a {
 
 .proof-container {
   display: flex;
-  justify-content: space-around;
+  justify-around: space-around;
   align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -607,47 +706,6 @@ a {
 .stake-card p {
   color: #CBD5E1;
   font-size: 0.95rem;
-}
-
-/* SECTION 3: VALUE PROPOSITION */
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.value-card {
-  background: var(--color-card);
-  border-radius: var(--radius-md);
-  padding: 2.5rem 1.75rem;
-  border: 1px solid var(--color-border);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-  transition: var(--transition);
-  text-align: center;
-}
-
-.value-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-}
-
-.value-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: rgba(5, 150, 105, 0.1);
-  color: var(--t4-green);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.75rem;
-  margin: 0 auto 1.25rem;
-}
-
-.value-card h3 {
-  font-size: 1.35rem;
-  margin-bottom: 0.6rem;
-  color: var(--color-navy);
 }
 
 /* DEDICATED 7-THERAPY INTEGRATED SYSTEM CHAIN WITH 1:1 CHAKRA BORDERS */
@@ -792,27 +850,6 @@ a {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
-
-/* ACTIVE PILL STYLES FOR 7 THERAPIES (1:1 CHAKRA ORDER) */
-.sb7-pill.active-pill {
-  cursor: default;
-  color: #FFFFFF !important;
-  border-color: transparent !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-  font-weight: 800;
-}
-
-.sb7-pill.active-pill:hover {
-  transform: none;
-}
-
-.sb7-pill-t1.active-pill { background: linear-gradient(135deg, var(--t1-red) 0%, #C53030 100%); }
-.sb7-pill-t2.active-pill { background: linear-gradient(135deg, var(--t2-orange) 0%, #DD6B20 100%); }
-.sb7-pill-t3.active-pill { background: linear-gradient(135deg, var(--t3-yellow) 0%, #B7791F 100%); }
-.sb7-pill-t4.active-pill { background: linear-gradient(135deg, var(--t4-green) 0%, #047857 100%); }
-.sb7-pill-t5.active-pill { background: linear-gradient(135deg, var(--t5-blue) 0%, #1D4ED8 100%); }
-.sb7-pill-t6.active-pill { background: linear-gradient(135deg, var(--t6-purple) 0%, #6D28D9 100%); }
-.sb7-pill-t7.active-pill { background: linear-gradient(135deg, var(--t7-teal) 0%, #0F766E 100%); }
 
 /* DOT COLOR ACCENTS FOR 7 THERAPIES */
 .sb7-pill-dot {
@@ -991,34 +1028,6 @@ a {
   margin-bottom: 1.5rem;
 }
 
-/* SECTION 8: LEAD MAGNET */
-.section-lead {
-  background: linear-gradient(135deg, rgba(5, 150, 105, 0.08) 0%, rgba(37, 99, 235, 0.1) 100%);
-  padding: 4rem 0;
-}
-
-.lead-box {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.lead-tag {
-  color: var(--t4-green);
-  font-family: var(--font-sans-heading);
-  font-weight: 800;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-}
-
-.lead-box h2 {
-  font-size: 1.85rem;
-  color: var(--color-navy);
-  margin: 0.3rem 0;
-}
-
 /* SECTION 9: FINAL DIRECT CTA */
 .section-final-cta {
   background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-slate-blue) 100%);
@@ -1152,187 +1161,35 @@ a {
   border-color: var(--color-slate-blue);
 }
 
-/* BRANDING PAGE SPECIFIC STYLES */
-.branding-hero {
-  background: linear-gradient(135deg, #09090B 0%, #18181B 100%);
-  color: #FFFFFF;
-  padding: 4.5rem 0 3.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.branding-hero h1 {
-  color: #FFFFFF;
-  font-size: 2.8rem;
-  margin-bottom: 0.75rem;
-}
-
-.branding-hero p {
-  color: #A1A1AA;
-  font-size: 1.1rem;
-  max-width: 720px;
-}
-
-.swatch-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.swatch-card {
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-}
-
-.swatch-color-box {
-  height: 120px;
-  display: flex;
-  align-items: flex-end;
-  padding: 1rem;
-  color: #FFFFFF;
-  font-family: var(--font-sans-heading);
-  font-weight: 800;
-  font-size: 1.1rem;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
-}
-
-.swatch-details {
-  padding: 1.25rem;
-}
-
-.swatch-details code {
-  background: #F4F4F5;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-navy);
-}
-
-.type-scale-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1.5rem;
-}
-
-.type-scale-table th, .type-scale-table td {
-  padding: 1rem;
-  border-bottom: 1px solid var(--color-border);
-  text-align: left;
-}
-
-.type-scale-table th {
-  background: #F4F4F5;
-  font-family: var(--font-sans-heading);
-  font-weight: 700;
-  font-size: 0.9rem;
-}
-
 /* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 992px) {
-  .hero-grid, .guide-grid, .stakes-grid, .grid-3, .plan-steps {
+  .hero-grid-storybrand, .guide-grid, .stakes-grid, .hero-bottom-grid {
     grid-template-columns: 1fr;
   }
 
-  .hero-text h1 {
-    font-size: 2.3rem;
-  }
-  
-  .hero-img, .guide-img {
-    height: 360px;
-  }
-
-  .vita-system-card {
-    grid-template-columns: 1fr;
-  }
-
-  .vita-card-img-box {
-    height: 200px;
-  }
-
-  .vita-card-content {
-    padding: 1.5rem;
+  .hero-headline-storybrand {
+    font-size: 2.2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .top-bar, .mobile-cta-bar {
-    display: none !important;
+  .hero-headline-storybrand {
+    font-size: 1.9rem;
   }
 
-  body {
-    padding-bottom: 0 !important;
-  }
-
-  .section {
-    padding: 3.5rem 0;
-  }
-
-  .hero {
-    padding: 3rem 0 2.5rem;
-  }
-
-  .hero-text h1 {
-    font-size: 2.1rem;
-    line-height: 1.25;
-  }
-
-  .hero-subhead {
-    font-size: 1.05rem;
-    margin-bottom: 1.75rem;
-  }
-
-  .nav-menu {
-    display: none;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
-
-  .modal-card {
-    padding: 1.75rem;
-  }
-
-  .sb7-transitional-block {
-    padding: 2.25rem 0 2rem;
-  }
-
-  .sb7-title {
-    font-size: 1.15rem;
-    padding: 0 0.5rem;
-  }
-
-  .sb7-subtitle {
-    font-size: 0.85rem;
-    padding: 0 0.5rem;
-  }
-
-  .sb7-therapy-pills {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.6rem 0.45rem;
-    max-width: 360px;
-    margin: 0 auto;
-    padding: 0 0.5rem;
-  }
-
-  .sb7-pill {
-    padding: 0.5rem 0.85rem;
-    font-size: 0.8rem;
-    border-radius: var(--radius-pill);
-    white-space: nowrap;
-  }
-
-  .hero-notsure-card {
+  .hero-notsure-card-storybrand {
     flex-direction: column;
+    border-radius: var(--radius-md);
     align-items: flex-start;
-    gap: 0.75rem;
+  }
+
+  .storybrand-circle-bg {
+    width: 250px;
+    height: 250px;
+  }
+
+  .storybrand-portrait-img {
+    width: 235px;
+    height: 235px;
   }
 }
