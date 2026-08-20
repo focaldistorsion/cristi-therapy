@@ -1715,3 +1715,99 @@ html:has(.outcome-success:hover) .outcome-success {
   box-shadow: 0 22px 55px rgba(16, 185, 129, 0.35) !important;
   transform: translateY(-6px) scale(1.02) !important;
 }
+
+
+/* RANDOM VIEWPORT BORDER PAIN OVERLAY (EDGES OF SCREEN THROBBING INWARDS) */
+#viewport-pain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  box-shadow: inset 0 0 0px transparent;
+}
+
+/* WHEN HOVERING NEGATIVE CARD: RANDOM THROBBING RED PULSE FROM VIEWPORT EDGES INWARDS */
+body.is-negative-hovered #viewport-pain-overlay,
+body.is-pain-active #viewport-pain-overlay,
+html:has(.outcome-failure:hover) #viewport-pain-overlay {
+  opacity: 1;
+  animation: randomViewportPulse 1.6s infinite cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes randomViewportPulse {
+  0% {
+    box-shadow: inset 0 40px 60px -20px rgba(239, 68, 68, 0.75),
+                inset 0 -40px 60px -20px rgba(239, 68, 68, 0.75),
+                inset 40px 0 60px -20px rgba(239, 68, 68, 0.75),
+                inset -40px 0 60px -20px rgba(239, 68, 68, 0.75);
+  }
+  18% {
+    box-shadow: inset 0 95px 120px -30px rgba(239, 68, 68, 0.88),
+                inset 0 -45px 65px -20px rgba(239, 68, 68, 0.55),
+                inset 75px 0 95px -25px rgba(239, 68, 68, 0.82),
+                inset -55px 0 75px -20px rgba(239, 68, 68, 0.65);
+  }
+  38% {
+    box-shadow: inset 0 30px 45px -15px rgba(239, 68, 68, 0.45),
+                inset 0 -90px 110px -30px rgba(239, 68, 68, 0.85),
+                inset 35px 0 50px -15px rgba(239, 68, 68, 0.5),
+                inset -95px 0 120px -30px rgba(239, 68, 68, 0.9);
+  }
+  55% {
+    box-shadow: inset 0 115px 140px -35px rgba(220, 38, 38, 0.92),
+                inset 0 -115px 140px -35px rgba(220, 38, 38, 0.92),
+                inset 115px 0 140px -35px rgba(220, 38, 38, 0.92),
+                inset -115px 0 140px -35px rgba(220, 38, 38, 0.92);
+  }
+  74% {
+    box-shadow: inset 0 50px 70px -20px rgba(239, 68, 68, 0.65),
+                inset 0 -35px 50px -15px rgba(239, 68, 68, 0.45),
+                inset 90px 0 110px -30px rgba(239, 68, 68, 0.8),
+                inset -45px 0 65px -20px rgba(239, 68, 68, 0.55);
+  }
+  100% {
+    box-shadow: inset 0 40px 60px -20px rgba(239, 68, 68, 0.75),
+                inset 0 -40px 60px -20px rgba(239, 68, 68, 0.75),
+                inset 40px 0 60px -20px rgba(239, 68, 68, 0.75),
+                inset -40px 0 60px -20px rgba(239, 68, 68, 0.75);
+  }
+}
+
+/* KEEP SECTION & CARDS CLEAN (NO BOX SHADOW BEHIND CARDS GRID) */
+.section-sb7-outcomes {
+  background: #FAFAFA !important;
+  box-shadow: none !important;
+}
+
+.sb7-outcomes-grid {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* WHEN HOVERING NEGATIVE CARD: GREEN CARD FADES OUT A BIT */
+body.is-negative-hovered .outcome-success,
+html:has(.outcome-failure:hover) .outcome-success {
+  opacity: 0.4 !important;
+  filter: grayscale(60%) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* WHEN HOVERING POSITIVE CARD: RED CARD FADES OUT HEAVILY */
+body.is-positive-hovered .outcome-failure,
+html:has(.outcome-success:hover) .outcome-failure {
+  opacity: 0.18 !important;
+  filter: grayscale(95%) opacity(0.18) !important;
+  transform: scale(0.96) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+body.is-positive-hovered .outcome-success,
+html:has(.outcome-success:hover) .outcome-success {
+  box-shadow: 0 22px 55px rgba(16, 185, 129, 0.35) !important;
+  transform: translateY(-6px) scale(1.02) !important;
+}
