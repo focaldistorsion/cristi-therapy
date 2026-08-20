@@ -1393,3 +1393,164 @@ html:has(.outcome-success:hover) .outcome-failure {
   transform: scale(0.96) !important;
   transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
+
+/* ==========================================================================
+   STORYBRAND SB7 OUTCOMES SECTION (ULTRA-CLEAN & MINIMAL, NO EXTRA ANIMATIONS)
+   ========================================================================== */
+.section-sb7-outcomes {
+  background: #FAFAFA !important;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 5rem 0;
+  box-shadow: none !important;
+}
+
+.sb7-outcomes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.25rem;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.sb7-outcome-card {
+  background: #FFFFFF !important;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: none !important;
+}
+
+.outcome-failure {
+  border-top: 4px solid #EF4444 !important;
+  background: #FFFFFF !important;
+}
+
+.outcome-success {
+  border-top: 4px solid #10B981 !important;
+  background: #FFFFFF !important;
+}
+
+.outcome-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.outcome-icon-failure {
+  font-size: 2.2rem;
+  color: #EF4444;
+}
+
+.outcome-icon-success {
+  font-size: 2.2rem;
+  color: #10B981;
+}
+
+.outcome-badge {
+  display: inline-block;
+  font-family: var(--font-sans-heading);
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.badge-failure {
+  background: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+}
+
+.badge-success {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+}
+
+.outcome-header h3 {
+  font-family: var(--font-sans-heading);
+  font-size: 1.35rem;
+  color: var(--color-dark);
+  font-weight: 800;
+}
+
+.outcome-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.outcome-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.outcome-list li i {
+  font-size: 1.1rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.text-danger { color: #EF4444; }
+.text-success { color: #10B981; }
+
+.outcome-list strong {
+  font-family: var(--font-sans-heading);
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--color-dark);
+  display: block;
+}
+
+.outcome-list p {
+  font-size: 0.88rem;
+  color: var(--color-body);
+  margin-top: 0.15rem;
+  line-height: 1.5;
+}
+
+/* MUTUAL GRAY-OUT INTERACTION (ONLY GRAYS OUT OPPOSITE CARD ON HOVER) */
+.sb7-outcomes-grid:has(.outcome-failure:hover) .outcome-success,
+.sb7-outcomes-grid.is-negative-hovered .outcome-success,
+body.is-negative-hovered .outcome-success {
+  opacity: 0.2 !important;
+  filter: grayscale(90%) opacity(0.2) !important;
+  transform: scale(0.97) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.sb7-outcomes-grid:has(.outcome-success:hover) .outcome-failure,
+.sb7-outcomes-grid.is-positive-hovered .outcome-failure,
+body.is-positive-hovered .outcome-failure {
+  opacity: 0.2 !important;
+  filter: grayscale(90%) opacity(0.2) !important;
+  transform: scale(0.97) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.outcome-success:hover {
+  box-shadow: 0 16px 40px rgba(16, 185, 129, 0.18) !important;
+  transform: translateY(-4px) scale(1.01) !important;
+}
+
+.outcome-failure:hover {
+  box-shadow: 0 16px 40px rgba(239, 68, 68, 0.12) !important;
+  transform: translateY(-4px) scale(1.01) !important;
+}
+
+@media (max-width: 768px) {
+  .sb7-outcomes-grid {
+    grid-template-columns: 1fr;
+  }
+}
