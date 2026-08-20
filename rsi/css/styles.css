@@ -2141,3 +2141,91 @@ html:has(.outcome-success:hover) .outcome-success {
   box-shadow: 0 22px 55px rgba(16, 185, 129, 0.35) !important;
   transform: translateY(-6px) scale(1.02) !important;
 }
+
+
+/* ULTRA-SMOOTH VIEWPORT BORDER PULSE (BEHIND SCREEN EDGES) */
+#viewport-pain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  background: radial-gradient(circle at center, transparent 45%, rgba(239, 68, 68, 0.25) 100%);
+  box-shadow: inset 0 0 100px rgba(239, 68, 68, 0.35);
+}
+
+/* WHEN HOVERING NEGATIVE CARD: ULTRA-SMOOTH SOMATIC PULSE AT 3.6s */
+body.is-negative-hovered #viewport-pain-overlay,
+body.is-pain-active #viewport-pain-overlay,
+html:has(.outcome-failure:hover) #viewport-pain-overlay {
+  opacity: 1;
+  animation: ultraSmoothSomaticPulse 3.6s infinite ease-in-out;
+}
+
+@keyframes ultraSmoothSomaticPulse {
+  0% {
+    background: radial-gradient(circle at center, transparent 50%, rgba(239, 68, 68, 0.15) 100%);
+    box-shadow: inset 0 0 60px rgba(239, 68, 68, 0.2);
+  }
+  50% {
+    background: radial-gradient(circle at center, transparent 30%, rgba(239, 68, 68, 0.35) 100%);
+    box-shadow: inset 0 0 140px rgba(239, 68, 68, 0.45);
+  }
+  100% {
+    background: radial-gradient(circle at center, transparent 50%, rgba(239, 68, 68, 0.15) 100%);
+    box-shadow: inset 0 0 60px rgba(239, 68, 68, 0.2);
+  }
+}
+
+/* ABSOLUTELY CLEAN SECTION & CARDS GRID (NO RED BACKGROUND OR BLEED UNDER CARDS) */
+.section-sb7-outcomes {
+  background: #FAFAFA !important;
+  box-shadow: none !important;
+}
+
+.sb7-outcomes-grid {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.sb7-outcome-card {
+  background: #FFFFFF !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+.sb7-outcome-card.outcome-failure {
+  animation: none !important;
+  border-color: var(--color-border) !important;
+  border-top: 4px solid #EF4444 !important;
+}
+
+.outcome-failure:hover {
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* WHEN HOVERING NEGATIVE CARD: GREEN CARD FADES OUT MODERATELY */
+body.is-negative-hovered .outcome-success,
+html:has(.outcome-failure:hover) .outcome-success {
+  opacity: 0.45 !important;
+  filter: grayscale(55%) !important;
+  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* WHEN HOVERING POSITIVE CARD: RED CARD FADES OUT HEAVILY */
+body.is-positive-hovered .outcome-failure,
+html:has(.outcome-success:hover) .outcome-failure {
+  opacity: 0.18 !important;
+  filter: grayscale(95%) opacity(0.18) !important;
+  transform: scale(0.96) !important;
+  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+body.is-positive-hovered .outcome-success,
+html:has(.outcome-success:hover) .outcome-success {
+  box-shadow: 0 22px 55px rgba(16, 185, 129, 0.35) !important;
+  transform: translateY(-6px) scale(1.02) !important;
+}
