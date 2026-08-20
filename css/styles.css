@@ -1,8 +1,8 @@
 /* ==========================================================================
-   Cristi Therapy - Metoda Oglan (Terapie Manuală Integrată)
-   Architecture: 7-Therapy Somatic Spectrum & Full Black CTA System
+   Cristi Therapy - Metoda T7 (Terapie Manuală Integrată pe 7 Niveluri)
+   Architecture: 1:1 7-Chakra Spectrum & Full Black CTA System
    Palette: Full Black (#000000) Primary CTAs, Outline Black Secondary CTAs
-            7 Somatic Color Tokens (Amber, Crimson, Saffron, Emerald, Royal, Amethyst, Teal)
+            7 Chakra Color Tokens (Red, Orange, Yellow, Green, Royal Blue, Purple, Teal)
    Stylesheet: styles.css
    ========================================================================== */
 
@@ -16,30 +16,30 @@
   --color-card: #FFFFFF;
   --color-border: #E4E4E7;
   
-  /* 7 Somatic Therapy Layer Tokens */
-  --t1-amber: #D97706;          /* 1. Masaj Terapeutic */
-  --t1-amber-bg: rgba(217, 119, 6, 0.08);
+  /* 1:1 Strict 7-Chakra Spectrum Tokens */
+  --t1-red: #E53E3E;            /* T1: Masaj Terapeutic (Chakra 1 - Root) */
+  --t1-red-bg: rgba(229, 62, 62, 0.08);
 
-  --t2-crimson: #E53E3E;        /* 2. Trigger Point */
-  --t2-crimson-bg: rgba(229, 62, 62, 0.08);
+  --t2-orange: #ED8936;         /* T2: Trigger Point (Chakra 2 - Sacral) */
+  --t2-orange-bg: rgba(237, 137, 54, 0.08);
 
-  --t3-saffron: #D69E2E;        /* 3. Tok Sen */
-  --t3-saffron-bg: rgba(214, 158, 46, 0.08);
+  --t3-yellow: #D69E2E;         /* T3: Tok Sen (Chakra 3 - Solar Plexus) */
+  --t3-yellow-bg: rgba(214, 158, 46, 0.08);
 
-  --t4-emerald: #059669;        /* 4. Manipulare Miofascială */
-  --t4-emerald-bg: rgba(5, 150, 105, 0.08);
+  --t4-green: #059669;          /* T4: Manipulare Miofascială (Chakra 4 - Heart) */
+  --t4-green-bg: rgba(5, 150, 105, 0.08);
 
-  --t5-royal: #2563EB;          /* 5. Osteopatie Structurală */
-  --t5-royal-bg: rgba(37, 99, 235, 0.08);
+  --t5-blue: #2563EB;           /* T5: Osteopatie Structurală (Chakra 5 - Throat) */
+  --t5-blue-bg: rgba(37, 99, 235, 0.08);
 
-  --t6-purple: #7C3AED;         /* 6. Osteopatie Viscerală */
+  --t6-purple: #7C3AED;         /* T6: Osteopatie Viscerală (Chakra 6 - Third Eye) */
   --t6-purple-bg: rgba(124, 58, 237, 0.08);
 
-  --t7-teal: #0D9488;           /* 7. Terapie Bowen */
+  --t7-teal: #0D9488;           /* T7: Terapie Bowen (Chakra 7 - Crown) */
   --t7-teal-bg: rgba(13, 148, 136, 0.08);
 
   /* Spectrum Gradients */
-  --oglan-spectrum-gradient: linear-gradient(135deg, #D97706 0%, #E53E3E 16%, #D69E2E 33%, #059669 50%, #2563EB 66%, #7C3AED 83%, #0D9488 100%);
+  --t7-spectrum-gradient: linear-gradient(135deg, #E53E3E 0%, #ED8936 16%, #D69E2E 33%, #059669 50%, #2563EB 66%, #7C3AED 83%, #0D9488 100%);
 
   /* Typography */
   --font-serif-heading: 'Playfair Display', Georgia, serif;
@@ -115,7 +115,7 @@ a {
 
 .section-tag {
   display: inline-block;
-  color: var(--t4-emerald);
+  color: var(--t4-green);
   font-family: var(--font-sans-heading);
   font-weight: 800;
   font-size: 0.85rem;
@@ -170,7 +170,7 @@ a {
 }
 
 .brand-badge-v2 {
-  background: var(--oglan-spectrum-gradient);
+  background: var(--t7-spectrum-gradient);
   color: #FFFFFF;
   font-family: var(--font-sans-heading);
   font-weight: 800;
@@ -203,7 +203,7 @@ a {
 }
 
 .nav-menu a:hover {
-  color: var(--t4-emerald);
+  color: var(--t4-green);
 }
 
 /* THEME TOGGLE BUTTON */
@@ -231,7 +231,7 @@ a {
 }
 
 .theme-toggle-btn i {
-  color: var(--t4-emerald);
+  color: var(--t4-green);
 }
 
 .nav-toggle {
@@ -258,7 +258,7 @@ a {
 }
 
 .breadcrumb-bar a:hover {
-  color: var(--t4-emerald);
+  color: var(--t4-green);
 }
 
 /* BUTTON DESIGN SYSTEM */
@@ -366,7 +366,7 @@ a {
   align-items: center;
   gap: 0.4rem;
   background: rgba(5, 150, 105, 0.12);
-  color: var(--t4-emerald);
+  color: var(--t4-green);
   font-family: var(--font-sans-heading);
   font-weight: 700;
   font-size: 0.85rem;
@@ -384,7 +384,7 @@ a {
 }
 
 .hero-text h1 span {
-  color: var(--t4-emerald);
+  color: var(--t4-green);
   font-style: italic;
 }
 
@@ -442,12 +442,12 @@ a {
   height: 52px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--t4-emerald);
+  border: 2px solid var(--t4-green);
   flex-shrink: 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* 7 THERAPY BANNERS & ACCENTS */
+/* 7 THERAPY BANNERS & ACCENTS (1:1 CHAKRA SPECTRUM) */
 .chakra-level-banner {
   display: inline-flex;
   align-items: center;
@@ -464,11 +464,11 @@ a {
   letter-spacing: 0.5px;
 }
 
-.level-banner-1 { background: linear-gradient(135deg, var(--t1-amber) 0%, #B45309 100%); }
-.level-banner-2 { background: linear-gradient(135deg, var(--t2-crimson) 0%, #C53030 100%); }
-.level-banner-3 { background: linear-gradient(135deg, var(--t3-saffron) 0%, #B7791F 100%); }
-.level-banner-4 { background: linear-gradient(135deg, var(--t4-emerald) 0%, #047857 100%); }
-.level-banner-5 { background: linear-gradient(135deg, var(--t5-royal) 0%, #1D4ED8 100%); }
+.level-banner-1 { background: linear-gradient(135deg, var(--t1-red) 0%, #C53030 100%); }
+.level-banner-2 { background: linear-gradient(135deg, var(--t2-orange) 0%, #DD6B20 100%); }
+.level-banner-3 { background: linear-gradient(135deg, var(--t3-yellow) 0%, #B7791F 100%); }
+.level-banner-4 { background: linear-gradient(135deg, var(--t4-green) 0%, #047857 100%); }
+.level-banner-5 { background: linear-gradient(135deg, var(--t5-blue) 0%, #1D4ED8 100%); }
 .level-banner-6 { background: linear-gradient(135deg, var(--t6-purple) 0%, #6D28D9 100%); }
 .level-banner-7 { background: linear-gradient(135deg, var(--t7-teal) 0%, #0F766E 100%); }
 
@@ -514,7 +514,7 @@ a {
 }
 
 .proof-item i {
-  color: var(--t4-emerald);
+  color: var(--t4-green);
 }
 
 /* SECTION 2: STAKES */
@@ -526,7 +526,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: var(--t1-amber);
+  color: var(--t2-orange);
   font-family: var(--font-sans-heading);
   font-weight: 700;
   font-size: 0.85rem;
@@ -555,7 +555,7 @@ a {
 
 .stake-card i {
   font-size: 2.2rem;
-  color: var(--t1-amber);
+  color: var(--t2-orange);
   margin-bottom: 1rem;
 }
 
@@ -597,7 +597,7 @@ a {
   height: 64px;
   border-radius: 50%;
   background: rgba(5, 150, 105, 0.1);
-  color: var(--t4-emerald);
+  color: var(--t4-green);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -740,7 +740,7 @@ a {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* ACTIVE PILL STYLES FOR 7 THERAPIES */
+/* ACTIVE PILL STYLES FOR 7 THERAPIES (1:1 CHAKRA ORDER) */
 .sb7-pill.active-pill {
   cursor: default;
   color: #FFFFFF !important;
@@ -753,11 +753,11 @@ a {
   transform: none;
 }
 
-.sb7-pill-t1.active-pill { background: linear-gradient(135deg, var(--t1-amber) 0%, #B45309 100%); }
-.sb7-pill-t2.active-pill { background: linear-gradient(135deg, var(--t2-crimson) 0%, #C53030 100%); }
-.sb7-pill-t3.active-pill { background: linear-gradient(135deg, var(--t3-saffron) 0%, #B7791F 100%); }
-.sb7-pill-t4.active-pill { background: linear-gradient(135deg, var(--t4-emerald) 0%, #047857 100%); }
-.sb7-pill-t5.active-pill { background: linear-gradient(135deg, var(--t5-royal) 0%, #1D4ED8 100%); }
+.sb7-pill-t1.active-pill { background: linear-gradient(135deg, var(--t1-red) 0%, #C53030 100%); }
+.sb7-pill-t2.active-pill { background: linear-gradient(135deg, var(--t2-orange) 0%, #DD6B20 100%); }
+.sb7-pill-t3.active-pill { background: linear-gradient(135deg, var(--t3-yellow) 0%, #B7791F 100%); }
+.sb7-pill-t4.active-pill { background: linear-gradient(135deg, var(--t4-green) 0%, #047857 100%); }
+.sb7-pill-t5.active-pill { background: linear-gradient(135deg, var(--t5-blue) 0%, #1D4ED8 100%); }
 .sb7-pill-t6.active-pill { background: linear-gradient(135deg, var(--t6-purple) 0%, #6D28D9 100%); }
 .sb7-pill-t7.active-pill { background: linear-gradient(135deg, var(--t7-teal) 0%, #0F766E 100%); }
 
@@ -769,11 +769,11 @@ a {
   flex-shrink: 0;
 }
 
-.dot-t1 { background: var(--t1-amber); }
-.dot-t2 { background: var(--t2-crimson); }
-.dot-t3 { background: var(--t3-saffron); }
-.dot-t4 { background: var(--t4-emerald); }
-.dot-t5 { background: var(--t5-royal); }
+.dot-t1 { background: var(--t1-red); }
+.dot-t2 { background: var(--t2-orange); }
+.dot-t3 { background: var(--t3-yellow); }
+.dot-t4 { background: var(--t4-green); }
+.dot-t5 { background: var(--t5-blue); }
 .dot-t6 { background: var(--t6-purple); }
 .dot-t7 { background: var(--t7-teal); }
 
@@ -821,7 +821,7 @@ a {
 }
 
 .guide-photo-badge p {
-  color: var(--t4-emerald);
+  color: var(--t4-green);
   font-size: 0.9rem;
 }
 
@@ -848,7 +848,7 @@ a {
 }
 
 .agreement-box i {
-  color: var(--t4-emerald);
+  color: var(--t4-green);
   font-size: 1.5rem;
   margin-top: 2px;
 }
@@ -953,7 +953,7 @@ a {
 }
 
 .lead-tag {
-  color: var(--t4-emerald);
+  color: var(--t4-green);
   font-family: var(--font-sans-heading);
   font-weight: 800;
   font-size: 0.85rem;
@@ -1017,7 +1017,7 @@ a {
 }
 
 .footer-links a:hover {
-  color: var(--t4-emerald);
+  color: var(--t4-green);
 }
 
 /* MODALS */
@@ -1097,6 +1097,85 @@ a {
 .form-control:focus {
   outline: none;
   border-color: var(--color-slate-blue);
+}
+
+/* BRANDING PAGE SPECIFIC STYLES */
+.branding-hero {
+  background: linear-gradient(135deg, #09090B 0%, #18181B 100%);
+  color: #FFFFFF;
+  padding: 4.5rem 0 3.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.branding-hero h1 {
+  color: #FFFFFF;
+  font-size: 2.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.branding-hero p {
+  color: #A1A1AA;
+  font-size: 1.1rem;
+  max-width: 720px;
+}
+
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.swatch-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.swatch-color-box {
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  color: #FFFFFF;
+  font-family: var(--font-sans-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.swatch-details {
+  padding: 1.25rem;
+}
+
+.swatch-details code {
+  background: #F4F4F5;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.type-scale-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.type-scale-table th, .type-scale-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.type-scale-table th {
+  background: #F4F4F5;
+  font-family: var(--font-sans-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
 /* RESPONSIVE MEDIA QUERIES */
