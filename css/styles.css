@@ -1,5 +1,6 @@
 /* ==========================================================================
    Cristi Therapy - Official StoryBrand.com Inspired Stylesheet
+   Image-Driven & Photography-Rich Visual Layout
    Typography: Playfair Display (Serif Headings) + Inter / Plus Jakarta Sans (Body)
    Palette: Deep Navy (#0F2341) + Slate Navy (#1B365D) + Sage (#2C4C3E) + Amber Gold (#C89B3C)
    ========================================================================== */
@@ -26,7 +27,7 @@
   --radius-lg: 24px;
   --radius-pill: 9999px;
   
-  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 *, *::before, *::after {
@@ -261,7 +262,7 @@ a {
   width: 100%;
 }
 
-/* SECTION 1: HERO (StoryBrand.com Style) */
+/* SECTION 1: HERO (Image-Driven) */
 .hero {
   padding: 5rem 0 4rem;
   background: linear-gradient(135deg, rgba(15, 35, 65, 0.04) 0%, rgba(44, 76, 62, 0.06) 100%);
@@ -269,7 +270,7 @@ a {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 3.5rem;
   align-items: center;
 }
@@ -315,63 +316,61 @@ a {
   flex-wrap: wrap;
 }
 
-.hero-card-box {
-  background: var(--color-card);
-  border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  box-shadow: 0 15px 40px rgba(15, 35, 65, 0.08);
-  border: 1px solid var(--color-border);
+.hero-image-wrap {
   position: relative;
+  border-radius: var(--radius-lg);
   overflow: hidden;
+  box-shadow: 0 20px 45px rgba(15, 35, 65, 0.14);
 }
 
-.hero-card-box::before {
-  content: '';
+.hero-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+  transition: var(--transition);
+}
+
+.hero-image-wrap:hover .hero-img {
+  transform: scale(1.03);
+}
+
+.hero-image-badge {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background: var(--color-gold);
-}
-
-.card-label {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  font-family: var(--font-sans-heading);
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.card-highlight h3 {
-  font-size: 1.6rem;
-  margin: 0.3rem 0 1.25rem;
-  color: var(--color-navy);
-}
-
-.check-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-
-.check-list li {
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1.1rem 1.4rem;
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  font-size: 0.98rem;
+  gap: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-.check-list i {
+.hero-image-badge i {
   color: var(--color-sage);
+  font-size: 1.8rem;
+}
+
+.hero-image-badge strong {
+  color: var(--color-navy);
+  font-size: 1.05rem;
+}
+
+.hero-image-badge p {
+  color: var(--color-body);
+  font-size: 0.85rem;
 }
 
 /* PROOF BAR */
 .proof-bar {
   background: #FFFFFF;
-  border-y: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
   padding: 1.25rem 0;
 }
 
@@ -397,7 +396,7 @@ a {
   color: var(--color-gold);
 }
 
-/* SECTION 2: STAKES (Dark Navy) */
+/* SECTION 2: STAKES */
 .stakes-section {
   text-align: center;
 }
@@ -491,7 +490,7 @@ a {
   color: var(--color-navy);
 }
 
-/* SECTION 4: THE GUIDE */
+/* SECTION 4: THE GUIDE (Realistic Photo Profile) */
 .section-guide {
   background: linear-gradient(to right, var(--color-navy), var(--color-slate-blue));
   color: #FFFFFF;
@@ -499,53 +498,44 @@ a {
 
 .guide-grid {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: 0.85fr 1.15fr;
   gap: 4rem;
   align-items: center;
 }
 
-.guide-profile {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+.guide-photo-wrap {
+  position: relative;
   border-radius: var(--radius-lg);
-  padding: 2.5rem 2rem;
-  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
 }
 
-.guide-avatar-box {
-  width: 105px;
-  height: 105px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-gold), var(--color-sage));
+.guide-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.guide-photo-badge {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(15, 35, 65, 0.95), transparent);
+  padding: 2rem 1.5rem 1.25rem;
   color: #FFFFFF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.6rem;
-  margin: 0 auto 1.25rem;
-  border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
-.guide-profile h3 {
+.guide-photo-badge strong {
+  font-size: 1.35rem;
   color: #FFFFFF;
-  font-size: 1.6rem;
-  margin-bottom: 0.2rem;
+  display: block;
 }
 
-.guide-subtitle {
+.guide-photo-badge p {
   color: var(--color-gold);
-  font-family: var(--font-sans-heading);
   font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 1.25rem;
-}
-
-.guide-proof {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: 0.88rem;
-  color: #E2E8F0;
 }
 
 .guide-text h2 {
@@ -638,43 +628,69 @@ a {
   margin-top: 2.75rem;
 }
 
-/* SECTION 6: THERAPIES MATRIX */
-.therapies-grid {
+/* SECTION 6: VISUAL THERAPIES MATRIX GRID */
+.visual-therapies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.75rem;
 }
 
-.therapy-card {
+.visual-t-card {
   background: var(--color-card);
   border-radius: var(--radius-md);
-  padding: 1.85rem 1.5rem;
+  overflow: hidden;
   border: 1px solid var(--color-border);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
   transition: var(--transition);
 }
 
-.therapy-card:hover {
-  border-color: var(--color-gold);
-  transform: translateY(-3px);
+.visual-t-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(15, 35, 65, 0.12);
 }
 
-.t-num {
-  font-size: 0.75rem;
-  text-transform: uppercase;
+.visual-t-img-box {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.visual-t-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.visual-t-card:hover .visual-t-img-box img {
+  transform: scale(1.06);
+}
+
+.t-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(15, 35, 65, 0.88);
+  color: var(--color-gold);
   font-family: var(--font-sans-heading);
   font-weight: 800;
-  color: var(--color-gold);
-  display: block;
-  margin-bottom: 0.3rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
 }
 
-.therapy-card h3 {
-  font-size: 1.15rem;
+.visual-t-body {
+  padding: 1.5rem;
+}
+
+.visual-t-body h3 {
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
   color: var(--color-navy);
 }
 
-.therapy-card p {
+.visual-t-body p {
   font-size: 0.9rem;
   color: var(--color-body);
 }
@@ -909,6 +925,10 @@ a {
 
   .hero-text h1 {
     font-size: 2.3rem;
+  }
+  
+  .hero-img, .guide-img {
+    height: 360px;
   }
 }
 
