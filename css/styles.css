@@ -2,7 +2,7 @@
    Cristi Therapy - Official StoryBrand.com Inspired Stylesheet
    Image-Driven & Photography-Rich Visual Layout
    Single-Column Vertical VITA 5 System Chain with Connecting Arrows
-   Mobile UI Clean & Responsive Audit
+   Chakra Color Level Banners & Theme Integration
    Typography: Playfair Display (Serif Headings) + Inter / Plus Jakarta Sans (Body)
    Palette: Deep Navy (#0F2341) + Slate Navy (#1B365D) + Sage (#2C4C3E) + Amber Gold (#C89B3C)
    ========================================================================== */
@@ -13,6 +13,13 @@
   --color-sage: #2C4C3E;
   --color-gold: #C89B3C;
   --color-gold-hover: #DBA948;
+  
+  /* Chakra Color Codes */
+  --chakra-red: #E53E3E;
+  --chakra-orange: #ED8936;
+  --chakra-yellow: #D69E2E;
+  --chakra-green: #38A169;
+  --chakra-blue: #3182CE;
   
   --color-dark: #0F172A;
   --color-body: #334155;
@@ -394,19 +401,50 @@ a {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-.hero-image-badge i {
-  color: var(--color-sage);
-  font-size: 1.8rem;
+/* CHAKRA COLOR LEVEL BANNERS */
+.chakra-level-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans-heading);
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  letter-spacing: 0.5px;
 }
 
-.hero-image-badge strong {
-  color: var(--color-navy);
-  font-size: 1.05rem;
+.level-banner-1 {
+  background: linear-gradient(135deg, #E53E3E 0%, #C53030 100%);
 }
 
-.hero-image-badge p {
-  color: var(--color-body);
-  font-size: 0.85rem;
+.level-banner-2 {
+  background: linear-gradient(135deg, #ED8936 0%, #DD6B20 100%);
+}
+
+.level-banner-3 {
+  background: linear-gradient(135deg, #D69E2E 0%, #B7791F 100%);
+}
+
+.level-banner-4 {
+  background: linear-gradient(135deg, #38A169 0%, #2F855A 100%);
+}
+
+.level-banner-5 {
+  background: linear-gradient(135deg, #3182CE 0%, #2B6CB0 100%);
+}
+
+.level-tag-num {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
+
+.level-tag-name {
+  font-weight: 700;
 }
 
 /* PROOF BAR */
@@ -989,12 +1027,7 @@ a {
 }
 
 @media (max-width: 768px) {
-  /* Hide Top Bar & Bottom Mobile CTA Bar on Mobile */
-  .top-bar {
-    display: none !important;
-  }
-
-  .mobile-cta-bar {
+  .top-bar, .mobile-cta-bar {
     display: none !important;
   }
 
