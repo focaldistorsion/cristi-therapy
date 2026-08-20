@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Auto-evaluare Somatică | Cristi Therapy - Metoda T7</title>
-  <meta name="description" content="Auto-evaluează-te în 5 întrebări pentru a descoperi ce nivel din cele 7 terapii complementare Metoda T7 (Masaj, Trigger Point, Tok Sen, Miofascial, Osteopatie, Visceral, Bowen) este ideal pentru tine.">
+  <meta name="description" content="Auto-evaluează-te în 5 întrebări pentru a descoperi ce nivel din cele 7 terapii complementare Metoda T7 este ideal pentru tine.">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,25 +14,37 @@
   
   <link rel="stylesheet" href="css/styles-v2.css">
   <style>
+    /* CLEAN QUIZ HEADER (DISTRACTION-FREE) */
+    .quiz-header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.85rem 0;
+    }
+    .quiz-nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     .quiz-section {
       padding: 3.5rem 0 5rem;
       background: linear-gradient(135deg, rgba(18, 18, 18, 0.02) 0%, rgba(5, 150, 105, 0.05) 100%);
-      min-height: 80vh;
+      min-height: 85vh;
     }
     .quiz-card {
       background: #FFFFFF;
       border-radius: var(--radius-lg);
       border: 1px solid var(--color-border);
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
-      max-width: 740px;
+      max-width: 780px;
       margin: 0 auto;
       padding: 2.5rem;
     }
     .quiz-header-banner {
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
       border-bottom: 1px solid var(--color-border);
-      padding-bottom: 1.5rem;
+      padding-bottom: 1.25rem;
     }
     .quiz-main-title {
       font-size: 2.2rem;
@@ -69,25 +81,25 @@
       display: block;
     }
     .quiz-question-title {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       color: var(--color-navy);
       margin-bottom: 1.5rem;
     }
     .quiz-options-grid {
       display: flex;
       flex-direction: column;
-      gap: 0.85rem;
+      gap: 0.95rem;
       margin-bottom: 2rem;
     }
     .quiz-option-card {
       border: 2px solid var(--color-border);
       border-radius: var(--radius-md);
-      padding: 1.1rem 1.35rem;
+      padding: 0.85rem 1.25rem;
       cursor: pointer;
       transition: var(--transition);
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 1.25rem;
       background: #FFFFFF;
     }
     .quiz-option-card:hover {
@@ -97,8 +109,24 @@
     }
     .quiz-option-card.selected {
       border-color: #000000;
-      background: rgba(0, 0, 0, 0.04);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      background: rgba(0, 0, 0, 0.03);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+    .quiz-option-img {
+      width: 68px;
+      height: 68px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      flex-shrink: 0;
+      background: #FAFAFA;
+    }
+    .quiz-option-card.selected .quiz-option-img {
+      border-color: #000000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .quiz-option-info {
+      flex-grow: 1;
     }
     .quiz-radio-icon {
       width: 22px;
@@ -171,35 +199,17 @@
 </head>
 <body>
 
-  <!-- Header Navigation -->
-  <header class="header">
-    <div class="container nav-container">
+  <!-- DISTRACTION-FREE HEADER -->
+  <header class="quiz-header">
+    <div class="container quiz-nav-container">
       <a href="index.html" class="brand">
         <span class="brand-badge-v2">METODA T7</span>
       </a>
-      <nav>
-        <ul class="nav-menu">
-          <li><a href="index.html#metoda-t7">Metoda T7</a></li>
-          <li><a href="index.html#despre">Despre Terapeut</a></li>
-          <li><a href="index.html#cum-functioneaza">Cum Funcționează</a></li>
-          <li>
-            <a href="rsi/quiz.html" class="brand-switcher-btn" title="Comută la Auto-evaluare Metoda RSI">
-              <span class="switcher-active">T7</span> <i class="fa-solid fa-arrows-rotate"></i> <span>RSI</span>
-            </a>
-          </li>
-          <li><a href="#contact" class="btn btn-header-cta js-open-modal">Programează o Consultație</a></li>
-        </ul>
-      </nav>
-      <button class="nav-toggle" aria-label="Meniu Mobile"><i class="fa-solid fa-bars"></i></button>
+      <a href="index.html" class="btn btn-outline btn-sm">
+        <i class="fa-solid fa-arrow-left"></i> Înapoi la Pagina Principală
+      </a>
     </div>
   </header>
-
-  <!-- BREADCRUMB -->
-  <div class="breadcrumb-bar">
-    <div class="container">
-      <a href="index.html"><i class="fa-solid fa-house"></i> Acasă</a> &gt; <span>Auto-evaluare Somatică</span>
-    </div>
-  </div>
 
   <!-- QUIZ SECTION -->
   <section class="quiz-section">
@@ -210,7 +220,7 @@
         <div class="quiz-header-banner" id="quizHeaderBanner">
           <span class="quiz-step-indicator" id="stepIndicator">PASUL 1 DIN 5 – AUTO-EVALUARE</span>
           <h1 class="quiz-main-title">Auto-evaluează-te Somatic</h1>
-          <p class="quiz-intro-sub">Răspunde la 5 întrebări rapide pentru a afla ce nivel din Metoda T7 este ideal pentru starea ta corporală.</p>
+          <p class="quiz-intro-sub">Alege opțiunea care descrie cel mai bine zona de disconfort și simptomele tale.</p>
         </div>
 
         <!-- Progress Bar -->
@@ -303,61 +313,61 @@
       {
         title: "1. Unde simți cel mai frecvent disconfortul sau tensiunea principală?",
         options: [
-          { label: "Musculatură încordată / Spate superior & Umeri", level: 1 },
-          { label: "Puncte fixe hipersensibile / Durere care radiază local", level: 2 },
-          { label: "Blocaj muscular adânc / Tensiune cronică în fascie profundă", level: 3 },
-          { label: "Senzație de restricție în mișcare / Fasciă rigidă pe tot corpul", level: 4 },
-          { label: "Coloană vertebrală rigidă / Încheieturi sau bazin desaxializat", level: 5 },
-          { label: "Zona abdominală / Stomac / Senzație de apăsare viscerală", level: 6 },
-          { label: "Stres cronic / Insomnie / Agitație & Sistem nervos suprasolicitat", level: 7 }
+          { label: "Musculatură încordată / Spate superior & Umeri", level: 1, img: "assets/images/quiz/body_pain_shoulders.png" },
+          { label: "Puncte fixe hipersensibile / Durere care radiază local", level: 2, img: "assets/images/quiz/body_pain_trigger.png" },
+          { label: "Blocaj muscular adânc / Tensiune cronică în zona lombară", level: 3, img: "assets/images/quiz/body_pain_lower_back.png" },
+          { label: "Senzație de restricție în mișcare / Fasciă rigidă pe tot corpul", level: 4, img: "assets/images/quiz/body_pain_fascia.png" },
+          { label: "Coloană vertebrală rigidă / Încheieturi sau bazin desaxializat", level: 5, img: "assets/images/quiz/body_pain_spine.png" },
+          { label: "Zona abdominală / Stomac / Senzație de apăsare viscerală", level: 6, img: "assets/images/quiz/body_pain_abdomen.png" },
+          { label: "Stres cronic / Insomnie / Agitație & Sistem nervos suprasolicitat", level: 7, img: "assets/images/quiz/body_pain_nervous.png" }
         ]
       },
       {
         title: "2. Cum ai descrie senzația fizică predominantă?",
         options: [
-          { label: "Febră musculară / Oboseală fizică la suprafață", level: 1 },
-          { label: "Noduri dureroase 'arse' la atingere sau presiune", level: 2 },
-          { label: "Tensiune musculară încăpățânată ce nu cedează la masaj clasic", level: 3 },
-          { label: "Lipsă de flexibilitate / Alunecare greoaie a mușchilor", level: 4 },
-          { label: "Înțepenire articulară / Durere la răsuciri sau flexii", level: 5 },
-          { label: "Tensiune profundă sub coaste sau în jurul organelor", level: 6 },
-          { label: "Stare continuă de 'fight or flight' / Tensiune mentală & corporală", level: 7 }
+          { label: "Febră musculară / Oboseală fizică la suprafață", level: 1, img: "assets/images/quiz/body_pain_shoulders.png" },
+          { label: "Noduri dureroase 'arse' la atingere sau presiune", level: 2, img: "assets/images/quiz/body_pain_trigger.png" },
+          { label: "Tensiune musculară încăpățânată ce nu cedează la masaj clasic", level: 3, img: "assets/images/quiz/body_pain_lower_back.png" },
+          { label: "Lipsă de flexibilitate / Alunecare greoaie a mușchilor", level: 4, img: "assets/images/quiz/body_pain_fascia.png" },
+          { label: "Înțepenire articulară / Durere la răsuciri sau flexii", level: 5, img: "assets/images/quiz/body_pain_spine.png" },
+          { label: "Tensiune profundă sub coaste sau în jurul organelor", level: 6, img: "assets/images/quiz/body_pain_abdomen.png" },
+          { label: "Stare continuă de 'fight or flight' / Tensiune mentală & corporală", level: 7, img: "assets/images/quiz/body_pain_nervous.png" }
         ]
       },
       {
         title: "3. De cât timp persistă această stare?",
         options: [
-          { label: "De câteva zile / după un efort recent", level: 1 },
-          { label: "De 2-4 săptămâni în puncte specifice", level: 2 },
-          { label: "De câteva luni, având perioade de acutizare", level: 3 },
-          { label: "De peste 6 luni – simt tot corpul tensionat", level: 4 },
-          { label: "De ani de zile cu dureri de coloană sau articulații", level: 5 },
-          { label: "Recurent, asociat cu perioade de stres și digestie lentă", level: 6 },
-          { label: "Permanent – mă trezesc deja obosit și tensionat", level: 7 }
+          { label: "De câteva zile / după un efort recent", level: 1, img: "assets/images/quiz/body_pain_shoulders.png" },
+          { label: "De 2-4 săptămâni în puncte specifice", level: 2, img: "assets/images/quiz/body_pain_trigger.png" },
+          { label: "De câteva luni, având perioade de acutizare", level: 3, img: "assets/images/quiz/body_pain_lower_back.png" },
+          { label: "De peste 6 luni – simt tot corpul tensionat", level: 4, img: "assets/images/quiz/body_pain_fascia.png" },
+          { label: "De ani de zile cu dureri de coloană sau articulații", level: 5, img: "assets/images/quiz/body_pain_spine.png" },
+          { label: "Recurent, asociat cu perioade de stres și digestie lentă", level: 6, img: "assets/images/quiz/body_pain_abdomen.png" },
+          { label: "Permanent – mă trezesc deja obosit și tensionat", level: 7, img: "assets/images/quiz/body_pain_nervous.png" }
         ]
       },
       {
         title: "4. Ce fel de soluții ai încercat până în prezent?",
         options: [
-          { label: "Masaj clasic de relaxare", level: 1 },
-          { label: "Unguente antiinflamatoare / Geluri termice", level: 2 },
-          { label: "Kinetoterapie sau exerciții de stretching", level: 3 },
-          { label: "Acupunctură sau terapii manuale intense", level: 4 },
-          { label: "Adjustări vertebrale / Chiropracticâ", level: 5 },
-          { label: "Regim alimentar & tratament medicamentos gastro", level: 6 },
-          { label: "Suplimente de magneziu / Ceaiuri de somn", level: 7 }
+          { label: "Masaj clasic de relaxare", level: 1, img: "assets/images/quiz/body_pain_shoulders.png" },
+          { label: "Unguente antiinflamatoare / Geluri termice", level: 2, img: "assets/images/quiz/body_pain_trigger.png" },
+          { label: "Kinetoterapie sau exerciții de stretching", level: 3, img: "assets/images/quiz/body_pain_lower_back.png" },
+          { label: "Acupunctură sau terapii manuale intense", level: 4, img: "assets/images/quiz/body_pain_fascia.png" },
+          { label: "Adjustări vertebrale / Chiropracticâ", level: 5, img: "assets/images/quiz/body_pain_spine.png" },
+          { label: "Regim alimentar & tratament medicamentos gastro", level: 6, img: "assets/images/quiz/body_pain_abdomen.png" },
+          { label: "Suplimente de magneziu / Ceaiuri de somn", level: 7, img: "assets/images/quiz/body_pain_nervous.png" }
         ]
       },
       {
         title: "5. Care este dorința ta principală pentru prima ședință?",
         options: [
-          { label: "Decontracturarea și vascularizarea musculaturii", level: 1 },
-          { label: "Dezactivarea nodurilor fixe de durere", level: 2 },
-          { label: "Vibrație profundă și relaxare prin Tok Sen", level: 3 },
-          { label: "Eliberarea fasciei și recăpătarea mobilității", level: 4 },
-          { label: "Realinierea coloanei vertebrale și restabilirea echilibrului", level: 5 },
-          { label: "Detensionarea organelor interne și eliminarea apăsării viscerale", level: 6 },
-          { label: "Resetarea completă a sistemului nervos prin Terapie Bowen", level: 7 }
+          { label: "Decontracturarea și vascularizarea musculaturii", level: 1, img: "assets/images/quiz/body_pain_shoulders.png" },
+          { label: "Dezactivarea nodurilor fixe de durere", level: 2, img: "assets/images/quiz/body_pain_trigger.png" },
+          { label: "Vibrație profundă și relaxare prin Tok Sen", level: 3, img: "assets/images/quiz/body_pain_lower_back.png" },
+          { label: "Eliberarea fasciei și recăpătarea mobilității", level: 4, img: "assets/images/quiz/body_pain_fascia.png" },
+          { label: "Realinierea coloanei vertebrale și restabilirea echilibrului", level: 5, img: "assets/images/quiz/body_pain_spine.png" },
+          { label: "Detensionarea organelor interne și eliminarea apăsării viscerale", level: 6, img: "assets/images/quiz/body_pain_abdomen.png" },
+          { label: "Resetarea completă a sistemului nervos prin Terapie Bowen", level: 7, img: "assets/images/quiz/body_pain_nervous.png" }
         ]
       }
     ];
@@ -434,8 +444,11 @@
           card.classList.add('selected');
         }
         card.innerHTML = `
+          <img src="${opt.img}" alt="Zona Somatică" class="quiz-option-img">
+          <div class="quiz-option-info">
+            <span class="quiz-option-label">${opt.label}</span>
+          </div>
           <div class="quiz-radio-icon"><i class="fa-solid fa-check"></i></div>
-          <div class="quiz-option-label">${opt.label}</div>
         `;
         card.onclick = () => {
           document.querySelectorAll('.quiz-option-card').forEach(c => c.classList.remove('selected'));
@@ -513,11 +526,6 @@
     document.querySelector('.modal-close').onclick = () => modal.classList.remove('active');
     modal.onclick = (e) => {
       if (e.target === modal) modal.classList.remove('active');
-    };
-
-    // Mobile nav toggle
-    document.querySelector('.nav-toggle').onclick = () => {
-      document.querySelector('.nav-menu').classList.toggle('active');
     };
 
     renderQuestion();
