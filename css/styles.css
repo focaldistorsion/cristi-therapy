@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Cristi Therapy - Metoda T7 (Terapie Manuală Integrată pe 7 Niveluri)
+   Cristi Therapy - Metoda T7 & Metoda RSI (Terapie Manuală Integrată)
    Architecture: 1:1 7-Chakra Spectrum & Full Black CTA System
    Palette: Full Black (#000000) Primary CTAs, Outline Black Secondary CTAs
             7 Chakra Color Tokens (Red, Orange, Yellow, Green, Royal Blue, Purple, Teal)
@@ -129,23 +129,6 @@ a {
   color: var(--color-navy);
 }
 
-/* TOP ANNOUNCEMENT BAR */
-.top-bar {
-  background: #09090B;
-  color: #A1A1AA;
-  font-size: 0.85rem;
-  padding: 0.45rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.top-bar-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
 /* HEADER NAVIGATION */
 .header {
   position: sticky;
@@ -192,7 +175,7 @@ a {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.5rem;
   list-style: none;
 }
 
@@ -206,32 +189,39 @@ a {
   color: var(--t4-green);
 }
 
-/* THEME TOGGLE BUTTON */
-.theme-toggle-btn {
+/* BRAND METHOD SWITCHER TOGGLE (T7 ⇄ RSI) */
+.brand-switcher-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  background: var(--color-light);
-  border: 1px solid var(--color-border);
-  color: var(--color-navy);
-  padding: 0.4rem 0.85rem;
+  gap: 0.45rem;
+  background: #09090B;
+  color: #FFFFFF !important;
+  padding: 0.4rem 0.95rem;
   border-radius: var(--radius-pill);
   font-family: var(--font-sans-heading);
-  font-weight: 700;
-  font-size: 0.82rem;
-  cursor: pointer;
+  font-weight: 800;
+  font-size: 0.84rem;
+  text-decoration: none;
   transition: var(--transition);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.theme-toggle-btn:hover {
-  background: #FFFFFF;
-  border-color: #000000;
+.brand-switcher-btn:hover {
+  background: #18181B;
   transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
 }
 
-.theme-toggle-btn i {
-  color: var(--t4-green);
+.brand-switcher-btn i {
+  color: #10B981;
+  font-size: 0.78rem;
+}
+
+.brand-switcher-btn .switcher-active {
+  color: #34D399;
+  font-weight: 800;
+  border-bottom: 2px solid #34D399;
 }
 
 .nav-toggle {
@@ -284,7 +274,7 @@ a {
 
 .btn-header-cta {
   background: #000000;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
   padding: 0.65rem 1.4rem;
   font-size: 0.88rem;
 }
@@ -296,7 +286,7 @@ a {
 
 .btn-primary {
   background: #000000;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 .btn-primary:hover {
