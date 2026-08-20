@@ -1508,3 +1508,49 @@ body.is-solution-active .outcome-success {
   transform: translateY(-8px) scale(1.03) !important;
   border-color: #10B981 !important;
 }
+
+
+/* PAIN RED NERVE OVERLAY SYSTEM (GROWING NERVES TOWARDS CENTER) */
+.pain-nerve-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.pain-nerve-overlay svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.85));
+}
+
+.nerve-line {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  transition: stroke-dashoffset 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.85;
+}
+
+/* GROW NERVES TOWARDS CENTER ON NEGATIVE HOVER */
+body.is-pain-active .pain-nerve-overlay,
+.section-sb7-outcomes:has(.outcome-failure:hover) .pain-nerve-overlay {
+  opacity: 1;
+}
+
+body.is-pain-active .nerve-line,
+.section-sb7-outcomes:has(.outcome-failure:hover) .nerve-line {
+  stroke-dashoffset: 0;
+  animation: nervePulse 2.2s infinite ease-in-out;
+}
+
+@keyframes nervePulse {
+  0% { stroke: #EF4444; filter: drop-shadow(0 0 4px #EF4444); }
+  50% { stroke: #DC2626; filter: drop-shadow(0 0 14px #EF4444); stroke-width: 3.5; }
+  100% { stroke: #EF4444; filter: drop-shadow(0 0 4px #EF4444); }
+}
