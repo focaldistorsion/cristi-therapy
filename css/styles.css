@@ -2,6 +2,7 @@
    Cristi Therapy - Official StoryBrand.com Inspired Stylesheet
    Image-Driven & Photography-Rich Visual Layout
    Single-Column Vertical VITA 5 System Chain with Connecting Arrows
+   Mobile UI Clean & Responsive Audit
    Typography: Playfair Display (Serif Headings) + Inter / Plus Jakarta Sans (Body)
    Palette: Deep Navy (#0F2341) + Slate Navy (#1B365D) + Sage (#2C4C3E) + Amber Gold (#C89B3C)
    ========================================================================== */
@@ -876,25 +877,9 @@ a {
   color: var(--color-gold);
 }
 
-/* FLOATING MOBILE CTA */
+/* FLOATING MOBILE CTA (Hidden as requested) */
 .mobile-cta-bar {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(15, 35, 65, 0.96);
-  backdrop-filter: blur(10px);
-  padding: 0.75rem 1rem;
-  z-index: 999;
-  justify-content: space-around;
-  gap: 0.75rem;
-}
-
-.m-cta-btn {
-  flex: 1;
-  padding: 0.65rem 0.5rem;
-  font-size: 0.85rem;
+  display: none !important;
 }
 
 /* MODALS */
@@ -1004,12 +989,35 @@ a {
 }
 
 @media (max-width: 768px) {
-  body {
-    padding-bottom: 60px;
+  /* Hide Top Bar & Bottom Mobile CTA Bar on Mobile */
+  .top-bar {
+    display: none !important;
   }
 
   .mobile-cta-bar {
-    display: flex;
+    display: none !important;
+  }
+
+  body {
+    padding-bottom: 0 !important;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .hero {
+    padding: 3rem 0 2.5rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.1rem;
+    line-height: 1.25;
+  }
+
+  .hero-subhead {
+    font-size: 1.05rem;
+    margin-bottom: 1.75rem;
   }
 
   .nav-menu {
@@ -1018,5 +1026,9 @@ a {
 
   .nav-toggle {
     display: block;
+  }
+
+  .modal-card {
+    padding: 1.75rem;
   }
 }
