@@ -39,6 +39,7 @@
   --t7-teal-bg: rgba(13, 148, 136, 0.08);
 
   /* Spectrum Gradients */
+  --rsi-spectrum-gradient: linear-gradient(135deg, #E53E3E 0%, #ED8936 16%, #D69E2E 33%, #059669 50%, #2563EB 66%, #7C3AED 83%, #0D9488 100%);
   --t7-spectrum-gradient: linear-gradient(135deg, #E53E3E 0%, #ED8936 16%, #D69E2E 33%, #059669 50%, #2563EB 66%, #7C3AED 83%, #0D9488 100%);
 
   /* Typography */
@@ -153,15 +154,15 @@ a {
 }
 
 .brand-badge-v2 {
-  background: var(--t7-spectrum-gradient);
+  background: linear-gradient(135deg, #E53E3E 0%, #ED8936 16%, #D69E2E 33%, #059669 50%, #2563EB 66%, #7C3AED 83%, #0D9488 100%);
   color: #FFFFFF;
   font-family: var(--font-sans-heading);
   font-weight: 800;
-  padding: 0.35rem 0.75rem;
+  padding: 0.4rem 0.85rem;
   border-radius: var(--radius-sm);
-  font-size: 0.92rem;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 0.95rem;
+  letter-spacing: 0.6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
