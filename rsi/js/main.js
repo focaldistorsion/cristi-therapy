@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Cristi Therapy - Main JavaScript Engine
+   Cristian Angel Oglan - Main JavaScript Engine
    Direct Booking Form, Lead Magnet Engine, V1 / V2 Theme Switcher,
    and Level Pagination Slider Controller
    ========================================================================== */

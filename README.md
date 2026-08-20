@@ -1,6 +1,6 @@
-# Cristi Therapy – VITA 5 StoryBrand Website
+# Cristian Angel Oglan – VITA 5 StoryBrand Website
 
-An MVP website for **Cristian Angel Oglan (Cristi Therapy)**, designed using the **StoryBrand Framework** and built with modern CSS custom properties, responsive glassmorphism design system, and clean Vanilla JS interactivity.
+An MVP website for **Cristian Angel Oglan (Cristian Angel Oglan)**, designed using the **StoryBrand Framework** and built with modern CSS custom properties, responsive glassmorphism design system, and clean Vanilla JS interactivity.
 
 The site presents a layered, holistic approach to manual therapy combining **Osteopathy, Visceral Manipulation, Dry Needling, Bowen Therapy, and Hirudotherapy**.
 
@@ -56,7 +56,7 @@ Open your terminal inside the project directory and run:
 ```bash
 git init
 git add .
-git commit -m "Initial commit: Cristi Therapy VITA 5 website MVP"
+git commit -m "Initial commit: Cristian Angel Oglan VITA 5 website MVP"
 ```
 
 ### Step 2: Create a New GitHub Repository
@@ -93,5 +93,5 @@ Your site will be live within 1–2 minutes at:
 ## 📜 Credits & Contact
 
 - **Therapist:** Cristian Angel Oglan
-- **Facebook:** [facebook.com/cristitherapy](https://www.facebook.com/cristitherapy)
+- **Facebook:** [facebook.com/cristian.angel.oglan](https://www.facebook.com/cristian.angel.oglan)
 - **Framework & Concept:** VITA 5 – Integrated Manual Therapy
