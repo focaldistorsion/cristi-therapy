@@ -1456,3 +1456,55 @@ a {
   transform: scale(0.96) !important;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
+
+
+/* FULL VIEWPORT (SCREEN-WIDE) PAIN & SOLUTION OVERLAY SYSTEM */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1), background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* FULL VIEWPORT PAIN AURA ON NEGATIVE HOVER */
+body.is-pain-active::before {
+  opacity: 1;
+  background: radial-gradient(circle at center, rgba(239, 68, 68, 0.06) 0%, rgba(239, 68, 68, 0.18) 100%);
+  box-shadow: inset 0 0 150px rgba(239, 68, 68, 0.4);
+  animation: viewportPainPulse 2.2s infinite ease-in-out;
+}
+
+@keyframes viewportPainPulse {
+  0% { box-shadow: inset 0 0 100px rgba(239, 68, 68, 0.25); }
+  50% { box-shadow: inset 0 0 190px rgba(239, 68, 68, 0.5); }
+  100% { box-shadow: inset 0 0 100px rgba(239, 68, 68, 0.25); }
+}
+
+/* FULL VIEWPORT SOLUTION AURA ON POSITIVE HOVER */
+body.is-solution-active::before {
+  opacity: 1;
+  background: radial-gradient(circle at center, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.16) 100%);
+  box-shadow: inset 0 0 150px rgba(16, 185, 129, 0.38);
+}
+
+/* SPOTLIGHT FOCUS ON POSITIVE CARD & DIM NEGATIVE CARD */
+body.is-solution-active .outcome-failure {
+  opacity: 0.18 !important;
+  filter: grayscale(95%) opacity(0.18) blur(0.5px) !important;
+  transform: scale(0.95) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+body.is-solution-active .outcome-success {
+  position: relative;
+  z-index: 10000;
+  box-shadow: 0 25px 60px rgba(16, 185, 129, 0.4) !important;
+  transform: translateY(-8px) scale(1.03) !important;
+  border-color: #10B981 !important;
+}

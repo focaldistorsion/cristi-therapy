@@ -199,3 +199,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+// SB7 Full Viewport Pain Aura & Solution Focus Interaction
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.outcome-failure').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      document.body.classList.add('is-pain-active');
+      document.body.classList.remove('is-solution-active');
+    });
+    card.addEventListener('mouseleave', () => {
+      document.body.classList.remove('is-pain-active');
+    });
+  });
+
+  document.querySelectorAll('.outcome-success').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      document.body.classList.add('is-solution-active');
+      document.body.classList.remove('is-pain-active');
+    });
+    card.addEventListener('mouseleave', () => {
+      document.body.classList.remove('is-solution-active');
+    });
+  });
+});
