@@ -1,6 +1,7 @@
 /* ==========================================================================
    Cristi Therapy - Official StoryBrand.com Inspired Stylesheet
    Image-Driven & Photography-Rich Visual Layout
+   Single-Column Vertical VITA 5 System Chain with Connecting Arrows
    Typography: Playfair Display (Serif Headings) + Inter / Plus Jakarta Sans (Body)
    Palette: Deep Navy (#0F2341) + Slate Navy (#1B365D) + Sage (#2C4C3E) + Amber Gold (#C89B3C)
    ========================================================================== */
@@ -531,7 +532,7 @@ a {
   color: var(--color-navy);
 }
 
-/* DEDICATED VITA 5 SECTION STYLING */
+/* DEDICATED VITA 5 SECTION - SINGLE COLUMN VERTICAL SYSTEM CHAIN */
 .section-vita-system {
   background: linear-gradient(180deg, #F8F9FA 0%, rgba(44, 76, 62, 0.04) 100%);
   border-top: 1px solid var(--color-border);
@@ -542,6 +543,77 @@ a {
   font-size: 1.1rem;
   color: var(--color-body);
   margin-top: 0.5rem;
+}
+
+.vita-vertical-chain {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vita-system-card {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 1.75rem;
+  background: var(--color-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 25px rgba(15, 35, 65, 0.06);
+  overflow: hidden;
+  width: 100%;
+  transition: var(--transition);
+  align-items: center;
+}
+
+.vita-system-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 35px rgba(15, 35, 65, 0.12);
+  border-color: var(--color-gold);
+}
+
+.vita-card-img-box {
+  position: relative;
+  height: 100%;
+  min-height: 180px;
+}
+
+.vita-card-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vita-card-content {
+  padding: 1.75rem 1.75rem 1.75rem 0;
+}
+
+.vita-card-content h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-navy);
+}
+
+.vita-card-content p {
+  font-size: 0.95rem;
+  color: var(--color-body);
+  margin-bottom: 0.75rem;
+}
+
+.vita-arrow-connector {
+  font-size: 2rem;
+  color: var(--color-gold);
+  margin: 0.75rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulseArrow 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseArrow {
+  0%, 100% { transform: translateY(0); opacity: 0.8; }
+  50% { transform: translateY(5px); opacity: 1; color: var(--color-sage); }
 }
 
 /* SECTION 4: THE GUIDE */
@@ -680,73 +752,6 @@ a {
 .plan-cta {
   text-align: center;
   margin-top: 2.75rem;
-}
-
-/* VISUAL THERAPIES MATRIX GRID */
-.visual-therapies-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.75rem;
-}
-
-.visual-t-card {
-  background: var(--color-card);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: 1px solid var(--color-border);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
-  transition: var(--transition);
-}
-
-.visual-t-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(15, 35, 65, 0.12);
-}
-
-.visual-t-img-box {
-  position: relative;
-  height: 180px;
-  overflow: hidden;
-}
-
-.visual-t-img-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--transition);
-}
-
-.visual-t-card:hover .visual-t-img-box img {
-  transform: scale(1.06);
-}
-
-.t-badge {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  background: rgba(15, 35, 65, 0.88);
-  color: var(--color-gold);
-  font-family: var(--font-sans-heading);
-  font-weight: 800;
-  font-size: 0.75rem;
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-pill);
-  text-transform: uppercase;
-}
-
-.visual-t-body {
-  padding: 1.5rem;
-}
-
-.visual-t-body h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: var(--color-navy);
-}
-
-.visual-t-body p {
-  font-size: 0.9rem;
-  color: var(--color-body);
 }
 
 /* SECTION 7: TESTIMONIALS */
@@ -983,6 +988,18 @@ a {
   
   .hero-img, .guide-img {
     height: 360px;
+  }
+
+  .vita-system-card {
+    grid-template-columns: 1fr;
+  }
+
+  .vita-card-img-box {
+    height: 200px;
+  }
+
+  .vita-card-content {
+    padding: 1.5rem;
   }
 }
 
