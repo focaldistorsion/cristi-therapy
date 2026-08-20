@@ -755,97 +755,72 @@ a {
   50% { transform: translateY(5px); opacity: 1; color: var(--color-green); }
 }
 
-/* SECTION: VITA 5 LEVEL PAGINATION SLIDER */
-.section-level-slider {
+/* COMPACT POST-CTA LEVEL QUICK-NAV BAR */
+.compact-level-nav {
   background: #F4F4F5;
   border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  padding: 4.5rem 0;
+  padding: 1.1rem 0;
+  font-size: 0.88rem;
 }
 
-.slider-header-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.slider-nav-controls {
-  display: flex;
-  gap: 0.75rem;
-}
-
-.slider-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
-  color: var(--color-dark);
+.compact-nav-flex {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: var(--transition);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
 }
 
-.slider-btn:hover {
-  background: #000000;
-  color: #FFFFFF;
-  border-color: #000000;
-  transform: translateY(-2px);
+.compact-nav-title {
+  font-family: var(--font-sans-heading);
+  font-weight: 700;
+  color: var(--color-dark);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.level-slider-wrapper {
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  padding: 0.5rem 0 1.5rem;
-}
-
-.level-slider-wrapper::-webkit-scrollbar {
-  display: none;
-}
-
-.level-slider-track {
+.compact-lvl-pills {
   display: flex;
-  gap: 1.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.level-slider-card {
-  flex: 0 0 320px;
+.compact-lvl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
   background: #FFFFFF;
-  border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
-  padding: 1.75rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  font-family: var(--font-sans-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--color-dark);
   transition: var(--transition);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
-.level-slider-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+.compact-lvl-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border-color: #000000;
 }
 
-.level-slider-card h4 {
-  font-size: 1.25rem;
-  margin: 0.5rem 0;
-  color: var(--color-navy);
+.lvl-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
-.level-slider-card p {
-  font-size: 0.9rem;
-  color: var(--color-body);
-  margin-bottom: 1.25rem;
-}
+.lvl-dot-1 { background: #E53E3E; }
+.lvl-dot-2 { background: #ED8936; }
+.lvl-dot-3 { background: #D69E2E; }
+.lvl-dot-4 { background: #38A169; }
+.lvl-dot-5 { background: #3182CE; }
 
 /* SECTION 4: THE GUIDE */
 .section-guide {
@@ -1215,10 +1190,6 @@ a {
 
   .vita-card-content {
     padding: 1.5rem;
-  }
-
-  .level-slider-card {
-    flex: 0 0 280px;
   }
 }
 
