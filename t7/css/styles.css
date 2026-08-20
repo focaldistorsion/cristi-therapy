@@ -1811,3 +1811,74 @@ html:has(.outcome-success:hover) .outcome-success {
   box-shadow: 0 22px 55px rgba(16, 185, 129, 0.35) !important;
   transform: translateY(-6px) scale(1.02) !important;
 }
+
+
+/* CIRCULAR SOMATIC PAIN OVERLAY (SLOW PULSE 2X SLOWER THAN HEARTBEAT) */
+#viewport-pain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: radial-gradient(circle at center, transparent 35%, rgba(239, 68, 68, 0.35) 100%);
+  box-shadow: inset 0 0 120px rgba(239, 68, 68, 0.5);
+}
+
+/* WHEN HOVERING NEGATIVE CARD: RHYTHMIC CIRCULAR PULSE AT 2.8s */
+body.is-negative-hovered #viewport-pain-overlay,
+body.is-pain-active #viewport-pain-overlay,
+html:has(.outcome-failure:hover) #viewport-pain-overlay {
+  opacity: 1;
+  animation: circularSomaticPulse 2.8s infinite ease-in-out;
+}
+
+@keyframes circularSomaticPulse {
+  0% {
+    background: radial-gradient(circle at center, transparent 40%, rgba(239, 68, 68, 0.2) 100%);
+    box-shadow: inset 0 0 70px rgba(239, 68, 68, 0.3);
+  }
+  50% {
+    background: radial-gradient(circle at center, transparent 20%, rgba(220, 38, 38, 0.55) 100%);
+    box-shadow: inset 0 0 160px rgba(220, 38, 38, 0.7);
+  }
+  100% {
+    background: radial-gradient(circle at center, transparent 40%, rgba(239, 68, 68, 0.2) 100%);
+    box-shadow: inset 0 0 70px rgba(239, 68, 68, 0.3);
+  }
+}
+
+/* NEGATIVE CARD HAS NO EXTRA RED EFFECT APPLIED TO ITSELF */
+.sb7-outcome-card.outcome-failure {
+  animation: none !important;
+}
+
+.outcome-failure:hover {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* WHEN HOVERING NEGATIVE CARD: GREEN CARD FADES OUT MODERATELY */
+body.is-negative-hovered .outcome-success,
+html:has(.outcome-failure:hover) .outcome-success {
+  opacity: 0.4 !important;
+  filter: grayscale(60%) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* WHEN HOVERING POSITIVE CARD: RED CARD FADES OUT HEAVILY */
+body.is-positive-hovered .outcome-failure,
+html:has(.outcome-success:hover) .outcome-failure {
+  opacity: 0.18 !important;
+  filter: grayscale(95%) opacity(0.18) !important;
+  transform: scale(0.96) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+body.is-positive-hovered .outcome-success,
+html:has(.outcome-success:hover) .outcome-success {
+  box-shadow: 0 22px 55px rgba(16, 185, 129, 0.35) !important;
+  transform: translateY(-6px) scale(1.02) !important;
+}
