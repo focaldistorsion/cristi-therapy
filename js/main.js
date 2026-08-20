@@ -1,82 +1,46 @@
 /**
- * VITA 5 - Cristi Therapy (Cristian Angel Oglan) JavaScript Logic
- * StoryBrand SB7 Framework Enhanced: Handles Direct Booking & Lead Magnet Modals
+ * Cristi Therapy - StoryBrand Landing Page JavaScript
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initVitaTabs();
-  initModal();
+  initBookingModal();
   initLeadModal();
   initMobileNav();
-  initWhatsAppBooking();
+  initWhatsAppButtons();
 });
 
 /**
- * Interactive 5-Layer Therapy Tab Switcher
+ * Direct Appointment Booking Modal
  */
-function initVitaTabs() {
-  const tabs = document.querySelectorAll('.vita-tab');
-  const panels = document.querySelectorAll('.vita-panel');
-
-  if (!tabs.length || !panels.length) return;
-
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const targetLayer = tab.getAttribute('data-layer');
-
-      // Update Tab Active State
-      tabs.forEach((t) => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      // Update Panel Display
-      panels.forEach((panel) => {
-        if (panel.id === `panel-${targetLayer}`) {
-          panel.classList.add('active');
-          if (window.innerWidth <= 992) {
-            panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }
-        } else {
-          panel.classList.remove('active');
-        }
-      });
-    });
-  });
-}
-
-/**
- * Direct Appointment Booking Modal Manager
- */
-function initModal() {
-  const modalBackdrop = document.getElementById('bookingModal');
-  const openButtons = document.querySelectorAll('.js-open-modal');
-  const closeButton = modalBackdrop?.querySelector('.modal-close');
+function initBookingModal() {
+  const modal = document.getElementById('bookingModal');
+  const openBtns = document.querySelectorAll('.js-open-modal');
+  const closeBtn = modal?.querySelector('.modal-close');
   const bookingForm = document.getElementById('bookingForm');
 
-  if (!modalBackdrop) return;
+  if (!modal) return;
 
-  openButtons.forEach((btn) => {
+  openBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      modalBackdrop.classList.add('active');
+      modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     });
   });
 
   const closeModal = () => {
-    modalBackdrop.classList.remove('active');
+    modal.classList.remove('active');
     document.body.style.overflow = '';
   };
 
-  if (closeButton) closeButton.addEventListener('click', closeModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
-  modalBackdrop.addEventListener('click', (e) => {
-    if (e.target === modalBackdrop) closeModal();
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalBackdrop.classList.contains('active')) {
-      closeModal();
-    }
+    if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
   });
 
   if (bookingForm) {
@@ -85,13 +49,10 @@ function initModal() {
       const name = document.getElementById('clientName')?.value || 'Client';
       const phone = document.getElementById('clientPhone')?.value || '';
       const therapy = document.getElementById('clientTherapy')?.value || 'Evaluare VITA 5';
-      const message = document.getElementById('clientMessage')?.value || '';
 
-      const text = `Bună ziua! Numele meu este ${name} (Tel: ${phone}). Doresc o programare la Cristi Therapy pentru: ${therapy}. ${message ? 'Simptome: ' + message : ''}`;
-      
-      const waNumber = '40700000000';
-      const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
-      
+      const text = `Bună ziua! Numele meu este ${name} (Tel: ${phone}). Doresc o programare la Cristi Therapy pentru: ${therapy}.`;
+      const waUrl = `https://wa.me/40700000000?text=${encodeURIComponent(text)}`;
+
       closeModal();
       window.open(waUrl, '_blank');
     });
@@ -99,92 +60,95 @@ function initModal() {
 }
 
 /**
- * StoryBrand Transitional CTA (Lead Magnet) Modal Manager
+ * Transitional Lead Magnet PDF Modal
  */
 function initLeadModal() {
-  const leadModal = document.getElementById('leadModal');
-  const openLeadButtons = document.querySelectorAll('.js-open-lead-modal');
-  const closeLeadButton = leadModal?.querySelector('.modal-lead-close');
+  const modal = document.getElementById('leadModal');
+  const openBtns = document.querySelectorAll('.js-open-lead-modal');
+  const closeBtn = modal?.querySelector('.modal-lead-close');
   const leadForm = document.getElementById('leadForm');
 
-  if (!leadModal) return;
+  if (!modal) return;
 
-  openLeadButtons.forEach((btn) => {
+  openBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      leadModal.classList.add('active');
+      modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     });
   });
 
-  const closeLeadModal = () => {
-    leadModal.classList.remove('active');
+  const closeModal = () => {
+    modal.classList.remove('active');
     document.body.style.overflow = '';
   };
 
-  if (closeLeadButton) closeLeadButton.addEventListener('click', closeLeadModal);
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
 
-  leadModal.addEventListener('click', (e) => {
-    if (e.target === leadModal) closeLeadModal();
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && leadModal.classList.contains('active')) {
-      closeLeadModal();
-    }
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
   });
 
   if (leadForm) {
     leadForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = document.getElementById('leadName')?.value || 'Prieten';
-      const email = document.getElementById('leadEmail')?.value || '';
+      const contact = document.getElementById('leadContact')?.value || '';
 
-      const text = `Bună ziua! Numele meu este ${name} (${email}). Doresc să primesc gratuit Ghidul PDF: "5 Exerciții Posturale Pentru Eliberarea Spatelui".`;
-      
-      const waNumber = '40700000000';
-      const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
-      
-      closeLeadModal();
+      const text = `Bună ziua! Numele meu este ${name} (${contact}). Doresc să primesc gratuit Ghidul PDF "5 Exerciții Posturale Spate".`;
+      const waUrl = `https://wa.me/40700000000?text=${encodeURIComponent(text)}`;
+
+      closeModal();
       window.open(waUrl, '_blank');
     });
   }
 }
 
 /**
- * Mobile Navigation Drawer Toggle
+ * Mobile Navigation Menu
  */
 function initMobileNav() {
-  const toggleBtn = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('.nav-menu');
 
-  if (!toggleBtn || !navLinks) return;
+  if (!toggle || !menu) return;
 
-  toggleBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+  toggle.addEventListener('click', () => {
+    if (menu.style.display === 'flex') {
+      menu.style.display = 'none';
+    } else {
+      menu.style.display = 'flex';
+      menu.style.flexDirection = 'column';
+      menu.style.position = 'absolute';
+      menu.style.top = '100%';
+      menu.style.left = '0';
+      menu.style.width = '100%';
+      menu.style.background = '#FFFFFF';
+      menu.style.padding = '1.5rem';
+      menu.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+    }
   });
 
-  navLinks.querySelectorAll('a').forEach((link) => {
+  menu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
+      if (window.innerWidth <= 768) {
+        menu.style.display = 'none';
+      }
     });
   });
 }
 
 /**
- * Direct WhatsApp Booking Triggers
+ * Direct WhatsApp Buttons
  */
-function initWhatsAppBooking() {
-  const waButtons = document.querySelectorAll('.js-whatsapp-direct');
+function initWhatsAppButtons() {
+  const waBtns = document.querySelectorAll('.js-whatsapp-direct');
 
-  waButtons.forEach((btn) => {
+  waBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const selectedTherapy = btn.getAttribute('data-therapy') || 'Evaluare VITA 5';
-      const defaultText = `Bună ziua, domnule Cristian! Doresc să programez o consultație/ședință de ${selectedTherapy}.`;
-      
-      const waNumber = '40700000000';
-      const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(defaultText)}`;
+      const defaultText = `Bună ziua, domnule Cristian! Doresc să programez o consultație la Cristi Therapy.`;
+      const waUrl = `https://wa.me/40700000000?text=${encodeURIComponent(defaultText)}`;
       window.open(waUrl, '_blank');
     });
   });
