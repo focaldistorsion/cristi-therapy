@@ -1813,3 +1813,56 @@ body.is-pain-active .nerve-line,
   50% { stroke: #DC2626; filter: drop-shadow(0 0 14px #EF4444); stroke-width: 3.5; }
   100% { stroke: #EF4444; filter: drop-shadow(0 0 4px #EF4444); }
 }
+
+
+/* CARD-CENTERED FAST LIGHTNING OVERLAY SYSTEM */
+.sb7-outcome-card.outcome-failure {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-lightning-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.card-lightning-overlay svg {
+  width: 100%;
+  height: 100%;
+}
+
+.lightning-bolt {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  transition: stroke-dashoffset 0.35s ease;
+  filter: drop-shadow(0 0 8px #EF4444);
+}
+
+.outcome-failure:hover .card-lightning-overlay {
+  opacity: 1;
+}
+
+.outcome-failure:hover .lightning-bolt {
+  stroke-dashoffset: 0;
+  animation: lightningFlicker 0.35s infinite alternate ease-in-out;
+}
+
+.outcome-failure:hover .bolt-2 { animation-delay: 0.07s; }
+.outcome-failure:hover .bolt-3 { animation-delay: 0.14s; }
+.outcome-failure:hover .bolt-4 { animation-delay: 0.21s; }
+.outcome-failure:hover .bolt-5 { animation-delay: 0.28s; }
+
+@keyframes lightningFlicker {
+  0% { opacity: 0.1; stroke-width: 1.2; filter: drop-shadow(0 0 2px #EF4444); }
+  25% { opacity: 1; stroke-width: 3.5; filter: drop-shadow(0 0 16px #EF4444); }
+  50% { opacity: 0.25; stroke-width: 1.5; filter: drop-shadow(0 0 4px #EF4444); }
+  75% { opacity: 0.95; stroke-width: 3.2; filter: drop-shadow(0 0 14px #EF4444); }
+  100% { opacity: 0.2; stroke-width: 1.2; filter: drop-shadow(0 0 2px #DC2626); }
+}
