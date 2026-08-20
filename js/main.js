@@ -31,6 +31,10 @@ function initVitaTabs() {
       panels.forEach((panel) => {
         if (panel.id === `panel-${targetLayer}`) {
           panel.classList.add('active');
+          // Scroll content gently into view on small screens
+          if (window.innerWidth <= 992) {
+            panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
         } else {
           panel.classList.remove('active');
         }
@@ -82,13 +86,13 @@ function initModal() {
       e.preventDefault();
       const name = document.getElementById('clientName')?.value || 'Client';
       const phone = document.getElementById('clientPhone')?.value || '';
-      const therapy = document.getElementById('clientTherapy')?.value || 'Consultație VITA 5';
+      const therapy = document.getElementById('clientTherapy')?.value || 'Evaluare VITA 5';
       const message = document.getElementById('clientMessage')?.value || '';
 
-      const text = `Bună ziua! Numele meu este ${name} (Tel: ${phone}). Doresc o programare pentru: ${therapy}. ${message ? 'Mențiuni: ' + message : ''}`;
+      const text = `Bună ziua! Numele meu este ${name} (Tel: ${phone}). Doresc o programare la Cristi Therapy pentru: ${therapy}. ${message ? 'Simptome/Zone: ' + message : ''}`;
       
       // Send via WhatsApp
-      const waNumber = '40700000000'; // Replace with Cristi's actual phone number
+      const waNumber = '40700000000'; // Target phone number
       const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
       
       closeModal();
@@ -130,7 +134,7 @@ function initWhatsAppBooking() {
       const selectedTherapy = btn.getAttribute('data-therapy') || 'Evaluare VITA 5';
       const defaultText = `Bună ziua, domnule Cristian! Doresc să programez o consultație/ședință de ${selectedTherapy}.`;
       
-      const waNumber = '40700000000'; // Updated upon user confirmation
+      const waNumber = '40700000000';
       const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(defaultText)}`;
       window.open(waUrl, '_blank');
     });
