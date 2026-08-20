@@ -392,6 +392,55 @@ a {
   flex-wrap: wrap;
 }
 
+/* STORYBRAND-INSPIRED HERO "NOT SURE?" TRANSITIONAL CARD */
+.hero-notsure-card {
+  margin-top: 1.5rem;
+  background: rgba(18, 18, 18, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.notsure-text {
+  font-family: var(--font-sans-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-dark);
+}
+
+.notsure-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #FFFFFF;
+  color: #000000 !important;
+  font-family: var(--font-sans-heading);
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  transition: var(--transition);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+}
+
+.notsure-btn:hover {
+  background: #000000;
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+}
+
+.notsure-btn i {
+  font-size: 0.75rem;
+}
+
 .hero-image-wrap {
   position: relative;
   border-radius: var(--radius-lg);
@@ -1279,5 +1328,11 @@ a {
     font-size: 0.8rem;
     border-radius: var(--radius-pill);
     white-space: nowrap;
+  }
+
+  .hero-notsure-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
 }
