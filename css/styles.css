@@ -1,6 +1,7 @@
 /* ==========================================================================
-   Cristi Therapy - StoryBrand Landing Page Stylesheet
-   Pure 10-Section StoryBrand Architecture
+   Cristi Therapy - Official StoryBrand.com Inspired Stylesheet
+   Typography: Playfair Display (Serif Headings) + Inter / Plus Jakarta Sans (Body)
+   Palette: Deep Navy (#0F2341) + Slate Navy (#1B365D) + Sage (#2C4C3E) + Amber Gold (#C89B3C)
    ========================================================================== */
 
 :root {
@@ -16,7 +17,8 @@
   --color-card: #FFFFFF;
   --color-border: #E2E8F0;
   
-  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-serif-heading: 'Playfair Display', Georgia, serif;
+  --font-sans-heading: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Inter', sans-serif;
   
   --radius-sm: 8px;
@@ -45,8 +47,15 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-heading);
+h1, h2, h3 {
+  font-family: var(--font-serif-heading);
+  color: var(--color-dark);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h4, h5, h6 {
+  font-family: var(--font-sans-heading);
   color: var(--color-dark);
   line-height: 1.25;
   font-weight: 700;
@@ -64,44 +73,44 @@ a {
 }
 
 .section {
-  padding: 4.5rem 0;
+  padding: 5rem 0;
 }
 
 .section-dark {
   background: var(--color-navy);
   color: #FFFFFF;
-  padding: 4rem 0;
+  padding: 4.5rem 0;
 }
 
 .section-title-box {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto 3rem;
+  max-width: 720px;
+  margin: 0 auto 3.5rem;
 }
 
 .section-tag {
   display: inline-block;
   color: var(--color-gold);
-  font-family: var(--font-heading);
+  font-family: var(--font-sans-heading);
   font-weight: 800;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .section-title-box h2 {
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   color: var(--color-navy);
 }
 
-/* Top Bar & Header */
+/* TOP ANNOUNCEMENT BAR */
 .top-bar {
-  background: var(--color-navy);
+  background: #0A172C;
   color: #CBD5E1;
   font-size: 0.85rem;
-  padding: 0.4rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .top-bar-content {
@@ -112,12 +121,13 @@ a {
   gap: 0.5rem;
 }
 
+/* HEADER & NAVIGATION */
 .header {
   position: sticky;
   top: 0;
   z-index: 1000;
   background: rgba(248, 249, 250, 0.94);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -125,36 +135,36 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.9rem 0;
+  padding: 1rem 0;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
 }
 
 .brand-badge {
   background: var(--color-slate-blue);
   color: var(--color-gold);
-  font-family: var(--font-heading);
+  font-family: var(--font-sans-heading);
   font-weight: 800;
-  padding: 0.25rem 0.6rem;
+  padding: 0.3rem 0.65rem;
   border-radius: var(--radius-sm);
   font-size: 1rem;
 }
 
 .brand-text {
-  font-family: var(--font-heading);
+  font-family: var(--font-sans-heading);
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: var(--color-navy);
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 2rem;
   list-style: none;
 }
 
@@ -177,20 +187,31 @@ a {
   cursor: pointer;
 }
 
-/* Buttons */
+/* BUTTONS */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.8rem 1.6rem;
+  padding: 0.85rem 1.75rem;
   border-radius: var(--radius-pill);
-  font-family: var(--font-heading);
+  font-family: var(--font-sans-heading);
   font-weight: 700;
   font-size: 0.95rem;
   cursor: pointer;
   border: none;
   transition: var(--transition);
+}
+
+.btn-header-cta {
+  background: var(--color-navy);
+  color: #FFFFFF;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.88rem;
+}
+
+.btn-header-cta:hover {
+  background: var(--color-slate-blue);
 }
 
 .btn-primary {
@@ -240,16 +261,16 @@ a {
   width: 100%;
 }
 
-/* Section 1: Hero */
+/* SECTION 1: HERO (StoryBrand.com Style) */
 .hero {
-  padding: 4.5rem 0 3.5rem;
+  padding: 5rem 0 4rem;
   background: linear-gradient(135deg, rgba(15, 35, 65, 0.04) 0%, rgba(44, 76, 62, 0.06) 100%);
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 3rem;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 3.5rem;
   align-items: center;
 }
 
@@ -259,43 +280,46 @@ a {
   gap: 0.4rem;
   background: rgba(44, 76, 62, 0.1);
   color: var(--color-sage);
+  font-family: var(--font-sans-heading);
   font-weight: 700;
   font-size: 0.85rem;
-  padding: 0.3rem 0.8rem;
+  padding: 0.35rem 0.85rem;
   border-radius: var(--radius-pill);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   text-transform: uppercase;
 }
 
 .hero-text h1 {
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   color: var(--color-navy);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   letter-spacing: -0.5px;
 }
 
 .hero-text h1 span {
   color: var(--color-sage);
+  font-style: italic;
 }
 
 .hero-subhead {
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   color: var(--color-body);
-  margin-bottom: 2rem;
+  margin-bottom: 2.25rem;
   line-height: 1.65;
+  max-width: 640px;
 }
 
 .hero-actions {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 
 .hero-card-box {
   background: var(--color-card);
   border-radius: var(--radius-lg);
-  padding: 2.25rem;
-  box-shadow: 0 15px 35px rgba(15, 35, 65, 0.08);
+  padding: 2.5rem;
+  box-shadow: 0 15px 40px rgba(15, 35, 65, 0.08);
   border: 1px solid var(--color-border);
   position: relative;
   overflow: hidden;
@@ -306,7 +330,7 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  width: 5px;
+  width: 6px;
   height: 100%;
   background: var(--color-gold);
 }
@@ -315,12 +339,13 @@ a {
   font-size: 0.85rem;
   text-transform: uppercase;
   color: var(--color-gold);
+  font-family: var(--font-sans-heading);
   font-weight: 800;
   letter-spacing: 1px;
 }
 
 .card-highlight h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin: 0.3rem 0 1.25rem;
   color: var(--color-navy);
 }
@@ -329,21 +354,50 @@ a {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.9rem;
 }
 
 .check-list li {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-size: 0.95rem;
+  gap: 0.65rem;
+  font-size: 0.98rem;
 }
 
 .check-list i {
   color: var(--color-sage);
 }
 
-/* Section 2: Stakes */
+/* PROOF BAR */
+.proof-bar {
+  background: #FFFFFF;
+  border-y: 1px solid var(--color-border);
+  padding: 1.25rem 0;
+}
+
+.proof-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.proof-item {
+  font-family: var(--font-sans-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-slate-blue);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.proof-item i {
+  color: var(--color-gold);
+}
+
+/* SECTION 2: STAKES (Dark Navy) */
 .stakes-section {
   text-align: center;
 }
@@ -353,6 +407,7 @@ a {
   align-items: center;
   gap: 0.4rem;
   color: var(--color-gold);
+  font-family: var(--font-sans-heading);
   font-weight: 700;
   font-size: 0.85rem;
   text-transform: uppercase;
@@ -361,8 +416,8 @@ a {
 
 .stakes-container h2 {
   color: #FFFFFF;
-  font-size: 2rem;
-  margin-bottom: 2.5rem;
+  font-size: 2.2rem;
+  margin-bottom: 2.75rem;
 }
 
 .stakes-grid {
@@ -372,21 +427,21 @@ a {
 }
 
 .stake-card {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius-md);
-  padding: 2rem 1.5rem;
+  padding: 2.25rem 1.75rem;
 }
 
 .stake-card i {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--color-gold);
   margin-bottom: 1rem;
 }
 
 .stake-card h4 {
   color: #FFFFFF;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
 }
 
@@ -395,7 +450,7 @@ a {
   font-size: 0.95rem;
 }
 
-/* Section 3: Value Proposition */
+/* SECTION 3: VALUE PROPOSITION */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -405,7 +460,7 @@ a {
 .value-card {
   background: var(--color-card);
   border-radius: var(--radius-md);
-  padding: 2.25rem 1.75rem;
+  padding: 2.5rem 1.75rem;
   border: 1px solid var(--color-border);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
   transition: var(--transition);
@@ -418,25 +473,25 @@ a {
 }
 
 .value-icon {
-  width: 60px;
-  height: 60px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background: rgba(44, 76, 62, 0.1);
   color: var(--color-sage);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.6rem;
+  font-size: 1.75rem;
   margin: 0 auto 1.25rem;
 }
 
 .value-card h3 {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   margin-bottom: 0.6rem;
   color: var(--color-navy);
 }
 
-/* Section 4: The Guide */
+/* SECTION 4: THE GUIDE */
 .section-guide {
   background: linear-gradient(to right, var(--color-navy), var(--color-slate-blue));
   color: #FFFFFF;
@@ -445,7 +500,7 @@ a {
 .guide-grid {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
-  gap: 3.5rem;
+  gap: 4rem;
   align-items: center;
 }
 
@@ -458,27 +513,28 @@ a {
 }
 
 .guide-avatar-box {
-  width: 100px;
-  height: 100px;
+  width: 105px;
+  height: 105px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--color-gold), var(--color-sage));
   color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   margin: 0 auto 1.25rem;
   border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 .guide-profile h3 {
   color: #FFFFFF;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 0.2rem;
 }
 
 .guide-subtitle {
   color: var(--color-gold);
+  font-family: var(--font-sans-heading);
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 1.25rem;
@@ -488,19 +544,19 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: #E2E8F0;
 }
 
 .guide-text h2 {
   color: #FFFFFF;
-  font-size: 2.1rem;
+  font-size: 2.2rem;
   margin-bottom: 1.25rem;
 }
 
 .guide-text p {
   color: #E2E8F0;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   margin-bottom: 1.5rem;
 }
 
@@ -508,31 +564,35 @@ a {
   background: rgba(200, 155, 60, 0.12);
   border: 1px solid rgba(200, 155, 60, 0.3);
   border-radius: var(--radius-md);
-  padding: 1.25rem;
+  padding: 1.25rem 1.5rem;
   display: flex;
   align-items: flex-start;
-  gap: 0.85rem;
+  gap: 1rem;
 }
 
 .agreement-box i {
   color: var(--color-gold);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-top: 2px;
 }
 
 .agreement-box strong {
   color: #FFFFFF;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
 }
 
 .agreement-box p {
   color: #CBD5E1;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   margin-bottom: 0;
   margin-top: 0.2rem;
 }
 
-/* Section 5: The Plan */
+.guide-action {
+  margin-top: 2rem;
+}
+
+/* SECTION 5: THE PLAN */
 .section-plan {
   background: var(--color-light);
 }
@@ -546,21 +606,21 @@ a {
 .step-card {
   background: var(--color-card);
   border-radius: var(--radius-md);
-  padding: 2.25rem 1.75rem;
+  padding: 2.5rem 1.75rem;
   border: 1px solid var(--color-border);
   position: relative;
   text-align: center;
 }
 
 .step-num {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: var(--color-gold);
   color: var(--color-navy);
-  font-family: var(--font-heading);
+  font-family: var(--font-sans-heading);
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -568,17 +628,17 @@ a {
 }
 
 .step-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
   color: var(--color-navy);
 }
 
 .plan-cta {
   text-align: center;
-  margin-top: 2.5rem;
+  margin-top: 2.75rem;
 }
 
-/* Section 6: Therapies Grid */
+/* SECTION 6: THERAPIES MATRIX */
 .therapies-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -588,7 +648,7 @@ a {
 .therapy-card {
   background: var(--color-card);
   border-radius: var(--radius-md);
-  padding: 1.75rem 1.5rem;
+  padding: 1.85rem 1.5rem;
   border: 1px solid var(--color-border);
   transition: var(--transition);
 }
@@ -601,6 +661,7 @@ a {
 .t-num {
   font-size: 0.75rem;
   text-transform: uppercase;
+  font-family: var(--font-sans-heading);
   font-weight: 800;
   color: var(--color-gold);
   display: block;
@@ -608,7 +669,7 @@ a {
 }
 
 .therapy-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   margin-bottom: 0.5rem;
   color: var(--color-navy);
 }
@@ -618,7 +679,7 @@ a {
   color: var(--color-body);
 }
 
-/* Section 7: Testimonials */
+/* SECTION 7: TESTIMONIALS */
 .section-testimonials {
   background: rgba(44, 76, 62, 0.05);
 }
@@ -626,8 +687,8 @@ a {
 .testimonial-card {
   background: var(--color-card);
   border-radius: var(--radius-lg);
-  padding: 2.5rem;
-  max-width: 800px;
+  padding: 2.75rem;
+  max-width: 820px;
   margin: 0 auto;
   text-align: center;
   border: 1px solid var(--color-border);
@@ -641,7 +702,7 @@ a {
 }
 
 .fb-badge-box i.fa-facebook {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   color: #1877F2;
 }
 
@@ -651,16 +712,17 @@ a {
 }
 
 .quote {
+  font-family: var(--font-serif-heading);
   font-style: italic;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   color: var(--color-dark);
   margin-bottom: 1.5rem;
 }
 
-/* Section 8: Lead Magnet */
+/* SECTION 8: LEAD MAGNET */
 .section-lead {
   background: linear-gradient(135deg, rgba(44, 76, 62, 0.08) 0%, rgba(200, 155, 60, 0.1) 100%);
-  padding: 3.5rem 0;
+  padding: 4rem 0;
 }
 
 .lead-box {
@@ -673,47 +735,48 @@ a {
 
 .lead-tag {
   color: var(--color-sage);
+  font-family: var(--font-sans-heading);
   font-weight: 800;
   font-size: 0.85rem;
   text-transform: uppercase;
 }
 
 .lead-box h2 {
-  font-size: 1.75rem;
+  font-size: 1.85rem;
   color: var(--color-navy);
   margin: 0.3rem 0;
 }
 
-/* Section 9: Final CTA */
+/* SECTION 9: FINAL DIRECT CTA */
 .section-final-cta {
   background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-sage) 100%);
   color: #FFFFFF;
   text-align: center;
-  padding: 4.5rem 0;
+  padding: 5rem 0;
 }
 
 .final-cta-box h2 {
   color: #FFFFFF;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   margin-bottom: 0.75rem;
 }
 
 .final-cta-box p {
   color: #E2E8F0;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  font-size: 1.15rem;
+  margin-bottom: 2.25rem;
 }
 
 .final-btns {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.25rem;
   flex-wrap: wrap;
 }
 
-/* Section 10: Footer */
+/* SECTION 10: FOOTER */
 .footer {
-  background: #0B1727;
+  background: #081220;
   color: #94A3B8;
   padding: 2.5rem 0;
   font-size: 0.9rem;
@@ -729,6 +792,7 @@ a {
 
 .footer-title {
   color: #FFFFFF;
+  font-family: var(--font-sans-heading);
   font-weight: 800;
   margin-left: 0.5rem;
 }
@@ -737,7 +801,7 @@ a {
   color: var(--color-gold);
 }
 
-/* Floating Mobile CTA */
+/* FLOATING MOBILE CTA */
 .mobile-cta-bar {
   display: none;
   position: fixed;
@@ -758,7 +822,7 @@ a {
   font-size: 0.85rem;
 }
 
-/* Modals */
+/* MODALS */
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -783,7 +847,7 @@ a {
   border-radius: var(--radius-lg);
   max-width: 480px;
   width: 100%;
-  padding: 2.25rem;
+  padding: 2.5rem;
   position: relative;
 }
 
@@ -799,7 +863,7 @@ a {
 }
 
 .modal-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--color-navy);
   margin-bottom: 0.25rem;
 }
@@ -816,6 +880,7 @@ a {
 
 .form-group label {
   display: block;
+  font-family: var(--font-sans-heading);
   font-weight: 600;
   font-size: 0.85rem;
   color: var(--color-dark);
@@ -836,14 +901,14 @@ a {
   border-color: var(--color-slate-blue);
 }
 
-/* Responsive */
+/* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 992px) {
   .hero-grid, .guide-grid, .stakes-grid, .grid-3, .plan-steps {
     grid-template-columns: 1fr;
   }
 
   .hero-text h1 {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
   }
 }
 

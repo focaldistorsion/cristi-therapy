@@ -1,5 +1,5 @@
 /**
- * Cristi Therapy - StoryBrand Landing Page JavaScript
+ * Cristi Therapy - Official StoryBrand.com Inspired JavaScript
  */
 
 document.addEventListener('DOMContentLoaded', () => {
