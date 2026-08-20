@@ -1399,8 +1399,10 @@ a {
 /* FADE INTERACTION BETWEEN CARDS */
 body.is-negative-hovered .outcome-success,
 html:has(.outcome-failure:hover) .outcome-success {
-  opacity: 0.45 !important;
-  filter: grayscale(55%) !important;
+  opacity: 0.18 !important;
+  filter: grayscale(95%) opacity(0.18) !important;
+  transform: scale(0.96) !important;
+  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 body.is-positive-hovered .outcome-failure,
