@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Brand Guide & Sistem de Design | Metoda T7 – Cristian Angel Oglan</title>
-  <meta name="description" content="Ghidul Oficial de Brand și Sistemul de Design pentru Metoda T7 (Cristian Angel Oglan). Specificații culori chakra 1:1, tipografie, componente UI și reguli de reproducere.">
+  <meta name="description" content="Ghidul Oficial de Brand, Ghidul de Copywriting și Sistemul de Design pentru Metoda T7 (Cristian Angel Oglan). Specificații culori chakra 1:1, tipografie, componente UI și fragmente de cod.">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +14,74 @@
   
   <!-- Dynamic Theme Stylesheet -->
   <link rel="stylesheet" href="css/styles-v2.css">
+  
+  <style>
+    /* BRAND GUIDE SPECIFIC CODE SNIPPET DISPLAY */
+    .code-block-container {
+      background: #09090B;
+      border-radius: var(--radius-lg);
+      border: 1px solid #27272A;
+      overflow: hidden;
+      margin-top: 1.5rem;
+      position: relative;
+    }
+    .code-block-header {
+      background: #18181B;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #27272A;
+    }
+    .code-block-title {
+      font-family: var(--font-sans-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #A1A1AA;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .copy-btn {
+      background: #27272A;
+      color: #F4F4F5;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .copy-btn:hover {
+      background: #3F3F46;
+      color: #FFFFFF;
+    }
+    .code-block-body {
+      padding: 1.25rem;
+      overflow-x: auto;
+    }
+    .code-block-body pre {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.88rem;
+      color: #E4E4E7;
+      line-height: 1.6;
+    }
+    .keyword { color: #F472B6; }
+    .string { color: #34D399; }
+    .attribute { color: #60A5FA; }
+    .tag { color: #F87171; }
+    .comment { color: #71717A; font-style: italic; }
+    
+    .live-demo-box {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+  </style>
 </head>
 <body>
 
@@ -25,11 +93,12 @@
       </a>
       <nav>
         <ul class="nav-menu">
-          <li><a href="#naratival-sb7">Povestea SB7</a></li>
-          <li><a href="#paleta-chakra">Paleta 7-Chakra</a></li>
-          <li><a href="#tipografie">Tipografie</a></li>
-          <li><a href="#componente">Componente UI</a></li>
-          <li><a href="#reguli-brand">Reguli Brand</a></li>
+          <li><a href="#sb7-story">Arhitectura SB7</a></li>
+          <li><a href="#logo-system">Logo & Badge</a></li>
+          <li><a href="#color-system">Paleta Chakra</a></li>
+          <li><a href="#typography">Tipografie</a></li>
+          <li><a href="#component-gallery">Componente & Cod</a></li>
+          <li><a href="#brand-rules">Reguli & Guidelines</a></li>
         </ul>
       </nav>
       <button class="nav-toggle" aria-label="Meniu Mobile"><i class="fa-solid fa-bars"></i></button>
@@ -39,139 +108,159 @@
   <!-- BRANDING HERO -->
   <section class="branding-hero">
     <div class="container">
-      <span class="section-tag" style="color: #6EE7B7;">Manual Oficial de Identitate Vizuală</span>
-      <h1>Metoda T7 – Manual de Brand</h1>
-      <p>Documentația tehnică și ghidul vizual complet pentru reproducerea fidelă a brandului <strong>Metoda T7</strong> și a cabinetului Cristian Angel Oglan (Cristian Angel Oglan).</p>
+      <span class="section-tag" style="color: #6EE7B7;">Manual Oficial de Identitate Vizuală & Sistem de Design</span>
+      <h1>Metoda T7 – Ghid de Brand & Cod</h1>
+      <p>Ghidul vizual complet, regulile de copywriting StoryBrand SB7 și codul sursă reutilizabil pentru toate paginile ecosistemului <strong>Metoda T7 – Cristian Angel Oglan</strong>.</p>
     </div>
   </section>
 
-  <!-- SECTION 1: STORYBRAND NARRATIVE -->
-  <section class="section" id="naratival-sb7">
+  <!-- SECTION 1: STORYBRAND SB7 FRAMEWORK -->
+  <section class="section" id="sb7-story">
     <div class="container">
       <div class="section-title-box">
         <span class="section-tag">Arhitectura Poveștii</span>
-        <h2>1. Pozitionarea StoryBrand (SB7)</h2>
+        <h2>1. Poziționarea StoryBrand (SB7) – Pacientul Este Eroul</h2>
+        <p class="vita-intro-text">În comunicarea Metodei RSI, pacientul este întotdeauna Eroul care își recapătă libertatea de mișcare. Metoda T7 este Soluția, iar Cristian Angel Oglan este Ghidul empatic.</p>
       </div>
 
       <div class="grid-3">
         <div class="value-card">
           <div class="value-icon" style="color: var(--t1-red); background: var(--t1-red-bg);"><i class="fa-solid fa-user-ninja"></i></div>
           <h3>1. Eroul (Pacientul)</h3>
-          <p>Persoană activă, cu dureri recurente, care caută libertate de mișcare și refuză analgezicele temporare.</p>
+          <p>Persoană activă, determinată să își recapete flexibilitatea și somnul odihnitor. Refuză amânarea și analgezicele de moment.</p>
         </div>
         <div class="value-card">
           <div class="value-icon" style="color: var(--t4-green); background: var(--t4-green-bg);"><i class="fa-solid fa-user-doctor"></i></div>
-          <h3>2. Ghidul (Cristian Oglan)</h3>
-          <p>Terapeut specialist empatic și autoritar care înțelege rețeaua somatice integrată a corpului.</p>
+          <h3>2. Ghidul (Cristian Angel Oglan)</h3>
+          <p>Terapeut specialist empatic și autoritar care înțelege rețeaua somatică integrată pe 7 niveluri.</p>
         </div>
         <div class="value-card">
           <div class="value-icon" style="color: var(--t5-blue); background: var(--t5-blue-bg);"><i class="fa-solid fa-diagram-project"></i></div>
-          <h3>3. Planul (Metoda T7)</h3>
-          <p>Protocol în 7 niveluri (Mușchi ➔ Trigger ➔ Percuție ➔ Fasciă ➔ Os ➔ Visceral ➔ Reset Nervos).</p>
+          <h3>3. Soluția & Planul (Metoda T7)</h3>
+          <p>Protocolul integrat în 7 niveluri (Mușchi ➔ Trigger ➔ Percuție ➔ Fasciă ➔ Os ➔ Visceral ➔ Reset Nervos).</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 2: 1:1 CHAKRA COLOR PALETTE -->
-  <section class="section section-dark" id="paleta-chakra">
+  <!-- SECTION 2: LOGO & BADGE SYSTEM -->
+  <section class="section section-dark" id="logo-system">
     <div class="container">
-      <div class="section-title-box" style="text-align: center;">
-        <span class="section-tag" style="color: #6EE7B7;">Codul de Culori 1:1</span>
-        <h2 style="color: #FFFFFF;">2. Paleta Somatică 7-Chakra</h2>
-        <p style="color: #A1A1AA; max-width: 680px; margin: 0.5rem auto 0;">Fiecare nivel din Metoda T7 urmărește ordinea naturală 1:1 a celor 7 Chakra (de la Rădăcină la Coroană):</p>
+      <div class="section-title-box">
+        <span class="section-tag" style="color: #6EE7B7;">Identitate Vizuală Core</span>
+        <h2>2. Logo & Badge Spectrum RSI</h2>
+        <p style="color: #A1A1AA; max-width: 680px; margin: 0.5rem auto 0;">Insigna oficială a Metodei RSI îmbină toate cele 7 culori din ordinea 1:1 Chakra într-un gradient continuu de la Nivelul 1 (Roșu) la Nivelul 7 (Teal).</p>
+      </div>
+
+      <div class="live-demo-box" style="background: #121212; border-color: #27272A; text-align: center;">
+        <span class="brand-badge-v2" style="font-size: 1.2rem; padding: 0.6rem 1.8rem;">METODA T7</span>
+        <p style="color: #A1A1AA; font-size: 0.85rem; margin-top: 1rem;">Specificație Vizuală: Gradient 135° continuu peste cele 7 niveluri somatice.</p>
+      </div>
+
+      <!-- Code Snippet for Logo Badge -->
+      <div class="code-block-container">
+        <div class="code-block-header">
+          <span class="code-block-title">CSS Token & Clasă – Logo Badge Metoda T7</span>
+          <button class="copy-btn" onclick="copySnippet(this)">Copiază Codul</button>
+        </div>
+        <div class="code-block-body">
+<pre><code><span class="tag">.brand-badge-v2</span> {
+  <span class="attribute">display</span>: inline-flex;
+  <span class="attribute">align-items</span>: center;
+  <span class="attribute">font-family</span>: var(--font-sans-heading);
+  <span class="attribute">font-weight</span>: 800;
+  <span class="attribute">font-size</span>: 0.85rem;
+  <span class="attribute">letter-spacing</span>: 1.5px;
+  <span class="attribute">padding</span>: 0.4rem 1.1rem;
+  <span class="attribute">border-radius</span>: var(--radius-pill);
+  <span class="attribute">color</span>: #FFFFFF;
+  <span class="attribute">background</span>: <span class="string">linear-gradient(135deg, #D69E2E 0%, #059669 50%, #0D9488 100%)</span>;
+  <span class="attribute">box-shadow</span>: 0 4px 15px rgba(13, 148, 136, 0.25);
+  <span class="attribute">text-transform</span>: uppercase;
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: 1:1 CHAKRA COLOR SYSTEM -->
+  <section class="section" id="color-system">
+    <div class="container">
+      <div class="section-title-box">
+        <span class="section-tag">Sistemul de Culori</span>
+        <h2>3. Paleta Somatică 7-Chakra (1:1) & Neutre</h2>
+        <p class="vita-intro-text">Codul de culori urmărește ordinea fiziologică și energetică a celor 7 niveluri terapeutice (de la Rădăcină la Coroană).</p>
       </div>
 
       <div class="swatch-grid">
         
-        <!-- Swatch T1 -->
+        <!-- Swatch RSI 1 -->
         <div class="swatch-card">
-          <div class="swatch-color-box" style="background: #E53E3E;">
-            Nivelul T1: Masaj Terapeutic
-          </div>
+          <div class="swatch-color-box" style="background: #E53E3E;">Nivelul 1: Masaj Terapeutic</div>
           <div class="swatch-details">
             <p><strong>Chakra 1: Muladhara (Rădăcină)</strong></p>
             <p style="margin-top: 0.3rem;"><code>--t1-red: #E53E3E</code></p>
             <p style="font-size: 0.85rem; color: #52525B; margin-top: 0.4rem;">RGB: 229, 62, 62 | HSL: 0°, 76%, 57%</p>
-            <p style="font-size: 0.82rem; color: #71717A; margin-top: 0.3rem;">Rol: Vascularizaretisulară, căldură musculară, ancorare pe masă.</p>
           </div>
         </div>
 
-        <!-- Swatch T2 -->
+        <!-- Swatch RSI 2 -->
         <div class="swatch-card">
-          <div class="swatch-color-box" style="background: #ED8936;">
-            Nivelul T2: Trigger Point
-          </div>
+          <div class="swatch-color-box" style="background: #ED8936;">Nivelul 2: Trigger Point</div>
           <div class="swatch-details">
             <p><strong>Chakra 2: Svadhisthana (Sacral)</strong></p>
             <p style="margin-top: 0.3rem;"><code>--t2-orange: #ED8936</code></p>
             <p style="font-size: 0.85rem; color: #52525B; margin-top: 0.4rem;">RGB: 237, 137, 54 | HSL: 27°, 84%, 57%</p>
-            <p style="font-size: 0.82rem; color: #71717A; margin-top: 0.3rem;">Rol: Dezactivarea focarelor de contracție și circulație fluidă.</p>
           </div>
         </div>
 
-        <!-- Swatch T3 -->
+        <!-- Swatch RSI 3 -->
         <div class="swatch-card">
-          <div class="swatch-color-box" style="background: #D69E2E;">
-            Nivelul T3: Tok Sen
-          </div>
+          <div class="swatch-color-box" style="background: #D69E2E;">Nivelul 3: Tok Sen</div>
           <div class="swatch-details">
             <p><strong>Chakra 3: Manipura (Plex Solar)</strong></p>
             <p style="margin-top: 0.3rem;"><code>--t3-yellow: #D69E2E</code></p>
             <p style="font-size: 0.85rem; color: #52525B; margin-top: 0.4rem;">RGB: 214, 158, 46 | HSL: 40°, 68%, 51%</p>
-            <p style="font-size: 0.82rem; color: #71717A; margin-top: 0.3rem;">Rol: Percuție acustico-mecanică, foc & vibrație adâncă.</p>
           </div>
         </div>
 
-        <!-- Swatch T4 -->
+        <!-- Swatch RSI 4 -->
         <div class="swatch-card">
-          <div class="swatch-color-box" style="background: #059669;">
-            Nivelul T4: Manipulare Miofascială
-          </div>
+          <div class="swatch-color-box" style="background: #059669;">Nivelul 4: Miofascial</div>
           <div class="swatch-details">
             <p><strong>Chakra 4: Anahata (Inimă)</strong></p>
             <p style="margin-top: 0.3rem;"><code>--t4-green: #059669</code></p>
             <p style="font-size: 0.85rem; color: #52525B; margin-top: 0.4rem;">RGB: 5, 150, 105 | HSL: 161°, 94%, 30%</p>
-            <p style="font-size: 0.82rem; color: #71717A; margin-top: 0.3rem;">Rol: Centru, armonia tecii miofasciale tridimensionale.</p>
           </div>
         </div>
 
-        <!-- Swatch T5 -->
+        <!-- Swatch RSI 5 -->
         <div class="swatch-card">
-          <div class="swatch-color-box" style="background: #2563EB;">
-            Nivelul T5: Osteopatie Structurală
-          </div>
+          <div class="swatch-color-box" style="background: #2563EB;">Nivelul 5: Structural</div>
           <div class="swatch-details">
-            <p><strong>Chakra 5: Vishuddha (Gât & Coloană)</strong></p>
+            <p><strong>Chakra 5: Vishuddha (Coloană)</strong></p>
             <p style="margin-top: 0.3rem;"><code>--t5-blue: #2563EB</code></p>
             <p style="font-size: 0.85rem; color: #52525B; margin-top: 0.4rem;">RGB: 37, 99, 235 | HSL: 221°, 83%, 53%</p>
-            <p style="font-size: 0.82rem; color: #71717A; margin-top: 0.3rem;">Rol: Axul vertebral biomecanic, decompresie discală.</p>
           </div>
         </div>
 
-        <!-- Swatch T6 -->
+        <!-- Swatch RSI 6 -->
         <div class="swatch-card">
-          <div class="swatch-color-box" style="background: #7C3AED;">
-            Nivelul T6: Osteopatie Viscerală
-          </div>
+          <div class="swatch-color-box" style="background: #7C3AED;">Nivelul 6: Visceral</div>
           <div class="swatch-details">
-            <p><strong>Chakra 6: Ajna (Al Treilea Ochi)</strong></p>
+            <p><strong>Chakra 6: Ajna (Al 3-lea Ochi)</strong></p>
             <p style="margin-top: 0.3rem;"><code>--t6-purple: #7C3AED</code></p>
             <p style="font-size: 0.85rem; color: #52525B; margin-top: 0.4rem;">RGB: 124, 58, 237 | HSL: 262°, 83%, 58%</p>
-            <p style="font-size: 0.82rem; color: #71717A; margin-top: 0.3rem;">Rol: Viscerofascia abdominală & organele interne.</p>
           </div>
         </div>
 
-        <!-- Swatch T7 -->
+        <!-- Swatch RSI 7 -->
         <div class="swatch-card">
-          <div class="swatch-color-box" style="background: #0D9488;">
-            Nivelul T7: Terapie Bowen
-          </div>
+          <div class="swatch-color-box" style="background: #0D9488;">Nivelul 7: Terapie Bowen</div>
           <div class="swatch-details">
             <p><strong>Chakra 7: Sahasrara (Coroană)</strong></p>
             <p style="margin-top: 0.3rem;"><code>--t7-teal: #0D9488</code></p>
             <p style="font-size: 0.85rem; color: #52525B; margin-top: 0.4rem;">RGB: 13, 148, 136 | HSL: 175°, 84%, 32%</p>
-            <p style="font-size: 0.82rem; color: #71717A; margin-top: 0.3rem;">Rol: Reset neuro-vegetativ central & autovindecare.</p>
           </div>
         </div>
 
@@ -179,117 +268,193 @@
     </div>
   </section>
 
-  <!-- SECTION 3: TYPOGRAPHY -->
-  <section class="section" id="tipografie">
+  <!-- SECTION 4: TYPOGRAPHY HIERARCHY -->
+  <section class="section section-dark" id="typography">
     <div class="container">
       <div class="section-title-box">
-        <span class="section-tag">Ghid de Stil Tipografic</span>
-        <h2>3. Ierarhia Tipografică</h2>
+        <span class="section-tag" style="color: #6EE7B7;">Ghid de Stil Tipografic</span>
+        <h2 style="color: #FFFFFF;">4. Ierarhia Tipografică & Regulile de Formatare</h2>
       </div>
 
       <table class="type-scale-table">
         <thead>
           <tr>
             <th>Element UI</th>
-            <th>Font Family</th>
-            <th>Font Weight</th>
+            <th>Familie Font</th>
+            <th>Stil / Cazul Literei</th>
             <th>Dimensiune Desktop</th>
             <th>Exemplu Vizual</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>Titlu Principale (H1)</strong></td>
+            <td><strong>Titlu Principal (H1)</strong></td>
             <td><code>Playfair Display</code></td>
-            <td>700 Bold</td>
+            <td>Mixed Case (Majuscule/Minuscule)</td>
             <td>3.2rem (51px)</td>
-            <td><span style="font-family: var(--font-serif-heading); font-size: 1.5rem; font-weight: 700;">Elimină durerile prin Metoda T7.</span></td>
+            <td><span style="font-family: var(--font-serif-heading); font-size: 1.4rem; font-weight: 700; color: #FFF;">Restaurare Somatică Pe 7 Niveluri</span></td>
           </tr>
           <tr>
             <td><strong>Titlu Secțiune (H2)</strong></td>
             <td><code>Playfair Display</code></td>
-            <td>700 Bold</td>
+            <td>Mixed Case (Majuscule/Minuscule)</td>
             <td>2.3rem (37px)</td>
-            <td><span style="font-family: var(--font-serif-heading); font-size: 1.3rem; font-weight: 700;">Arhitectura Metodei T7</span></td>
+            <td><span style="font-family: var(--font-serif-heading); font-size: 1.2rem; font-weight: 700; color: #FFF;">Fără Acțiune vs. Soluția Prin Metodă</span></td>
           </tr>
           <tr>
-            <td><strong>Subtitluri & Insigne (H3)</strong></td>
+            <td><strong>Subtitluri & Badges (H3)</strong></td>
             <td><code>Plus Jakarta Sans</code></td>
-            <td>800 ExtraBold</td>
-            <td>1.35rem (21px)</td>
-            <td><span style="font-family: var(--font-sans-heading); font-size: 1.1rem; font-weight: 800; color: var(--t4-green);">METODA T7</span></td>
+            <td>ALL CAPS (Doar pentru badges)</td>
+            <td>0.75rem - 1.35rem</td>
+            <td><span style="font-family: var(--font-sans-heading); font-size: 0.9rem; font-weight: 800; color: #34D399; letter-spacing: 1px;">METODA T7 & CONSULTAȚIE</span></td>
           </tr>
           <tr>
             <td><strong>Text de Corp (Body)</strong></td>
-            <td><code>Inter</code></td>
-            <td>400 Regular / 600 SemiBold</td>
-            <td>1rem (16px)</td>
-            <td><span style="font-family: var(--font-body); font-size: 0.95rem;">Abordare restaurativă în 7 terapii complementare.</span></td>
+            <td><code>Inter</code> / <code>Plus Jakarta Sans</code></td>
+            <td>Regular 400 / 500</td>
+            <td>1.0rem (16px)</td>
+            <td><span style="font-family: var(--font-body); font-size: 0.95rem; color: #A1A1AA;">Programezi o consultație pentru a identifica precis blocajul.</span></td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <!-- SECTION 4: BUTTON & CTA RULES -->
-  <section class="section section-plan" id="componente">
+  <!-- SECTION 5: COMPONENT GALLERY & CODE EXAMPLES -->
+  <section class="section" id="component-gallery">
     <div class="container">
       <div class="section-title-box">
-        <span class="section-tag">Reguli Componente UI</span>
-        <h2>4. Sistemul de Butoane & CTA</h2>
+        <span class="section-tag">Librărie de Componente</span>
+        <h2>5. Exemple de Cod & Componente Reutilizabile</h2>
+        <p class="vita-intro-text">Copiază și lipeste fragmentele de cod de mai jos pentru a crea pagini consistente cu identitatea vizuală a Metodei RSI.</p>
       </div>
 
-      <div class="grid-3">
-        <div class="step-card" style="text-align: left;">
-          <h4>Primary CTA (Full Black)</h4>
-          <p style="font-size: 0.88rem; margin: 0.5rem 0 1.25rem;">Folosit exclusiv pentru acțiunea principală de conversie (Programare).</p>
-          <button class="btn btn-cta"><i class="fa-solid fa-calendar-check"></i> Programează-te Acum</button>
-          <p style="font-size: 0.8rem; color: #71717A; margin-top: 1rem;">Code: <code>.btn-cta</code> | Background: `#000000`</p>
-        </div>
-
-        <div class="step-card" style="text-align: left;">
-          <h4>Secondary CTA (Outline)</h4>
-          <p style="font-size: 0.88rem; margin: 0.5rem 0 1.25rem;">Folosit pentru navigare secundară și detalii suplimentare.</p>
-          <button class="btn btn-outline"><i class="fa-solid fa-layer-group"></i> Vezi Cele 7 Niveluri</button>
-          <p style="font-size: 0.8rem; color: #71717A; margin-top: 1rem;">Code: <code>.btn-outline</code> | Border: `2px solid #000000`</p>
-        </div>
-
-        <div class="step-card" style="text-align: left;">
-          <h4>Insignă Brand Head (Badge)</h4>
-          <p style="font-size: 0.88rem; margin: 0.5rem 0 1.25rem;">Folosit în antetul sticky și footer-ul oficial.</p>
-          <span class="brand-badge-v2">METODA T7</span>
-          <p style="font-size: 0.8rem; color: #71717A; margin-top: 1rem;">Code: <code>.brand-badge-v2</code> | Gradient T7 Spectrum</p>
+      <!-- COMPONENT 1: SB7 OUTCOMES CARDS (FAILED VS SUCCESS) -->
+      <h3 style="font-family: var(--font-sans-heading); font-size: 1.3rem; margin: 2rem 0 1rem; color: var(--color-dark);">A. Secțiunea SB7 Outcomes (Fără Acțiune vs. Soluția)</h3>
+      
+      <div class="live-demo-box">
+        <div class="sb7-outcomes-grid">
+          <div class="sb7-outcome-card outcome-failure">
+            <div class="outcome-header">
+              <i class="fa-solid fa-circle-xmark outcome-icon-failure"></i>
+              <div>
+                <span class="outcome-badge badge-failure">FĂRĂ ACȚIUNE – BUSINESS AS USUAL</span>
+                <h3>Traseul Obișnuit & Amânarea</h3>
+              </div>
+            </div>
+            <ul class="outcome-list">
+              <li><i class="fa-solid fa-xmark text-danger"></i> <div><strong>Ignorarea Semnalelor Corpului</strong><p>Mascarea temporară a simptomelor cu antiinflamatoare.</p></div></li>
+            </ul>
+          </div>
+          <div class="sb7-outcome-card outcome-success">
+            <div class="outcome-header">
+              <i class="fa-solid fa-circle-check outcome-icon-success"></i>
+              <div>
+                <span class="outcome-badge badge-success">ACȚIONAT – METODĂ & CONSULTAȚIE</span>
+                <h3>Restaurare & Libertate de Mișcare</h3>
+              </div>
+            </div>
+            <ul class="outcome-list">
+              <li><i class="fa-solid fa-check text-success"></i> <div><strong>Evaluare Biomecanică & Diagnostic</strong><p>Identificarea precisă a cauzei reale pe cele 7 niveluri.</p></div></li>
+            </ul>
+          </div>
         </div>
       </div>
+
+      <!-- Code Snippet for SB7 Outcomes -->
+      <div class="code-block-container">
+        <div class="code-block-header">
+          <span class="code-block-title">HTML & CSS – Secțiunea SB7 Outcomes cu Efect Mutual de Gray-Out</span>
+          <button class="copy-btn" onclick="copySnippet(this)">Copiază Codul</button>
+        </div>
+        <div class="code-block-body">
+<pre><code><span class="comment">&lt;!-- Structure --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"sb7-outcomes-grid"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"sb7-outcome-card outcome-failure"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"outcome-header"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;span</span> <span class="attribute">class</span>=<span class="string">"outcome-badge badge-failure"</span><span class="tag">&gt;</span>FĂRĂ ACȚIUNE – BUSINESS AS USUAL<span class="tag">&lt;/span&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+  
+  <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"sb7-outcome-card outcome-success"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attribute">class</span>=<span class="string">"outcome-header"</span><span class="tag">&gt;</span>
+      <span class="tag">&lt;span</span> <span class="attribute">class</span>=<span class="string">"outcome-badge badge-success"</span><span class="tag">&gt;</span>ACȚIONAT – METODĂ & CONSULTAȚIE<span class="tag">&lt;/span&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+  <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span>
+
+<span class="comment">/* Mutual Gray-Out Behavior */</span>
+<span class="tag">.sb7-outcomes-grid:has(.outcome-failure:hover) .outcome-success</span> {
+  <span class="attribute">opacity</span>: 0.2 <span class="keyword">!important</span>;
+  <span class="attribute">filter</span>: grayscale(90%) opacity(0.2) <span class="keyword">!important</span>;
+  <span class="attribute">transform</span>: scale(0.97) <span class="keyword">!important</span>;
+}
+
+<span class="tag">.sb7-outcomes-grid:has(.outcome-success:hover) .outcome-failure</span> {
+  <span class="attribute">opacity</span>: 0.2 <span class="keyword">!important</span>;
+  <span class="attribute">filter</span>: grayscale(90%) opacity(0.2) <span class="keyword">!important</span>;
+  <span class="attribute">transform</span>: scale(0.97) <span class="keyword">!important</span>;
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- COMPONENT 2: CTA BUTTON SYSTEM -->
+      <h3 style="font-family: var(--font-sans-heading); font-size: 1.3rem; margin: 3rem 0 1rem; color: var(--color-dark);">B. Butoane & Acțiuni de Conversie</h3>
+
+      <div class="live-demo-box" style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
+        <button class="btn btn-cta"><i class="fa-solid fa-calendar-check"></i> Programează Consultația Ta</button>
+        <button class="btn btn-outline"><i class="fa-solid fa-layer-group"></i> Vezi Cele 7 Niveluri</button>
+      </div>
+
+      <div class="code-block-container">
+        <div class="code-block-header">
+          <span class="code-block-title">HTML & CSS – Buton Principal (Full Black) și Secundar (Outline)</span>
+          <button class="copy-btn" onclick="copySnippet(this)">Copiază Codul</button>
+        </div>
+        <div class="code-block-body">
+<pre><code><span class="comment">&lt;!-- Primary CTA Button --&gt;</span>
+<span class="tag">&lt;button</span> <span class="attribute">class</span>=<span class="string">"btn btn-cta"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;i</span> <span class="attribute">class</span>=<span class="string">"fa-solid fa-calendar-check"</span><span class="tag">&gt;&lt;/i&gt;</span> Programează Consultația Ta
+<span class="tag">&lt;/button&gt;</span>
+
+<span class="comment">&lt;!-- Secondary Outline Button --&gt;</span>
+<span class="tag">&lt;button</span> <span class="attribute">class</span>=<span class="string">"btn btn-outline"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;i</span> <span class="attribute">class</span>=<span class="string">"fa-solid fa-layer-group"</span><span class="tag">&gt;&lt;/i&gt;</span> Vezi Cele 7 Niveluri
+<span class="tag">&lt;/button&gt;</span></code></pre>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- SECTION 5: BRAND RULES (DO'S AND DON'TS) -->
-  <section class="section-dark" id="reguli-brand">
+  <!-- SECTION 6: BRAND RULES & GUIDELINES -->
+  <section class="section section-dark" id="brand-rules">
     <div class="container">
       <div class="section-title-box">
-        <span class="section-tag" style="color: #6EE7B7;">Bune Practici Vizuale</span>
-        <h2 style="color: #FFFFFF;">5. Reguli de Utilizare a Brandului (Do's & Don'ts)</h2>
+        <span class="section-tag" style="color: #6EE7B7;">Bune Practici & Reguli Mandatorii</span>
+        <h2 style="color: #FFFFFF;">6. Reguli de Brand (Do's & Don'ts)</h2>
       </div>
 
       <div class="grid-3" style="margin-top: 2rem;">
         <div class="stake-card" style="border-color: rgba(5, 150, 105, 0.4); background: rgba(5, 150, 105, 0.08);">
           <i class="fa-solid fa-circle-check" style="color: #10B981;"></i>
           <h4 style="color: #FFFFFF;">AȘA DA (Do's)</h4>
-          <ul style="text-align: left; font-size: 0.9rem; color: #E2E8F0; margin-top: 0.75rem; padding-left: 1.2rem;">
-            <li>Păstrează ordinea strictă 1:1 a culorilor Chakra (T1 Roșu ➔ T7 Teal).</li>
-            <li>Folosește fundaluri Obsidian (`#121212`) pentru secțiunile de miza/stres.</li>
-            <li>Utilizează doar butonul Negru Absolut (`#000000`) pentru CTA-ul de conversie.</li>
+          <ul style="text-align: left; font-size: 0.9rem; color: #E2E8F0; margin-top: 0.75rem; padding-left: 1.2rem; line-height: 1.6;">
+            <li>Poziționează pacientul ca Erou și Metoda T7 ca Soluție.</li>
+            <li>Folosește doar `Playfair Display` în Mixed Case pentru titluri mari.</li>
+            <li>Păstrează ordinea strictă 1:1 a culorilor Chakra (Nivelul 1 Roșu ➔ Nivelul 7 Teal).</li>
+            <li>Utilizează butonul Negru Absolut (`#000000`) pentru CTA de conversie.</li>
           </ul>
         </div>
 
         <div class="stake-card" style="border-color: rgba(229, 62, 62, 0.4); background: rgba(229, 62, 62, 0.08);">
           <i class="fa-solid fa-circle-xmark" style="color: #EF4444;"></i>
           <h4 style="color: #FFFFFF;">AȘA NU (Don'ts)</h4>
-          <ul style="text-align: left; font-size: 0.9rem; color: #E2E8F0; margin-top: 0.75rem; padding-left: 1.2rem;">
-            <li>Nu schimba ordinea culorilor Chakra între nivelurile T7.</li>
-            <li>Nu folosi butoane colorate pentru CTA-ul principal de programare.</li>
-            <li>Nu folosi denumiri învechite precum "VITA 5" în texte sau cod.</li>
+          <ul style="text-align: left; font-size: 0.9rem; color: #E2E8F0; margin-top: 0.75rem; padding-left: 1.2rem; line-height: 1.6;">
+            <li>NU folosi niciodată denumirea învechită "Cristi Therapy".</li>
+            <li>NU folosi titluri mari scrise integral cu MAJUSCULE.</li>
+            <li>NU adăuga animații pulsante sau linii roșii suplimentare pe carduri.</li>
+            <li>NU modifica ordinea culorilor celor 7 niveluri.</li>
           </ul>
         </div>
       </div>
@@ -313,6 +478,23 @@
     </div>
   </footer>
 
+  <script>
+    function copySnippet(btn) {
+      const container = btn.closest('.code-block-container');
+      const code = container.querySelector('code').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        const originalText = btn.innerText;
+        btn.innerText = 'Copiat!';
+        btn.style.background = '#10B981';
+        btn.style.color = '#FFFFFF';
+        setTimeout(() => {
+          btn.innerText = originalText;
+          btn.style.background = '#27272A';
+          btn.style.color = '#F4F4F5';
+        }, 2000);
+      });
+    }
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>
