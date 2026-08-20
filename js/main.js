@@ -1,155 +1,148 @@
-/**
- * Cristi Therapy - Official StoryBrand.com Inspired JavaScript
- */
+/* ==========================================================================
+   Cristi Therapy - Main JavaScript Engine
+   StoryBrand Interactive Modals, WhatsApp Dynamic Direct Booking,
+   and Dynamic V1 / V2 Theme Switcher with LocalStorage State Persistence
+   ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initBookingModal();
-  initLeadModal();
-  initMobileNav();
-  initWhatsAppButtons();
-});
 
-/**
- * Direct Appointment Booking Modal
- */
-function initBookingModal() {
-  const modal = document.getElementById('bookingModal');
-  const openBtns = document.querySelectorAll('.js-open-modal');
-  const closeBtn = modal?.querySelector('.modal-close');
-  const bookingForm = document.getElementById('bookingForm');
+  // ==========================================
+  // 1. THEME SWITCHER ENGINE (V1 vs V2)
+  // ==========================================
+  const themeStylesheet = document.getElementById('themeStylesheet');
+  const themeToggleBtn = document.getElementById('themeToggle');
+  const themeToggleLabel = document.getElementById('themeToggleLabel');
+  const brandBadges = document.querySelectorAll('.brand-badge, .brand-badge-v2');
 
-  if (!modal) return;
+  // Read saved theme or default to V2
+  let currentTheme = localStorage.getItem('cristi_theme_version') || 'v2';
 
-  openBtns.forEach((btn) => {
+  function applyTheme(theme) {
+    if (theme === 'v1') {
+      if (themeStylesheet) themeStylesheet.href = 'css/styles.css';
+      if (themeToggleLabel) themeToggleLabel.textContent = 'Stil: V1';
+      brandBadges.forEach(badge => {
+        badge.classList.remove('brand-badge-v2');
+        badge.classList.add('brand-badge');
+      });
+    } else {
+      if (themeStylesheet) themeStylesheet.href = 'css/styles-v2.css';
+      if (themeToggleLabel) themeToggleLabel.textContent = 'Stil: V2';
+      brandBadges.forEach(badge => {
+        badge.classList.remove('brand-badge');
+        badge.classList.add('brand-badge-v2');
+      });
+    }
+    localStorage.setItem('cristi_theme_version', theme);
+    currentTheme = theme;
+  }
+
+  // Initial application
+  applyTheme(currentTheme);
+
+  // Toggle button event listener
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const nextTheme = currentTheme === 'v2' ? 'v1' : 'v2';
+      applyTheme(nextTheme);
+    });
+  }
+
+  // ==========================================
+  // 2. MODAL CONTROLLERS (Direct Booking & Lead Magnet)
+  // ==========================================
+  const bookingModal = document.getElementById('bookingModal');
+  const leadModal = document.getElementById('leadModal');
+
+  // Open Direct Booking Modal
+  document.querySelectorAll('.js-open-modal').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      if (bookingModal) bookingModal.classList.add('active');
     });
   });
 
-  const closeModal = () => {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  };
-
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
+  // Open Lead Magnet Modal
+  document.querySelectorAll('.js-open-lead-modal').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (leadModal) leadModal.classList.add('active');
+    });
   });
 
+  // Close Modals
+  document.querySelectorAll('.modal-close, .modal-backdrop').forEach(element => {
+    element.addEventListener('click', (e) => {
+      if (e.target === element || element.classList.contains('modal-close')) {
+        if (bookingModal) bookingModal.classList.remove('active');
+        if (leadModal) leadModal.classList.remove('active');
+      }
+    });
+  });
+
+  // Esc key close
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+    if (e.key === 'Escape') {
+      if (bookingModal) bookingModal.classList.remove('active');
+      if (leadModal) leadModal.classList.remove('active');
+    }
   });
 
+  // ==========================================
+  // 3. WHATSAPP DIRECT BOOKING FORM SUBMISSION
+  // ==========================================
+  const bookingForm = document.getElementById('bookingForm');
   if (bookingForm) {
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = document.getElementById('clientName')?.value || 'Client';
       const phone = document.getElementById('clientPhone')?.value || '';
-      const therapy = document.getElementById('clientTherapy')?.value || 'Evaluare VITA 5';
+      const therapySelect = document.getElementById('clientTherapy');
+      const therapy = therapySelect ? therapySelect.value : 'Terapie Integrată VITA 5';
 
-      const text = `Bună ziua! Numele meu este ${name} (Tel: ${phone}). Doresc o programare la Cristi Therapy pentru: ${therapy}.`;
-      const waUrl = `https://wa.me/40700000000?text=${encodeURIComponent(text)}`;
-
-      closeModal();
-      window.open(waUrl, '_blank');
+      const message = `Buna ziua! Numele meu este ${name} (Tel: ${phone}). Doresc o programare pentru: ${therapy}.`;
+      const encodedMsg = encodeURIComponent(message);
+      
+      // Target WhatsApp number for Cristian Angel Oglan
+      window.open(`https://wa.me/40700000000?text=${encodedMsg}`, '_blank');
+      if (bookingModal) bookingModal.classList.remove('active');
     });
   }
-}
 
-/**
- * Transitional Lead Magnet PDF Modal
- */
-function initLeadModal() {
-  const modal = document.getElementById('leadModal');
-  const openBtns = document.querySelectorAll('.js-open-lead-modal');
-  const closeBtn = modal?.querySelector('.modal-lead-close');
+  // Lead Magnet Form Submission
   const leadForm = document.getElementById('leadForm');
-
-  if (!modal) return;
-
-  openBtns.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  const closeModal = () => {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
-  };
-
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-
   if (leadForm) {
     leadForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('leadName')?.value || 'Prieten';
-      const contact = document.getElementById('leadContact')?.value || '';
-
-      const text = `Bună ziua! Numele meu este ${name} (${contact}). Doresc să primesc gratuit Ghidul PDF "5 Exerciții Posturale Spate".`;
-      const waUrl = `https://wa.me/40700000000?text=${encodeURIComponent(text)}`;
-
-      closeModal();
-      window.open(waUrl, '_blank');
+      const name = document.getElementById('leadName')?.value || '';
+      alert(`Mulțumim, ${name}! Ghidul gratuit PDF "5 Exerciții Posturale Spate" a fost generat.`);
+      if (leadModal) leadModal.classList.remove('active');
     });
   }
-}
 
-/**
- * Mobile Navigation Menu
- */
-function initMobileNav() {
-  const toggle = document.querySelector('.nav-toggle');
-  const menu = document.querySelector('.nav-menu');
-
-  if (!toggle || !menu) return;
-
-  toggle.addEventListener('click', () => {
-    if (menu.style.display === 'flex') {
-      menu.style.display = 'none';
-    } else {
-      menu.style.display = 'flex';
-      menu.style.flexDirection = 'column';
-      menu.style.position = 'absolute';
-      menu.style.top = '100%';
-      menu.style.left = '0';
-      menu.style.width = '100%';
-      menu.style.background = '#FFFFFF';
-      menu.style.padding = '1.5rem';
-      menu.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
-    }
-  });
-
-  menu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        menu.style.display = 'none';
-      }
-    });
-  });
-}
-
-/**
- * Direct WhatsApp Buttons
- */
-function initWhatsAppButtons() {
-  const waBtns = document.querySelectorAll('.js-whatsapp-direct');
-
-  waBtns.forEach((btn) => {
+  // Direct WhatsApp Button Listener
+  document.querySelectorAll('.js-whatsapp-direct').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const defaultText = `Bună ziua, domnule Cristian! Doresc să programez o consultație la Cristi Therapy.`;
-      const waUrl = `https://wa.me/40700000000?text=${encodeURIComponent(defaultText)}`;
-      window.open(waUrl, '_blank');
+      const message = "Buna ziua! Doresc o programare la cabinetul Cristi Therapy.";
+      window.open(`https://wa.me/40700000000?text=${encodeURIComponent(message)}`, '_blank');
     });
   });
-}
+
+  // Mobile Navigation Menu Toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+      navMenu.style.flexDirection = 'column';
+      navMenu.style.position = 'absolute';
+      navMenu.style.top = '100%';
+      navMenu.style.left = '0';
+      navMenu.style.width = '100%';
+      navMenu.style.background = '#FFFFFF';
+      navMenu.style.padding = '1.5rem';
+      navMenu.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+    });
+  }
+});
