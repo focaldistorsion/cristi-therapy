@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Auto-evaluare Somatică | Cristi Therapy - Metoda T7</title>
+  <meta name="description" content="Auto-evaluează-te în 5 întrebări pentru a descoperi ce nivel din cele 7 terapii complementare Metoda T7 este ideal pentru tine.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/styles-v2.css">
+  <style>
+    /* CLEAN QUIZ HEADER (DISTRACTION-FREE) */
+    .quiz-header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--color-border);
+      padding: 0.85rem 0;
+    }
+    .quiz-nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .quiz-section {
+      padding: 3.5rem 0 5rem;
+      background: linear-gradient(135deg, rgba(18, 18, 18, 0.02) 0%, rgba(5, 150, 105, 0.05) 100%);
+      min-height: 85vh;
+    }
+    .quiz-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2.5rem;
+    }
+    .quiz-header-banner {
+      text-align: center;
+      margin-bottom: 1.75rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1.25rem;
+      position: relative;
+    }
+    .quiz-main-title {
+      font-size: 2.2rem;
+      color: var(--color-navy);
+      margin-bottom: 0.4rem;
+    }
+    .quiz-intro-sub {
+      font-size: 1.05rem;
+      color: var(--color-body);
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    .quiz-progress-bar-wrap {
+      background: #E4E4E7;
+      border-radius: var(--radius-pill);
+      height: 8px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .quiz-progress-bar {
+      height: 100%;
+      background: var(--t7-spectrum-gradient);
+      width: 20%;
+      transition: width 0.4s ease;
+    }
+    .quiz-step-indicator-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .quiz-step-indicator {
+      font-family: var(--font-sans-heading);
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: var(--t4-green);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .quiz-restart-link {
+      font-family: var(--font-sans-heading);
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: var(--color-body);
+      background: rgba(18, 18, 18, 0.05);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-pill);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .quiz-restart-link:hover {
+      background: var(--color-dark);
+      color: #FFFFFF;
+    }
+    .quiz-question-title {
+      font-size: 1.45rem;
+      color: var(--color-navy);
+      margin-bottom: 0.35rem;
+    }
+    .quiz-question-sub {
+      font-size: 0.95rem;
+      color: var(--t4-green);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .quiz-options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    .quiz-options-grid-gender {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .quiz-option-card {
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1.25rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: #FFFFFF;
+      position: relative;
+    }
+    .quiz-option-card-gender {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+    .quiz-option-card:hover {
+      border-color: var(--t4-green);
+      background: rgba(5, 150, 105, 0.03);
+      transform: translateY(-2px);
+    }
+    .quiz-option-card.selected {
+      border-color: #000000;
+      background: rgba(0, 0, 0, 0.03);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+    .quiz-option-img {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      flex-shrink: 0;
+      background: #FAFAFA;
+    }
+    .quiz-option-card-gender .quiz-option-img {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 0.75rem;
+    }
+    .quiz-option-card.selected .quiz-option-img {
+      border-color: #000000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .quiz-option-info {
+      flex-grow: 1;
+    }
+    .quiz-radio-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid #A1A1AA;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+    .quiz-option-card.selected .quiz-radio-icon {
+      border-color: #000000;
+      background: #000000;
+      color: #FFFFFF;
+    }
+    .quiz-radio-icon i {
+      font-size: 0.7rem;
+      display: none;
+    }
+    .quiz-option-card.selected .quiz-radio-icon i {
+      display: block;
+    }
+    .quiz-option-label {
+      font-family: var(--font-sans-heading);
+      font-weight: 700;
+      font-size: 1.02rem;
+      color: var(--color-dark);
+    }
+    .quiz-actions-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .result-box {
+      display: none;
+      text-align: center;
+      animation: fadeIn 0.5s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .result-level-badge {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-pill);
+      color: #FFFFFF;
+      font-family: var(--font-sans-heading);
+      font-weight: 800;
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+    .result-box h3 {
+      font-size: 2rem;
+      color: var(--color-navy);
+      margin-bottom: 0.75rem;
+    }
+    .result-description {
+      font-size: 1.1rem;
+      color: var(--color-body);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      line-height: 1.65;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- DISTRACTION-FREE HEADER -->
+  <header class="quiz-header">
+    <div class="container quiz-nav-container">
+      <a href="index.html" class="brand">
+        <span class="brand-badge-v2">METODA T7</span>
+      </a>
+      <a href="index.html" class="btn btn-outline btn-sm">
+        <i class="fa-solid fa-arrow-left"></i> Înapoi la Pagina Principală
+      </a>
+    </div>
+  </header>
+
+  <!-- QUIZ SECTION -->
+  <section class="quiz-section">
+    <div class="container">
+      <div class="quiz-card">
+        
+        <!-- Header Banner -->
+        <div class="quiz-header-banner" id="quizHeaderBanner">
+          <div class="quiz-step-indicator-row">
+            <span class="quiz-step-indicator" id="stepIndicator">PASUL 1 DIN 5 – AUTO-EVALUARE</span>
+            <span class="quiz-restart-link" id="headerRestartBtn"><i class="fa-solid fa-rotate-left"></i> Repornește</span>
+          </div>
+          <h1 class="quiz-main-title">Auto-evaluează-te Somatic</h1>
+          <p class="quiz-intro-sub">Alege opțiunile care descriu cel mai bine starea ta corporală.</p>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="quiz-progress-bar-wrap" id="progressWrap">
+          <div class="quiz-progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Question Container -->
+        <div id="questionContainer">
+          <h2 class="quiz-question-title" id="questionTitle">1. Selectează Genul Tău</h2>
+          <span class="quiz-question-sub" id="questionSub">(Modelul 3D al corpului se va adapta în funcție de selectarea ta)</span>
+          
+          <div class="quiz-options-grid" id="optionsGrid">
+            <!-- Options dynamically populated by JS -->
+          </div>
+
+          <div class="quiz-actions-row">
+            <button class="btn btn-outline" id="prevBtn" style="visibility: hidden;"><i class="fa-solid fa-arrow-left"></i> Înapoi</button>
+            <button class="btn btn-cta" id="nextBtn">Următoarea Întrebare <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+
+        <!-- Result Box -->
+        <div class="result-box" id="resultBox">
+          <div id="resultBadge" class="result-level-badge level-banner-4">NIVELUL RECOMANDAT</div>
+          <h3 id="resultTitle">Rezultatul Auto-evaluării Tale</h3>
+          <p class="result-description" id="resultDesc">Pe baza răspunsurilor și zonelor bifate, corpul tău indică o nevoie primară de eliberare la acest nivel somatic.</p>
+          
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <button class="btn btn-cta js-open-modal" id="bookRecommendedBtn"><i class="fa-solid fa-calendar-check"></i> Programează o Consultație</button>
+            <button class="btn btn-outline" id="restartQuizBtn"><i class="fa-solid fa-rotate-left"></i> Repornește Auto-evaluarea</button>
+            <a href="index.html#metoda-t7" class="btn btn-outline"><i class="fa-solid fa-layer-group"></i> Vezi Toate Cele 7 Niveluri</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="brand-badge-v2">METODA T7</span>
+        <p>Cabinet de Terapie Manuală Integrată – Cristian Angel Oglan</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.facebook.com/cristitherapy" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i> Facebook</a>
+        <a href="https://www.instagram.com/cristitherapy" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="https://www.tiktok.com/@cristitherapy" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+        <a href="branding.html"><i class="fa-solid fa-book-bookmark"></i> Brand Guide</a>
+        <span>&copy; 2026 Cristi Therapy. Toate drepturile rezervate.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Direct Booking Modal -->
+  <div class="modal-backdrop" id="bookingModal">
+    <div class="modal-card">
+      <button class="modal-close">&times;</button>
+      <h3>Programare Consultație T7</h3>
+      <p class="modal-sub">Completează datele tale pentru a solicita o programare.</p>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="clientName">Nume și Prenume *</label>
+          <input type="text" id="clientName" class="form-control" required placeholder="Numele tău">
+        </div>
+        <div class="form-group">
+          <label for="clientPhone">Număr de Telefon *</label>
+          <input type="tel" id="clientPhone" class="form-control" required placeholder="07xx xxx xxx">
+        </div>
+        <div class="form-group">
+          <label for="clientTherapy">Terapie Solicitată</label>
+          <select id="clientTherapy" class="form-control">
+            <option value="Consultație Generală Metoda T7">Consultație Generală Metoda T7 (Recomandată)</option>
+            <option value="Masaj Terapeutic T1">Nivelul 1: Masaj Terapeutic (Roșu)</option>
+            <option value="Trigger Point T2">Nivelul 2: Trigger Point Therapy (Portocaliu)</option>
+            <option value="Tok Sen T3">Nivelul 3: Tok Sen Therapy (Galben)</option>
+            <option value="Manipulare Miofascială T4">Nivelul 4: Manipulare Miofascială (Verde)</option>
+            <option value="Osteopatie Structurală T5">Nivelul 5: Osteopatie Structurală (Albastru)</option>
+            <option value="Osteopatie Viscerală T6">Nivelul 6: Osteopatie Viscerală (Purple)</option>
+            <option value="Terapie Bowen T7">Nivelul 7: Terapie Bowen (Teal)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-cta w-100 mt-2">Trimite Solicitarea de Programare</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let userGender = 'male'; // 'male' or 'female'
+
+    const questions = [
+      {
+        id: "gender",
+        title: "1. Selectează Genul Tău",
+        sub: "(Modelul 3D al corpului se va adapta în funcție de selectarea ta)",
+        isMulti: false,
+        options: [
+          { label: "Bărbat", value: "male", img: "assets/images/quiz/male_gender.png" },
+          { label: "Femeie", value: "female", img: "assets/images/quiz/female_gender.png" }
+        ]
+      },
+      {
+        id: "locations",
+        title: "2. Unde simți cel mai frecvent durere sau disconfort?",
+        sub: "(Selectează una sau mai multe zone cu disconfort)",
+        isMulti: true,
+        options: [
+          { label: "Musculatură încordată / Spate superior & Umeri", level: 1, key: "shoulders" },
+          { label: "Puncte fixe hipersensibile / Noduri dureroase", level: 2, key: "trigger" },
+          { label: "Blocaj muscular adânc / Tensiune în zona lombară & șolduri", level: 3, key: "lower_back" },
+          { label: "Senzație de restricție în mișcare / Fasciă rigidă pe tot corpul", level: 4, key: "fascia" },
+          { label: "Coloană vertebrală rigidă / Încheieturi desaxializate", level: 5, key: "spine" },
+          { label: "Zona abdominală / Stomac / Tensiune viscerală", level: 6, key: "abdomen" },
+          { label: "Stres cronic / Insomnie / Agitație & Sistem nervos suprasolicitat", level: 7, key: "nervous" }
+        ]
+      },
+      {
+        id: "sensation",
+        title: "3. Cum ai descrie senzația fizică predominantă?",
+        sub: "(Selectează opțiunea principală)",
+        isMulti: false,
+        options: [
+          { label: "Febră musculară / Oboseală fizică la suprafață", level: 1, key: "shoulders" },
+          { label: "Noduri dureroase 'arse' la atingere sau presiune", level: 2, key: "trigger" },
+          { label: "Tensiune musculară încăpățânată ce nu cedează la masaj clasic", level: 3, key: "lower_back" },
+          { label: "Lipsă de flexibilitate / Alunecare greoaie a mușchilor", level: 4, key: "fascia" },
+          { label: "Înțepenire articulară / Durere la răsuciri sau flexii", level: 5, key: "spine" },
+          { label: "Tensiune profundă sub coaste sau în jurul organelor", level: 6, key: "abdomen" },
+          { label: "Stare continuă de 'fight or flight' / Tensiune mentală & corporală", level: 7, key: "nervous" }
+        ]
+      },
+      {
+        id: "duration",
+        title: "4. De cât timp persistă această stare?",
+        sub: "(Selectează durata)",
+        isMulti: false,
+        options: [
+          { label: "De câteva zile / după un efort recent", level: 1, key: "shoulders" },
+          { label: "De 2-4 săptămâni în puncte specifice", level: 2, key: "trigger" },
+          { label: "De câteva luni, având perioade de acutizare", level: 3, key: "lower_back" },
+          { label: "De peste 6 luni – simt tot corpul tensionat", level: 4, key: "fascia" },
+          { label: "De ani de zile cu dureri de coloană sau articulații", level: 5, key: "spine" },
+          { label: "Recurent, asociat cu perioade de stres și digestie lentă", level: 6, key: "abdomen" },
+          { label: "Permanent – mă trezesc deja obosit și tensionat", level: 7, key: "nervous" }
+        ]
+      },
+      {
+        id: "goal",
+        title: "5. Care este dorința ta principală pentru prima ședință?",
+        sub: "(Selectează obiectivul primar)",
+        isMulti: false,
+        options: [
+          { label: "Decontracturarea și vascularizarea musculaturii", level: 1, key: "shoulders" },
+          { label: "Dezactivarea nodurilor fixe de durere", level: 2, key: "trigger" },
+          { label: "Vibrație profundă și relaxare prin Tok Sen", level: 3, key: "lower_back" },
+          { label: "Eliberarea fasciei și recăpătarea mobilității", level: 4, key: "fascia" },
+          { label: "Realinierea coloanei vertebrale și restabilirea echilibrului", level: 5, key: "spine" },
+          { label: "Detensionarea organelor interne și eliminarea apăsării viscerale", level: 6, key: "abdomen" },
+          { label: "Resetarea completă a sistemului nervos prin Terapie Bowen", level: 7, key: "nervous" }
+        ]
+      }
+    ];
+
+    const levelDetails = {
+      1: {
+        name: "Nivelul 1: Masaj Terapeutic (Chakra 1 - Roșu)",
+        badgeClass: "level-banner-1",
+        desc: "Rezultatul auto-evaluării arată că ai nevoie de decontracturare musculară la suprafață, vascularizare și stimularea circulației pentru a pregăti țesuturile.",
+        therapyValue: "Masaj Terapeutic T1"
+      },
+      2: {
+        name: "Nivelul 2: Trigger Point Therapy (Chakra 2 - Portocaliu)",
+        badgeClass: "level-banner-2",
+        desc: "Rezultatul auto-evaluării indică prezența unor puncte trigger hipersensibile ce necesită dezactivare prin presiune izometrică țintită.",
+        therapyValue: "Trigger Point T2"
+      },
+      3: {
+        name: "Nivelul 3: Tok Sen Therapy (Chakra 3 - Galben)",
+        badgeClass: "level-banner-3",
+        desc: "Auto-evaluarea indică o tensiune musculară și fascială profundă ce beneficiază de rezonanța vibrațiilor mecanice ritmice Tok Sen.",
+        therapyValue: "Tok Sen T3"
+      },
+      4: {
+        name: "Nivelul 4: Manipulare Miofascială (Chakra 4 - Verde)",
+        badgeClass: "level-banner-4",
+        desc: "Auto-evaluarea arată aderențe fasciale și o restricție tridimensională de mobilitate. Manipularea Miofascială va elibera alunecarea țesuturilor.",
+        therapyValue: "Manipulare Miofascială T4"
+      },
+      5: {
+        name: "Nivelul 5: Osteopatie Structurală (Chakra 5 - Albastru)",
+        badgeClass: "level-banner-5",
+        desc: "Disconfortul tău provine din desaxializări vertebrale sau articulare. Osteopatia Structurală restabilește alinierea biomecanică corectă.",
+        therapyValue: "Osteopatie Structurală T5"
+      },
+      6: {
+        name: "Nivelul 6: Osteopatie Viscerală (Chakra 6 - Purple)",
+        badgeClass: "level-banner-6",
+        desc: "Tensiunea ta se concentrează în zona abdominală și fascia organelor interne. Osteopatia Viscerală restabilește motilitatea naturală a viscerelor.",
+        therapyValue: "Osteopatie Viscerală T6"
+      },
+      7: {
+        name: "Nivelul 7: Terapie Bowen (Chakra 7 - Teal)",
+        badgeClass: "level-banner-7",
+        desc: "Auto-evaluarea arată o suprasolicitare a sistemului nervos vegetativ. Mișcările blânde Bowen activează starea de parasimpatic și autovindecare.",
+        therapyValue: "Terapie Bowen T7"
+      }
+    };
+
+    let currentStep = 0;
+    const selectedAnswers = {
+      gender: 'male',
+      locations: [],
+      sensation: null,
+      duration: null,
+      goal: null
+    };
+
+    function renderQuestion() {
+      const q = questions[currentStep];
+      document.getElementById('stepIndicator').textContent = `PASUL ${currentStep + 1} DIN 5 – AUTO-EVALUARE`;
+      document.getElementById('questionTitle').textContent = q.title;
+      document.getElementById('questionSub').textContent = q.sub;
+      document.getElementById('progressBar').style.width = `${((currentStep + 1) / 5) * 100}%`;
+
+      const grid = document.getElementById('optionsGrid');
+      grid.innerHTML = '';
+      
+      if (q.id === 'gender') {
+        grid.className = 'quiz-options-grid-gender';
+      } else {
+        grid.className = 'quiz-options-grid';
+      }
+
+      q.options.forEach((opt, idx) => {
+        const card = document.createElement('div');
+        card.className = q.id === 'gender' ? 'quiz-option-card quiz-option-card-gender' : 'quiz-option-card';
+        
+        let isSelected = false;
+        if (q.isMulti) {
+          isSelected = selectedAnswers[q.id].includes(opt.level);
+        } else {
+          isSelected = selectedAnswers[q.id] === (q.id === 'gender' ? opt.value : opt.level);
+        }
+
+        if (isSelected) {
+          card.classList.add('selected');
+        }
+
+        // Determine 3D body image path dynamically based on selected gender
+        let imgSrc = opt.img;
+        if (!imgSrc && opt.key) {
+          imgSrc = `assets/images/quiz/${userGender}_${opt.key}.png`;
+        }
+
+        card.innerHTML = `
+          <img src="${imgSrc}" alt="Zona 3D" class="quiz-option-img">
+          <div class="quiz-option-info">
+            <span class="quiz-option-label">${opt.label}</span>
+          </div>
+          <div class="quiz-radio-icon"><i class="fa-solid fa-check"></i></div>
+        `;
+
+        card.onclick = () => {
+          if (q.id === 'gender') {
+            document.querySelectorAll('.quiz-option-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            userGender = opt.value;
+            selectedAnswers.gender = opt.value;
+          } else if (q.isMulti) {
+            card.classList.toggle('selected');
+            if (card.classList.contains('selected')) {
+              if (!selectedAnswers[q.id].includes(opt.level)) {
+                selectedAnswers[q.id].push(opt.level);
+              }
+            } else {
+              selectedAnswers[q.id] = selectedAnswers[q.id].filter(l => l !== opt.level);
+            }
+          } else {
+            document.querySelectorAll('.quiz-option-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            selectedAnswers[q.id] = opt.level;
+          }
+        };
+
+        grid.appendChild(card);
+      });
+
+      document.getElementById('prevBtn').style.visibility = currentStep > 0 ? 'visible' : 'hidden';
+      document.getElementById('nextBtn').textContent = currentStep === 4 ? 'Vezi Rezultatul Auto-evaluării' : 'Următoarea Întrebare';
+    }
+
+    document.getElementById('nextBtn').onclick = () => {
+      const q = questions[currentStep];
+      if (q.isMulti) {
+        if (selectedAnswers[q.id].length === 0) {
+          alert('Te rugăm să bifezi cel puțin o zonă înainte de a continua.');
+          return;
+        }
+      } else {
+        if (!selectedAnswers[q.id]) {
+          alert('Te rugăm să selectezi o opțiune înainte de a continua.');
+          return;
+        }
+      }
+
+      if (currentStep < 4) {
+        currentStep++;
+        renderQuestion();
+      } else {
+        showResults();
+      }
+    };
+
+    document.getElementById('prevBtn').onclick = () => {
+      if (currentStep > 0) {
+        currentStep--;
+        renderQuestion();
+      }
+    };
+
+    function restartQuiz() {
+      currentStep = 0;
+      selectedAnswers.gender = 'male';
+      selectedAnswers.locations = [];
+      selectedAnswers.sensation = null;
+      selectedAnswers.duration = null;
+      selectedAnswers.goal = null;
+
+      document.getElementById('resultBox').style.display = 'none';
+      document.getElementById('quizHeaderBanner').style.display = 'block';
+      document.getElementById('progressWrap').style.display = 'block';
+      document.getElementById('questionContainer').style.display = 'block';
+      renderQuestion();
+    }
+
+    document.getElementById('restartQuizBtn').onclick = restartQuiz;
+    document.getElementById('headerRestartBtn').onclick = restartQuiz;
+
+    function showResults() {
+      const scores = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0 };
+      
+      // Calculate scores
+      selectedAnswers.locations.forEach(lvl => scores[lvl] += 2); // Multi-select locations weighted higher
+      if (selectedAnswers.sensation) scores[selectedAnswers.sensation] += 1;
+      if (selectedAnswers.duration) scores[selectedAnswers.duration] += 1;
+      if (selectedAnswers.goal) scores[selectedAnswers.goal] += 1;
+
+      let recommendedLevel = 1;
+      let maxScore = -1;
+      for (let lvl in scores) {
+        if (scores[lvl] > maxScore) {
+          maxScore = scores[lvl];
+          recommendedLevel = lvl;
+        }
+      }
+
+      const rec = levelDetails[recommendedLevel];
+      document.getElementById('quizHeaderBanner').style.display = 'none';
+      document.getElementById('questionContainer').style.display = 'none';
+      document.getElementById('progressWrap').style.display = 'none';
+      
+      const resBox = document.getElementById('resultBox');
+      resBox.style.display = 'block';
+      
+      const badge = document.getElementById('resultBadge');
+      badge.className = `result-level-badge ${rec.badgeClass}`;
+      badge.textContent = rec.name;
+
+      document.getElementById('resultTitle').textContent = `Recomandarea Ta: ${rec.name.split(':')[1]}`;
+      document.getElementById('resultDesc').textContent = rec.desc;
+
+      document.getElementById('bookRecommendedBtn').onclick = () => {
+        document.getElementById('clientTherapy').value = rec.therapyValue;
+        document.getElementById('bookingModal').classList.add('active');
+      };
+    }
+
+    // Modal Script
+    const modal = document.getElementById('bookingModal');
+    document.querySelectorAll('.js-open-modal').forEach(btn => {
+      btn.onclick = () => modal.classList.add('active');
+    });
+    document.querySelector('.modal-close').onclick = () => modal.classList.remove('active');
+    modal.onclick = (e) => {
+      if (e.target === modal) modal.classList.remove('active');
+    };
+
+    renderQuestion();
+  </script>
+</body>
+</html>
