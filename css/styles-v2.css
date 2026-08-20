@@ -1,27 +1,22 @@
 /* ==========================================================================
    Cristi Therapy - Version 2 (V2) Unified Chakra Design System
-   Architecture: 5-Layer Chakra Spectrum & Obsidian Soft Black System
-   Palette: Obsidian Soft Black (#121212 / #18181B), Emerald (#38A169), Warm Ochre (#D69E2E), Soft Sand (#FAFAFA)
+   Architecture: 5-Layer Chakra Spectrum & Black CTA System
+   Palette: Full Black (#000000) Primary CTAs, Outline Black Secondary CTAs
+            100% Retained VITA 5 Chakra Colors (Red, Orange, Yellow, Green, Blue)
    Stylesheet: styles-v2.css
    ========================================================================== */
 
 :root {
-  /* Base Neutral & V2 Obsidian Soft Black Core */
-  --color-navy: #121212;        /* Obsidian Soft Black for dark sections */
-  --color-slate-blue: #18181B;  /* Zinc Soft Black for dark containers */
-  --color-dark: #09090B;        /* Deep Soft Black for headings */
-  --color-body: #3F3F46;        /* Zinc Dark Body text */
-  --color-light: #FAFAFA;       /* Calming Soft Alabaster */
+  /* Base Neutral & V2 Core */
+  --color-navy: #121212;        /* Obsidian Soft Black */
+  --color-slate-blue: #18181B;  /* Zinc Soft Black */
+  --color-dark: #09090B;        /* Deep Soft Black */
+  --color-body: #3F3F46;        /* Zinc Body text */
+  --color-light: #FAFAFA;       /* Soft Alabaster Light */
   --color-card: #FFFFFF;
   --color-border: #E4E4E7;
   
-  /* Primary Natural Brand Accents */
-  --color-green: #38A169;
-  --color-green-dark: #2F855A;
-  --color-ochre: #D69E2E;
-  --color-ochre-dark: #C05621;
-
-  /* VITA 5 Chakra Layer Tokens */
+  /* Primary VITA 5 Chakra Layer Tokens */
   --lvl1-red: #E53E3E;
   --lvl1-red-dark: #C53030;
   --lvl1-red-bg: rgba(229, 62, 62, 0.08);
@@ -44,7 +39,6 @@
 
   /* Gradients */
   --spectrum-gradient: linear-gradient(135deg, #E53E3E 0%, #ED8936 25%, #D69E2E 50%, #38A169 75%, #3182CE 100%);
-  --cta-gradient: linear-gradient(135deg, #E53E3E 0%, #ED8936 25%, #D69E2E 50%, #38A169 75%, #3182CE 100%);
 
   /* Typography */
   --font-serif-heading: 'Playfair Display', Georgia, serif;
@@ -120,7 +114,7 @@ a {
 
 .section-tag {
   display: inline-block;
-  color: var(--color-green-dark);
+  color: var(--lvl4-green-dark);
   font-family: var(--font-sans-heading);
   font-weight: 800;
   font-size: 0.85rem;
@@ -176,7 +170,7 @@ a {
 
 /* V1 CLASSIC BADGE */
 .brand-badge {
-  background: var(--color-slate-blue);
+  background: #000000;
   color: #FFFFFF;
   font-family: var(--font-sans-heading);
   font-weight: 800;
@@ -220,7 +214,7 @@ a {
 }
 
 .nav-menu a:hover {
-  color: var(--color-green-dark);
+  color: var(--lvl4-green-dark);
 }
 
 /* THEME TOGGLE BUTTON */
@@ -243,12 +237,12 @@ a {
 
 .theme-toggle-btn:hover {
   background: #FFFFFF;
-  border-color: var(--color-green-dark);
+  border-color: #000000;
   transform: translateY(-1px);
 }
 
 .theme-toggle-btn i {
-  color: var(--color-green-dark);
+  color: var(--lvl4-green);
 }
 
 .nav-toggle {
@@ -270,12 +264,12 @@ a {
 }
 
 .breadcrumb-bar a {
-  color: var(--color-slate-blue);
+  color: var(--color-navy);
   font-weight: 600;
 }
 
 .breadcrumb-bar a:hover {
-  color: var(--color-green-dark);
+  color: var(--lvl4-green-dark);
 }
 
 /* BUTTON DESIGN SYSTEM */
@@ -300,45 +294,60 @@ a {
 }
 
 .btn-header-cta {
-  background: var(--color-navy);
+  background: #000000;
   color: #FFFFFF;
   padding: 0.65rem 1.4rem;
   font-size: 0.88rem;
 }
 
 .btn-header-cta:hover {
-  background: var(--color-slate-blue);
-  box-shadow: 0 4px 12px rgba(18, 18, 18, 0.2);
+  background: #18181B;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary {
-  background: var(--color-slate-blue);
+  background: #000000;
   color: #FFFFFF;
 }
 
 .btn-primary:hover {
-  background: var(--color-navy);
+  background: #18181B;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(18, 18, 18, 0.25);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
-/* SIGNATURE V2 MULTI-TONE SPECTRUM CTA BUTTON */
+/* FULL BLACK PRIMARY CTA BUTTON */
 .btn-cta {
-  background: var(--spectrum-gradient);
-  color: #FFFFFF;
+  background: #000000 !important;
+  color: #FFFFFF !important;
   font-weight: 800;
-  box-shadow: 0 4px 16px rgba(49, 130, 206, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-shadow: none;
 }
 
 .btn-cta:hover {
+  background: #18181B !important;
+  color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(49, 130, 206, 0.5);
-  opacity: 0.96;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
-/* REFINED SOPHISTICATED LEVEL GLASS PILL BUTTONS */
+/* OUTLINE BLACK SECONDARY CTA BUTTON */
+.btn-outline {
+  background: transparent !important;
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+  font-weight: 700;
+}
+
+.btn-outline:hover {
+  background: #000000 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+}
+
+/* SOPHISTICATED LEVEL GLASS PILL BUTTONS */
 .btn-lvl-1 {
   background: rgba(229, 62, 62, 0.08);
   color: var(--lvl1-red-dark);
@@ -412,17 +421,6 @@ a {
   border-color: transparent;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(49, 130, 206, 0.35);
-}
-
-.btn-outline {
-  background: transparent;
-  border: 2px solid var(--color-slate-blue);
-  color: var(--color-slate-blue);
-}
-
-.btn-outline:hover {
-  background: var(--color-slate-blue);
-  color: #FFFFFF;
 }
 
 .w-100 {
@@ -616,7 +614,7 @@ a {
   font-family: var(--font-sans-heading);
   font-weight: 700;
   font-size: 0.95rem;
-  color: var(--color-slate-blue);
+  color: var(--color-navy);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -919,7 +917,7 @@ a {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--lvl4-green);
+  background: #000000;
   color: #FFFFFF;
   font-family: var(--font-sans-heading);
   font-weight: 800;
@@ -1011,7 +1009,7 @@ a {
 
 /* SECTION 9: FINAL DIRECT CTA */
 .section-final-cta {
-  background: linear-gradient(135deg, var(--color-navy) 0%, var(--lvl4-green-dark) 100%);
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-slate-blue) 100%);
   color: #FFFFFF;
   text-align: center;
   padding: 5rem 0;

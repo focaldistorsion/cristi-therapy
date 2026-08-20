@@ -1,7 +1,8 @@
 /* ==========================================================================
    Cristi Therapy - Classic Stylesheet (V1)
-   Architecture: 5-Layer Chakra Spectrum & Obsidian Soft Black System
-   Palette: Obsidian Soft Black (#121212 / #18181B), Emerald (#38A169), Warm Ochre (#D69E2E), Soft Sand (#FAFAFA)
+   Architecture: 5-Layer Chakra Spectrum & Black CTA System
+   Palette: Full Black (#000000) Primary CTAs, Outline Black Secondary CTAs
+            100% Retained VITA 5 Chakra Colors (Red, Orange, Yellow, Green, Blue)
    Stylesheet: styles.css
    ========================================================================== */
 
@@ -16,7 +17,6 @@
   
   --color-green: #38A169;
   --color-green-dark: #2F855A;
-  --color-ochre: #D69E2E;
 
   --spectrum-gradient: linear-gradient(135deg, #E53E3E 0%, #ED8936 25%, #D69E2E 50%, #38A169 75%, #3182CE 100%);
   
@@ -148,7 +148,7 @@ a {
 }
 
 .brand-badge {
-  background: var(--color-slate-blue);
+  background: #000000;
   color: #FFFFFF;
   font-family: var(--font-sans-heading);
   font-weight: 800;
@@ -212,7 +212,7 @@ a {
 
 .theme-toggle-btn:hover {
   background: #FFFFFF;
-  border-color: var(--color-green-dark);
+  border-color: #000000;
   transform: translateY(-1px);
 }
 
@@ -239,7 +239,7 @@ a {
 }
 
 .breadcrumb-bar a {
-  color: var(--color-slate-blue);
+  color: var(--color-navy);
   font-weight: 600;
 }
 
@@ -269,42 +269,57 @@ a {
 }
 
 .btn-header-cta {
-  background: var(--color-navy);
+  background: #000000;
   color: #FFFFFF;
   padding: 0.65rem 1.4rem;
   font-size: 0.88rem;
 }
 
 .btn-header-cta:hover {
-  background: var(--color-slate-blue);
-  box-shadow: 0 4px 12px rgba(18, 18, 18, 0.2);
+  background: #18181B;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary {
-  background: var(--color-slate-blue);
+  background: #000000;
   color: #FFFFFF;
 }
 
 .btn-primary:hover {
-  background: var(--color-navy);
+  background: #18181B;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(18, 18, 18, 0.25);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
 
-/* SIGNATURE V2 MULTI-TONE SPECTRUM CTA BUTTON */
+/* FULL BLACK PRIMARY CTA BUTTON */
 .btn-cta {
-  background: var(--spectrum-gradient);
-  color: #FFFFFF;
+  background: #000000 !important;
+  color: #FFFFFF !important;
   font-weight: 800;
-  box-shadow: 0 4px 16px rgba(49, 130, 206, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-shadow: none;
 }
 
 .btn-cta:hover {
+  background: #18181B !important;
+  color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(49, 130, 206, 0.5);
-  opacity: 0.96;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* OUTLINE BLACK SECONDARY CTA BUTTON */
+.btn-outline {
+  background: transparent !important;
+  border: 2px solid #000000 !important;
+  color: #000000 !important;
+  font-weight: 700;
+}
+
+.btn-outline:hover {
+  background: #000000 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
 }
 
 /* REFINED SOPHISTICATED LEVEL GLASS PILL BUTTONS */
@@ -381,17 +396,6 @@ a {
   border-color: transparent;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(49, 130, 206, 0.35);
-}
-
-.btn-outline {
-  background: transparent;
-  border: 2px solid var(--color-slate-blue);
-  color: var(--color-slate-blue);
-}
-
-.btn-outline:hover {
-  background: var(--color-slate-blue);
-  color: #FFFFFF;
 }
 
 .w-100 {
@@ -525,7 +529,7 @@ a {
   font-family: var(--font-sans-heading);
   font-weight: 700;
   font-size: 0.95rem;
-  color: var(--color-slate-blue);
+  color: var(--color-navy);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -867,7 +871,7 @@ a {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--color-green);
+  background: #000000;
   color: #FFFFFF;
   font-family: var(--font-sans-heading);
   font-weight: 800;
