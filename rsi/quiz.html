@@ -83,7 +83,14 @@
     .quiz-question-title {
       font-size: 1.45rem;
       color: var(--color-navy);
+      margin-bottom: 0.35rem;
+    }
+    .quiz-question-sub {
+      font-size: 0.95rem;
+      color: var(--t4-green);
+      font-weight: 600;
       margin-bottom: 1.5rem;
+      display: block;
     }
     .quiz-options-grid {
       display: flex;
@@ -91,21 +98,33 @@
       gap: 0.95rem;
       margin-bottom: 2rem;
     }
+    .quiz-options-grid-gender {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
     .quiz-option-card {
       border: 2px solid var(--color-border);
       border-radius: var(--radius-md);
-      padding: 0.85rem 1.25rem;
+      padding: 0.9rem 1.25rem;
       cursor: pointer;
       transition: var(--transition);
       display: flex;
       align-items: center;
       gap: 1.25rem;
       background: #FFFFFF;
+      position: relative;
+    }
+    .quiz-option-card-gender {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem 1.5rem;
     }
     .quiz-option-card:hover {
       border-color: var(--t4-green);
       background: rgba(5, 150, 105, 0.03);
-      transform: translateX(4px);
+      transform: translateY(-2px);
     }
     .quiz-option-card.selected {
       border-color: #000000;
@@ -113,13 +132,18 @@
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
     }
     .quiz-option-img {
-      width: 68px;
-      height: 68px;
+      width: 72px;
+      height: 72px;
       object-fit: cover;
       border-radius: var(--radius-sm);
       border: 1px solid var(--color-border);
       flex-shrink: 0;
       background: #FAFAFA;
+    }
+    .quiz-option-card-gender .quiz-option-img {
+      width: 120px;
+      height: 120px;
+      margin-bottom: 0.75rem;
     }
     .quiz-option-card.selected .quiz-option-img {
       border-color: #000000;
@@ -129,8 +153,8 @@
       flex-grow: 1;
     }
     .quiz-radio-icon {
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       border: 2px solid #A1A1AA;
       display: flex;
@@ -145,7 +169,7 @@
       color: #FFFFFF;
     }
     .quiz-radio-icon i {
-      font-size: 0.65rem;
+      font-size: 0.7rem;
       display: none;
     }
     .quiz-option-card.selected .quiz-radio-icon i {
@@ -220,7 +244,7 @@
         <div class="quiz-header-banner" id="quizHeaderBanner">
           <span class="quiz-step-indicator" id="stepIndicator">PASUL 1 DIN 5 – AUTO-EVALUARE</span>
           <h1 class="quiz-main-title">Auto-evaluează-te Somatic</h1>
-          <p class="quiz-intro-sub">Alege opțiunea care descrie cel mai bine zona de disconfort și simptomele tale.</p>
+          <p class="quiz-intro-sub">Alege opțiunile care descriu cel mai bine starea ta corporală.</p>
         </div>
 
         <!-- Progress Bar -->
@@ -230,7 +254,8 @@
 
         <!-- Question Container -->
         <div id="questionContainer">
-          <h2 class="quiz-question-title" id="questionTitle">1. Unde simți cel mai frecvent disconfortul sau tensiunea principală?</h2>
+          <h2 class="quiz-question-title" id="questionTitle">1. Selectează Genul Tău</h2>
+          <span class="quiz-question-sub" id="questionSub">(Modelul 3D al corpului se va adapta în funcție de selectarea ta)</span>
           
           <div class="quiz-options-grid" id="optionsGrid">
             <!-- Options dynamically populated by JS -->
@@ -246,7 +271,7 @@
         <div class="result-box" id="resultBox">
           <div id="resultBadge" class="result-level-badge level-banner-4">NIVELUL RECOMANDAT</div>
           <h3 id="resultTitle">Rezultatul Auto-evaluării Tale</h3>
-          <p class="result-description" id="resultDesc">Pe baza răspunsurilor tale, corpul tău indică o nevoie primară de eliberare la acest nivel somatic.</p>
+          <p class="result-description" id="resultDesc">Pe baza răspunsurilor și zonelor bifate, corpul tău indică o nevoie primară de eliberare la acest nivel somatic.</p>
           
           <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
             <button class="btn btn-cta js-open-modal" id="bookRecommendedBtn"><i class="fa-solid fa-calendar-check"></i> Programează o Consultație</button>
@@ -309,65 +334,77 @@
   </div>
 
   <script>
+    let userGender = 'male'; // 'male' or 'female'
+
     const questions = [
       {
-        title: "1. Unde simți cel mai frecvent disconfortul sau tensiunea principală?",
+        id: "gender",
+        title: "1. Selectează Genul Tău",
+        sub: "(Modelul 3D al corpului se va adapta în funcție de selectarea ta)",
+        isMulti: false,
         options: [
-          { label: "Musculatură încordată / Spate superior & Umeri", level: 1, img: "assets/images/quiz/body_pain_shoulders.png" },
-          { label: "Puncte fixe hipersensibile / Durere care radiază local", level: 2, img: "assets/images/quiz/body_pain_trigger.png" },
-          { label: "Blocaj muscular adânc / Tensiune cronică în zona lombară", level: 3, img: "assets/images/quiz/body_pain_lower_back.png" },
-          { label: "Senzație de restricție în mișcare / Fasciă rigidă pe tot corpul", level: 4, img: "assets/images/quiz/body_pain_fascia.png" },
-          { label: "Coloană vertebrală rigidă / Încheieturi sau bazin desaxializat", level: 5, img: "assets/images/quiz/body_pain_spine.png" },
-          { label: "Zona abdominală / Stomac / Senzație de apăsare viscerală", level: 6, img: "assets/images/quiz/body_pain_abdomen.png" },
-          { label: "Stres cronic / Insomnie / Agitație & Sistem nervos suprasolicitat", level: 7, img: "assets/images/quiz/body_pain_nervous.png" }
+          { label: "Bărbat", value: "male", img: "assets/images/quiz/male_gender.png" },
+          { label: "Femeie", value: "female", img: "assets/images/quiz/female_gender.png" }
         ]
       },
       {
-        title: "2. Cum ai descrie senzația fizică predominantă?",
+        id: "locations",
+        title: "2. Unde simți cel mai frecvent durere sau disconfort?",
+        sub: "(Selectează una sau mai multe zone cu disconfort)",
+        isMulti: true,
         options: [
-          { label: "Febră musculară / Oboseală fizică la suprafață", level: 1, img: "assets/images/quiz/body_pain_shoulders.png" },
-          { label: "Noduri dureroase 'arse' la atingere sau presiune", level: 2, img: "assets/images/quiz/body_pain_trigger.png" },
-          { label: "Tensiune musculară încăpățânată ce nu cedează la masaj clasic", level: 3, img: "assets/images/quiz/body_pain_lower_back.png" },
-          { label: "Lipsă de flexibilitate / Alunecare greoaie a mușchilor", level: 4, img: "assets/images/quiz/body_pain_fascia.png" },
-          { label: "Înțepenire articulară / Durere la răsuciri sau flexii", level: 5, img: "assets/images/quiz/body_pain_spine.png" },
-          { label: "Tensiune profundă sub coaste sau în jurul organelor", level: 6, img: "assets/images/quiz/body_pain_abdomen.png" },
-          { label: "Stare continuă de 'fight or flight' / Tensiune mentală & corporală", level: 7, img: "assets/images/quiz/body_pain_nervous.png" }
+          { label: "Musculatură încordată / Spate superior & Umeri", level: 1, key: "shoulders" },
+          { label: "Puncte fixe hipersensibile / Noduri dureroase", level: 2, key: "trigger" },
+          { label: "Blocaj muscular adânc / Tensiune în zona lombară & șolduri", level: 3, key: "lower_back" },
+          { label: "Senzație de restricție în mișcare / Fasciă rigidă pe tot corpul", level: 4, key: "fascia" },
+          { label: "Coloană vertebrală rigidă / Încheieturi desaxializate", level: 5, key: "spine" },
+          { label: "Zona abdominală / Stomac / Tensiune viscerală", level: 6, key: "abdomen" },
+          { label: "Stres cronic / Insomnie / Agitație & Sistem nervos suprasolicitat", level: 7, key: "nervous" }
         ]
       },
       {
-        title: "3. De cât timp persistă această stare?",
+        id: "sensation",
+        title: "3. Cum ai descrie senzația fizică predominantă?",
+        sub: "(Selectează opțiunea principală)",
+        isMulti: false,
         options: [
-          { label: "De câteva zile / după un efort recent", level: 1, img: "assets/images/quiz/body_pain_shoulders.png" },
-          { label: "De 2-4 săptămâni în puncte specifice", level: 2, img: "assets/images/quiz/body_pain_trigger.png" },
-          { label: "De câteva luni, având perioade de acutizare", level: 3, img: "assets/images/quiz/body_pain_lower_back.png" },
-          { label: "De peste 6 luni – simt tot corpul tensionat", level: 4, img: "assets/images/quiz/body_pain_fascia.png" },
-          { label: "De ani de zile cu dureri de coloană sau articulații", level: 5, img: "assets/images/quiz/body_pain_spine.png" },
-          { label: "Recurent, asociat cu perioade de stres și digestie lentă", level: 6, img: "assets/images/quiz/body_pain_abdomen.png" },
-          { label: "Permanent – mă trezesc deja obosit și tensionat", level: 7, img: "assets/images/quiz/body_pain_nervous.png" }
+          { label: "Febră musculară / Oboseală fizică la suprafață", level: 1, key: "shoulders" },
+          { label: "Noduri dureroase 'arse' la atingere sau presiune", level: 2, key: "trigger" },
+          { label: "Tensiune musculară încăpățânată ce nu cedează la masaj clasic", level: 3, key: "lower_back" },
+          { label: "Lipsă de flexibilitate / Alunecare greoaie a mușchilor", level: 4, key: "fascia" },
+          { label: "Înțepenire articulară / Durere la răsuciri sau flexii", level: 5, key: "spine" },
+          { label: "Tensiune profundă sub coaste sau în jurul organelor", level: 6, key: "abdomen" },
+          { label: "Stare continuă de 'fight or flight' / Tensiune mentală & corporală", level: 7, key: "nervous" }
         ]
       },
       {
-        title: "4. Ce fel de soluții ai încercat până în prezent?",
+        id: "duration",
+        title: "4. De cât timp persistă această stare?",
+        sub: "(Selectează durata)",
+        isMulti: false,
         options: [
-          { label: "Masaj clasic de relaxare", level: 1, img: "assets/images/quiz/body_pain_shoulders.png" },
-          { label: "Unguente antiinflamatoare / Geluri termice", level: 2, img: "assets/images/quiz/body_pain_trigger.png" },
-          { label: "Kinetoterapie sau exerciții de stretching", level: 3, img: "assets/images/quiz/body_pain_lower_back.png" },
-          { label: "Acupunctură sau terapii manuale intense", level: 4, img: "assets/images/quiz/body_pain_fascia.png" },
-          { label: "Adjustări vertebrale / Chiropracticâ", level: 5, img: "assets/images/quiz/body_pain_spine.png" },
-          { label: "Regim alimentar & tratament medicamentos gastro", level: 6, img: "assets/images/quiz/body_pain_abdomen.png" },
-          { label: "Suplimente de magneziu / Ceaiuri de somn", level: 7, img: "assets/images/quiz/body_pain_nervous.png" }
+          { label: "De câteva zile / după un efort recent", level: 1, key: "shoulders" },
+          { label: "De 2-4 săptămâni în puncte specifice", level: 2, key: "trigger" },
+          { label: "De câteva luni, având perioade de acutizare", level: 3, key: "lower_back" },
+          { label: "De peste 6 luni – simt tot corpul tensionat", level: 4, key: "fascia" },
+          { label: "De ani de zile cu dureri de coloană sau articulații", level: 5, key: "spine" },
+          { label: "Recurent, asociat cu perioade de stres și digestie lentă", level: 6, key: "abdomen" },
+          { label: "Permanent – mă trezesc deja obosit și tensionat", level: 7, key: "nervous" }
         ]
       },
       {
+        id: "goal",
         title: "5. Care este dorința ta principală pentru prima ședință?",
+        sub: "(Selectează obiectivul primar)",
+        isMulti: false,
         options: [
-          { label: "Decontracturarea și vascularizarea musculaturii", level: 1, img: "assets/images/quiz/body_pain_shoulders.png" },
-          { label: "Dezactivarea nodurilor fixe de durere", level: 2, img: "assets/images/quiz/body_pain_trigger.png" },
-          { label: "Vibrație profundă și relaxare prin Tok Sen", level: 3, img: "assets/images/quiz/body_pain_lower_back.png" },
-          { label: "Eliberarea fasciei și recăpătarea mobilității", level: 4, img: "assets/images/quiz/body_pain_fascia.png" },
-          { label: "Realinierea coloanei vertebrale și restabilirea echilibrului", level: 5, img: "assets/images/quiz/body_pain_spine.png" },
-          { label: "Detensionarea organelor interne și eliminarea apăsării viscerale", level: 6, img: "assets/images/quiz/body_pain_abdomen.png" },
-          { label: "Resetarea completă a sistemului nervos prin Terapie Bowen", level: 7, img: "assets/images/quiz/body_pain_nervous.png" }
+          { label: "Decontracturarea și vascularizarea musculaturii", level: 1, key: "shoulders" },
+          { label: "Dezactivarea nodurilor fixe de durere", level: 2, key: "trigger" },
+          { label: "Vibrație profundă și relaxare prin Tok Sen", level: 3, key: "lower_back" },
+          { label: "Eliberarea fasciei și recăpătarea mobilității", level: 4, key: "fascia" },
+          { label: "Realinierea coloanei vertebrale și restabilirea echilibrului", level: 5, key: "spine" },
+          { label: "Detensionarea organelor interne și eliminarea apăsării viscerale", level: 6, key: "abdomen" },
+          { label: "Resetarea completă a sistemului nervos prin Terapie Bowen", level: 7, key: "nervous" }
         ]
       }
     ];
@@ -376,85 +413,123 @@
       1: {
         name: "Nivelul 1: Masaj Terapeutic (Chakra 1 - Roșu)",
         badgeClass: "level-banner-1",
-        color: "#E53E3E",
         desc: "Rezultatul auto-evaluării arată că ai nevoie de decontracturare musculară la suprafață, vascularizare și stimularea circulației pentru a pregăti țesuturile.",
         therapyValue: "Masaj Terapeutic RSI 1"
       },
       2: {
         name: "Nivelul 2: Trigger Point Therapy (Chakra 2 - Portocaliu)",
         badgeClass: "level-banner-2",
-        color: "#ED8936",
         desc: "Rezultatul auto-evaluării indică prezența unor puncte trigger hipersensibile ce necesită dezactivare prin presiune izometrică țintită.",
         therapyValue: "Trigger Point RSI 2"
       },
       3: {
         name: "Nivelul 3: Tok Sen Therapy (Chakra 3 - Galben)",
         badgeClass: "level-banner-3",
-        color: "#D69E2E",
         desc: "Auto-evaluarea indică o tensiune musculară și fascială profundă ce beneficiază de rezonanța vibrațiilor mecanice ritmice Tok Sen.",
         therapyValue: "Tok Sen RSI 3"
       },
       4: {
         name: "Nivelul 4: Manipulare Miofascială (Chakra 4 - Verde)",
         badgeClass: "level-banner-4",
-        color: "#059669",
         desc: "Auto-evaluarea arată aderențe fasciale și o restricție tridimensională de mobilitate. Manipularea Miofascială va elibera alunecarea țesuturilor.",
         therapyValue: "Manipulare Miofascială RSI 4"
       },
       5: {
         name: "Nivelul 5: Osteopatie Structurală (Chakra 5 - Albastru)",
         badgeClass: "level-banner-5",
-        color: "#2563EB",
         desc: "Disconfortul tău provine din desaxializări vertebrale sau articulare. Osteopatia Structurală restabilește alinierea biomecanică corectă.",
         therapyValue: "Osteopatie Structurală RSI 5"
       },
       6: {
         name: "Nivelul 6: Osteopatie Viscerală (Chakra 6 - Purple)",
         badgeClass: "level-banner-6",
-        color: "#7C3AED",
         desc: "Tensiunea ta se concentrează în zona abdominală și fascia organelor interne. Osteopatia Viscerală restabilește motilitatea naturală a viscerelor.",
         therapyValue: "Osteopatie Viscerală RSI 6"
       },
       7: {
         name: "Nivelul 7: Terapie Bowen (Chakra 7 - Teal)",
         badgeClass: "level-banner-7",
-        color: "#0D9488",
         desc: "Auto-evaluarea arată o suprasolicitare a sistemului nervos vegetativ. Mișcările blânde Bowen activează starea de parasimpatic și autovindecare.",
         therapyValue: "Terapie Bowen RSI 7"
       }
     };
 
     let currentStep = 0;
-    const scores = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0 };
-    let selectedLevels = [];
+    const selectedAnswers = {
+      gender: 'male',
+      locations: [],
+      sensation: null,
+      duration: null,
+      goal: null
+    };
 
     function renderQuestion() {
       const q = questions[currentStep];
       document.getElementById('stepIndicator').textContent = `PASUL ${currentStep + 1} DIN 5 – AUTO-EVALUARE`;
       document.getElementById('questionTitle').textContent = q.title;
+      document.getElementById('questionSub').textContent = q.sub;
       document.getElementById('progressBar').style.width = `${((currentStep + 1) / 5) * 100}%`;
 
       const grid = document.getElementById('optionsGrid');
       grid.innerHTML = '';
+      
+      if (q.id === 'gender') {
+        grid.className = 'quiz-options-grid-gender';
+      } else {
+        grid.className = 'quiz-options-grid';
+      }
 
       q.options.forEach((opt, idx) => {
         const card = document.createElement('div');
-        card.className = 'quiz-option-card';
-        if (selectedLevels[currentStep] === opt.level) {
+        card.className = q.id === 'gender' ? 'quiz-option-card quiz-option-card-gender' : 'quiz-option-card';
+        
+        let isSelected = false;
+        if (q.isMulti) {
+          isSelected = selectedAnswers[q.id].includes(opt.level);
+        } else {
+          isSelected = selectedAnswers[q.id] === (q.id === 'gender' ? opt.value : opt.level);
+        }
+
+        if (isSelected) {
           card.classList.add('selected');
         }
+
+        // Determine 3D body image path dynamically based on selected gender
+        let imgSrc = opt.img;
+        if (!imgSrc && opt.key) {
+          imgSrc = `assets/images/quiz/${userGender}_${opt.key}.png`;
+        }
+
         card.innerHTML = `
-          <img src="${opt.img}" alt="Zona Somatică" class="quiz-option-img">
+          <img src="${imgSrc}" alt="Zona 3D" class="quiz-option-img">
           <div class="quiz-option-info">
             <span class="quiz-option-label">${opt.label}</span>
           </div>
           <div class="quiz-radio-icon"><i class="fa-solid fa-check"></i></div>
         `;
+
         card.onclick = () => {
-          document.querySelectorAll('.quiz-option-card').forEach(c => c.classList.remove('selected'));
-          card.classList.add('selected');
-          selectedLevels[currentStep] = opt.level;
+          if (q.id === 'gender') {
+            document.querySelectorAll('.quiz-option-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            userGender = opt.value;
+            selectedAnswers.gender = opt.value;
+          } else if (q.isMulti) {
+            card.classList.toggle('selected');
+            if (card.classList.contains('selected')) {
+              if (!selectedAnswers[q.id].includes(opt.level)) {
+                selectedAnswers[q.id].push(opt.level);
+              }
+            } else {
+              selectedAnswers[q.id] = selectedAnswers[q.id].filter(l => l !== opt.level);
+            }
+          } else {
+            document.querySelectorAll('.quiz-option-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            selectedAnswers[q.id] = opt.level;
+          }
         };
+
         grid.appendChild(card);
       });
 
@@ -463,9 +538,17 @@
     }
 
     document.getElementById('nextBtn').onclick = () => {
-      if (selectedLevels[currentStep] === undefined) {
-        alert('Te rugăm să selectezi o opțiune înainte de a continua.');
-        return;
+      const q = questions[currentStep];
+      if (q.isMulti) {
+        if (selectedAnswers[q.id].length === 0) {
+          alert('Te rugăm să bifezi cel puțin o zonă înainte de a continua.');
+          return;
+        }
+      } else {
+        if (!selectedAnswers[q.id]) {
+          alert('Te rugăm să selectezi o opțiune înainte de a continua.');
+          return;
+        }
       }
 
       if (currentStep < 4) {
@@ -484,9 +567,13 @@
     };
 
     function showResults() {
-      selectedLevels.forEach(lvl => {
-        scores[lvl] = (scores[lvl] || 0) + 1;
-      });
+      const scores = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0 };
+      
+      // Calculate scores
+      selectedAnswers.locations.forEach(lvl => scores[lvl] += 2); // Multi-select locations weighted higher
+      if (selectedAnswers.sensation) scores[selectedAnswers.sensation] += 1;
+      if (selectedAnswers.duration) scores[selectedAnswers.duration] += 1;
+      if (selectedAnswers.goal) scores[selectedAnswers.goal] += 1;
 
       let recommendedLevel = 1;
       let maxScore = -1;
