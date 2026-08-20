@@ -3,7 +3,7 @@
    Architecture: 1:1 7-Chakra Spectrum & Full Black CTA System
    Palette: Full Black (#000000) Primary CTAs, Outline Black Secondary CTAs
             7 Chakra Color Tokens (Red, Orange, Yellow, Green, Royal Blue, Purple, Teal)
-   Stylesheet: styles.css
+   Stylesheet: styles.css (RSI Full Width Hero Enabled)
    ========================================================================== */
 
 :root {
@@ -349,6 +349,101 @@ a {
   grid-template-columns: 1.15fr 0.85fr;
   gap: 3.5rem;
   align-items: center;
+}
+
+/* RSI FULL-WIDTH HERO BACKGROUND SYSTEM */
+.hero-fullwidth-rsi {
+  position: relative;
+  padding: 6.5rem 0 6rem;
+  background: url('../assets/images/hero_therapy_session.png') center/cover no-repeat;
+  overflow: hidden;
+  color: #FFFFFF;
+}
+
+.hero-fullwidth-rsi::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(105deg, rgba(9, 9, 11, 0.94) 0%, rgba(18, 18, 27, 0.85) 55%, rgba(9, 9, 11, 0.55) 100%);
+  z-index: 1;
+}
+
+.hero-fullwidth-rsi .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-grid-fullwidth {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero-text-light h1 {
+  color: #FFFFFF !important;
+  font-size: 3.4rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text-light h1 span {
+  color: #34D399 !important;
+  font-style: italic;
+}
+
+.hero-text-light .hero-subhead {
+  color: #E4E4E7 !important;
+  font-size: 1.2rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.badge-tag-light {
+  background: rgba(52, 211, 153, 0.18) !important;
+  color: #34D399 !important;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.hero-notsure-card-dark {
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+.hero-notsure-card-dark .notsure-text {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-profile-card-floating {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 1.35rem 1.65rem;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  max-width: 380px;
+  justify-self: end;
+}
+
+.hero-profile-card-floating strong {
+  font-family: var(--font-sans-heading);
+  font-size: 1.15rem;
+  color: var(--color-navy);
+  display: block;
+}
+
+.hero-profile-card-floating p {
+  font-size: 0.88rem;
+  color: var(--t4-green);
+  font-weight: 600;
 }
 
 .badge-tag {
@@ -1233,16 +1328,21 @@ a {
 
 /* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 992px) {
-  .hero-grid, .guide-grid, .stakes-grid, .grid-3, .plan-steps {
+  .hero-grid, .hero-grid-fullwidth, .guide-grid, .stakes-grid, .grid-3, .plan-steps {
     grid-template-columns: 1fr;
   }
 
-  .hero-text h1 {
-    font-size: 2.3rem;
+  .hero-text h1, .hero-text-light h1 {
+    font-size: 2.4rem;
   }
   
   .hero-img, .guide-img {
     height: 360px;
+  }
+
+  .hero-profile-card-floating {
+    justify-self: start;
+    max-width: 100%;
   }
 
   .vita-system-card {
@@ -1271,11 +1371,11 @@ a {
     padding: 3.5rem 0;
   }
 
-  .hero {
-    padding: 3rem 0 2.5rem;
+  .hero, .hero-fullwidth-rsi {
+    padding: 3.5rem 0 3rem;
   }
 
-  .hero-text h1 {
+  .hero-text h1, .hero-text-light h1 {
     font-size: 2.1rem;
     line-height: 1.25;
   }
