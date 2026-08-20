@@ -861,7 +861,7 @@ a {
 }
 
 .guide-grid {
-  display: grid;
+  display grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 4rem;
   align-items: center;
@@ -1264,14 +1264,36 @@ a {
     padding: 1.75rem;
   }
 
+  .sb7-transitional-block {
+    padding: 2.25rem 0 2rem;
+  }
+
+  .sb7-title {
+    font-size: 1.15rem;
+    padding: 0 0.5rem;
+  }
+
+  .sb7-subtitle {
+    font-size: 0.85rem;
+    padding: 0 0.5rem;
+  }
+
   .sb7-therapy-pills {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.65rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem 0.45rem;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 0 0.5rem;
   }
 
   .sb7-pill {
-    justify-content: flex-start;
-    padding: 0.75rem 1.25rem;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.8rem;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
   }
 }
