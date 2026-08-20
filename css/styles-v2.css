@@ -1,13 +1,13 @@
 /* ==========================================================================
-   Cristi Therapy - Version 2 (V2) Unified Chakra Design System
-   Architecture: 5-Layer Chakra Spectrum & Black CTA System
+   Cristi Therapy - Metoda Oglan (Terapie Manuală Integrată)
+   Architecture: 7-Therapy Somatic Spectrum & Full Black CTA System
    Palette: Full Black (#000000) Primary CTAs, Outline Black Secondary CTAs
-            100% Retained VITA 5 Chakra Colors (Red, Orange, Yellow, Green, Blue)
+            7 Somatic Color Tokens (Amber, Crimson, Saffron, Emerald, Royal, Amethyst, Teal)
    Stylesheet: styles-v2.css
    ========================================================================== */
 
 :root {
-  /* Base Neutral & V2 Core */
+  /* Base Neutral & Obsidian Dark Mode */
   --color-navy: #121212;        /* Obsidian Soft Black */
   --color-slate-blue: #18181B;  /* Zinc Soft Black */
   --color-dark: #09090B;        /* Deep Soft Black */
@@ -16,29 +16,30 @@
   --color-card: #FFFFFF;
   --color-border: #E4E4E7;
   
-  /* Primary VITA 5 Chakra Layer Tokens */
-  --lvl1-red: #E53E3E;
-  --lvl1-red-dark: #C53030;
-  --lvl1-red-bg: rgba(229, 62, 62, 0.08);
+  /* 7 Somatic Therapy Layer Tokens */
+  --t1-amber: #D97706;          /* 1. Masaj Terapeutic */
+  --t1-amber-bg: rgba(217, 119, 6, 0.08);
 
-  --lvl2-orange: #ED8936;
-  --lvl2-orange-dark: #DD6B20;
-  --lvl2-orange-bg: rgba(237, 137, 54, 0.08);
+  --t2-crimson: #E53E3E;        /* 2. Trigger Point */
+  --t2-crimson-bg: rgba(229, 62, 62, 0.08);
 
-  --lvl3-yellow: #D69E2E;
-  --lvl3-yellow-dark: #B7791F;
-  --lvl3-yellow-bg: rgba(214, 158, 46, 0.08);
+  --t3-saffron: #D69E2E;        /* 3. Tok Sen */
+  --t3-saffron-bg: rgba(214, 158, 46, 0.08);
 
-  --lvl4-green: #38A169;
-  --lvl4-green-dark: #2F855A;
-  --lvl4-green-bg: rgba(56, 161, 105, 0.08);
+  --t4-emerald: #059669;        /* 4. Manipulare Miofascială */
+  --t4-emerald-bg: rgba(5, 150, 105, 0.08);
 
-  --lvl5-blue: #3182CE;
-  --lvl5-blue-dark: #2B6CB0;
-  --lvl5-blue-bg: rgba(49, 130, 206, 0.08);
+  --t5-royal: #2563EB;          /* 5. Osteopatie Structurală */
+  --t5-royal-bg: rgba(37, 99, 235, 0.08);
 
-  /* Gradients */
-  --spectrum-gradient: linear-gradient(135deg, #E53E3E 0%, #ED8936 25%, #D69E2E 50%, #38A169 75%, #3182CE 100%);
+  --t6-purple: #7C3AED;         /* 6. Osteopatie Viscerală */
+  --t6-purple-bg: rgba(124, 58, 237, 0.08);
+
+  --t7-teal: #0D9488;           /* 7. Terapie Bowen */
+  --t7-teal-bg: rgba(13, 148, 136, 0.08);
+
+  /* Spectrum Gradients */
+  --oglan-spectrum-gradient: linear-gradient(135deg, #D97706 0%, #E53E3E 16%, #D69E2E 33%, #059669 50%, #2563EB 66%, #7C3AED 83%, #0D9488 100%);
 
   /* Typography */
   --font-serif-heading: 'Playfair Display', Georgia, serif;
@@ -114,7 +115,7 @@ a {
 
 .section-tag {
   display: inline-block;
-  color: var(--lvl4-green-dark);
+  color: var(--t4-emerald);
   font-family: var(--font-sans-heading);
   font-weight: 800;
   font-size: 0.85rem;
@@ -168,26 +169,14 @@ a {
   gap: 0.65rem;
 }
 
-/* V1 CLASSIC BADGE */
-.brand-badge {
-  background: #000000;
-  color: #FFFFFF;
-  font-family: var(--font-sans-heading);
-  font-weight: 800;
-  padding: 0.3rem 0.65rem;
-  border-radius: var(--radius-sm);
-  font-size: 1rem;
-}
-
-/* V2 MULTI-TONE CHAKRA SPECTRUM BADGE */
 .brand-badge-v2 {
-  background: var(--spectrum-gradient);
+  background: var(--oglan-spectrum-gradient);
   color: #FFFFFF;
   font-family: var(--font-sans-heading);
   font-weight: 800;
   padding: 0.35rem 0.75rem;
   border-radius: var(--radius-sm);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   letter-spacing: 0.5px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -214,7 +203,7 @@ a {
 }
 
 .nav-menu a:hover {
-  color: var(--lvl4-green-dark);
+  color: var(--t4-emerald);
 }
 
 /* THEME TOGGLE BUTTON */
@@ -242,7 +231,7 @@ a {
 }
 
 .theme-toggle-btn i {
-  color: var(--lvl4-green);
+  color: var(--t4-emerald);
 }
 
 .nav-toggle {
@@ -269,7 +258,7 @@ a {
 }
 
 .breadcrumb-bar a:hover {
-  color: var(--lvl4-green-dark);
+  color: var(--t4-emerald);
 }
 
 /* BUTTON DESIGN SYSTEM */
@@ -347,82 +336,6 @@ a {
   transform: translateY(-2px);
 }
 
-/* SOPHISTICATED LEVEL GLASS PILL BUTTONS */
-.btn-lvl-1 {
-  background: rgba(229, 62, 62, 0.08);
-  color: var(--lvl1-red-dark);
-  border: 1px solid rgba(229, 62, 62, 0.3);
-  font-weight: 700;
-}
-
-.btn-lvl-1:hover {
-  background: linear-gradient(135deg, var(--lvl1-red) 0%, var(--lvl1-red-dark) 100%);
-  color: #FFFFFF;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(229, 62, 62, 0.35);
-}
-
-.btn-lvl-2 {
-  background: rgba(237, 137, 54, 0.08);
-  color: var(--lvl2-orange-dark);
-  border: 1px solid rgba(237, 137, 54, 0.3);
-  font-weight: 700;
-}
-
-.btn-lvl-2:hover {
-  background: linear-gradient(135deg, var(--lvl2-orange) 0%, var(--lvl2-orange-dark) 100%);
-  color: #FFFFFF;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(237, 137, 54, 0.35);
-}
-
-.btn-lvl-3 {
-  background: rgba(214, 158, 46, 0.08);
-  color: var(--lvl3-yellow-dark);
-  border: 1px solid rgba(214, 158, 46, 0.3);
-  font-weight: 700;
-}
-
-.btn-lvl-3:hover {
-  background: linear-gradient(135deg, var(--lvl3-yellow) 0%, var(--lvl3-yellow-dark) 100%);
-  color: #FFFFFF;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(214, 158, 46, 0.35);
-}
-
-.btn-lvl-4 {
-  background: rgba(56, 161, 105, 0.08);
-  color: var(--lvl4-green-dark);
-  border: 1px solid rgba(56, 161, 105, 0.3);
-  font-weight: 700;
-}
-
-.btn-lvl-4:hover {
-  background: linear-gradient(135deg, var(--lvl4-green) 0%, var(--lvl4-green-dark) 100%);
-  color: #FFFFFF;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(56, 161, 105, 0.35);
-}
-
-.btn-lvl-5 {
-  background: rgba(49, 130, 206, 0.08);
-  color: var(--lvl5-blue-dark);
-  border: 1px solid rgba(49, 130, 206, 0.3);
-  font-weight: 700;
-}
-
-.btn-lvl-5:hover {
-  background: linear-gradient(135deg, var(--lvl5-blue) 0%, var(--lvl5-blue-dark) 100%);
-  color: #FFFFFF;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(49, 130, 206, 0.35);
-}
-
 .w-100 {
   width: 100%;
 }
@@ -434,7 +347,7 @@ a {
 /* SECTION 1: HERO */
 .hero {
   padding: 5rem 0 4rem;
-  background: linear-gradient(135deg, rgba(18, 18, 18, 0.03) 0%, rgba(56, 161, 105, 0.06) 100%);
+  background: linear-gradient(135deg, rgba(18, 18, 18, 0.03) 0%, rgba(5, 150, 105, 0.06) 100%);
 }
 
 .subpage-hero {
@@ -452,8 +365,8 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(56, 161, 105, 0.12);
-  color: var(--lvl4-green-dark);
+  background: rgba(5, 150, 105, 0.12);
+  color: var(--t4-emerald);
   font-family: var(--font-sans-heading);
   font-weight: 700;
   font-size: 0.85rem;
@@ -471,7 +384,7 @@ a {
 }
 
 .hero-text h1 span {
-  color: var(--lvl4-green-dark);
+  color: var(--t4-emerald);
   font-style: italic;
 }
 
@@ -529,12 +442,12 @@ a {
   height: 52px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--lvl4-green);
+  border: 2px solid var(--t4-emerald);
   flex-shrink: 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* CHAKRA COLOR LEVEL BANNERS */
+/* 7 THERAPY BANNERS & ACCENTS */
 .chakra-level-banner {
   display: inline-flex;
   align-items: center;
@@ -551,25 +464,13 @@ a {
   letter-spacing: 0.5px;
 }
 
-.level-banner-1 {
-  background: linear-gradient(135deg, var(--lvl1-red) 0%, var(--lvl1-red-dark) 100%);
-}
-
-.level-banner-2 {
-  background: linear-gradient(135deg, var(--lvl2-orange) 0%, var(--lvl2-orange-dark) 100%);
-}
-
-.level-banner-3 {
-  background: linear-gradient(135deg, var(--lvl3-yellow) 0%, var(--lvl3-yellow-dark) 100%);
-}
-
-.level-banner-4 {
-  background: linear-gradient(135deg, var(--lvl4-green) 0%, var(--lvl4-green-dark) 100%);
-}
-
-.level-banner-5 {
-  background: linear-gradient(135deg, var(--lvl5-blue) 0%, var(--lvl5-blue-dark) 100%);
-}
+.level-banner-1 { background: linear-gradient(135deg, var(--t1-amber) 0%, #B45309 100%); }
+.level-banner-2 { background: linear-gradient(135deg, var(--t2-crimson) 0%, #C53030 100%); }
+.level-banner-3 { background: linear-gradient(135deg, var(--t3-saffron) 0%, #B7791F 100%); }
+.level-banner-4 { background: linear-gradient(135deg, var(--t4-emerald) 0%, #047857 100%); }
+.level-banner-5 { background: linear-gradient(135deg, var(--t5-royal) 0%, #1D4ED8 100%); }
+.level-banner-6 { background: linear-gradient(135deg, var(--t6-purple) 0%, #6D28D9 100%); }
+.level-banner-7 { background: linear-gradient(135deg, var(--t7-teal) 0%, #0F766E 100%); }
 
 .level-tag-num {
   background: rgba(255, 255, 255, 0.25);
@@ -579,20 +480,12 @@ a {
   border-radius: var(--radius-pill);
   font-weight: 800;
   letter-spacing: 0.8px;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
 .level-tag-name {
   font-weight: 700;
   padding-right: 0.25rem;
 }
-
-/* VITA 5 CARD LEFT BORDER INDICATORS */
-.vita-card-lvl-1 { border-left: 5px solid var(--lvl1-red) !important; }
-.vita-card-lvl-2 { border-left: 5px solid var(--lvl2-orange) !important; }
-.vita-card-lvl-3 { border-left: 5px solid var(--lvl3-yellow) !important; }
-.vita-card-lvl-4 { border-left: 5px solid var(--lvl4-green) !important; }
-.vita-card-lvl-5 { border-left: 5px solid var(--lvl5-blue) !important; }
 
 /* PROOF BAR */
 .proof-bar {
@@ -621,7 +514,7 @@ a {
 }
 
 .proof-item i {
-  color: var(--lvl4-green);
+  color: var(--t4-emerald);
 }
 
 /* SECTION 2: STAKES */
@@ -633,7 +526,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: var(--lvl2-orange);
+  color: var(--t1-amber);
   font-family: var(--font-sans-heading);
   font-weight: 700;
   font-size: 0.85rem;
@@ -662,7 +555,7 @@ a {
 
 .stake-card i {
   font-size: 2.2rem;
-  color: var(--lvl2-orange);
+  color: var(--t1-amber);
   margin-bottom: 1rem;
 }
 
@@ -703,8 +596,8 @@ a {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: rgba(56, 161, 105, 0.1);
-  color: var(--lvl4-green);
+  background: rgba(5, 150, 105, 0.1);
+  color: var(--t4-emerald);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -718,9 +611,9 @@ a {
   color: var(--color-navy);
 }
 
-/* DEDICATED VITA 5 SECTION - SINGLE COLUMN VERTICAL SYSTEM CHAIN */
+/* DEDICATED 7-THERAPY INTEGRATED SYSTEM CHAIN */
 .section-vita-system {
-  background: linear-gradient(180deg, #FAFAFA 0%, rgba(56, 161, 105, 0.04) 100%);
+  background: linear-gradient(180deg, #FAFAFA 0%, rgba(5, 150, 105, 0.04) 100%);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
@@ -732,11 +625,12 @@ a {
 }
 
 .vita-vertical-chain {
-  max-width: 800px;
+  max-width: 860px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1.25rem;
 }
 
 .vita-system-card {
@@ -786,21 +680,6 @@ a {
   margin-bottom: 0.75rem;
 }
 
-.vita-arrow-connector {
-  font-size: 2rem;
-  color: var(--lvl4-green);
-  margin: 0.75rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: pulseArrow 2.5s infinite ease-in-out;
-}
-
-@keyframes pulseArrow {
-  0%, 100% { transform: translateY(0); opacity: 0.8; }
-  50% { transform: translateY(5px); opacity: 1; color: var(--lvl5-blue); }
-}
-
 /* STORYBRAND (SB7) TRANSITIONAL THERAPY BLOCK */
 .sb7-transitional-block {
   background: #F4F4F5;
@@ -834,8 +713,8 @@ a {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.85rem;
-  max-width: 920px;
+  gap: 0.75rem;
+  max-width: 1040px;
   margin: 0 auto;
 }
 
@@ -861,7 +740,7 @@ a {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* ACTIVE PILL STYLES */
+/* ACTIVE PILL STYLES FOR 7 THERAPIES */
 .sb7-pill.active-pill {
   cursor: default;
   color: #FFFFFF !important;
@@ -874,19 +753,15 @@ a {
   transform: none;
 }
 
-.sb7-pill-lvl-1.active-pill { background: linear-gradient(135deg, var(--lvl1-red) 0%, var(--lvl1-red-dark) 100%); }
-.sb7-pill-lvl-2.active-pill { background: linear-gradient(135deg, var(--lvl2-orange) 0%, var(--lvl2-orange-dark) 100%); }
-.sb7-pill-lvl-3.active-pill { background: linear-gradient(135deg, var(--lvl3-yellow) 0%, var(--lvl3-yellow-dark) 100%); }
-.sb7-pill-lvl-4.active-pill { background: linear-gradient(135deg, var(--lvl4-green) 0%, var(--lvl4-green-dark) 100%); }
-.sb7-pill-lvl-5.active-pill { background: linear-gradient(135deg, var(--lvl5-blue) 0%, var(--lvl5-blue-dark) 100%); }
+.sb7-pill-t1.active-pill { background: linear-gradient(135deg, var(--t1-amber) 0%, #B45309 100%); }
+.sb7-pill-t2.active-pill { background: linear-gradient(135deg, var(--t2-crimson) 0%, #C53030 100%); }
+.sb7-pill-t3.active-pill { background: linear-gradient(135deg, var(--t3-saffron) 0%, #B7791F 100%); }
+.sb7-pill-t4.active-pill { background: linear-gradient(135deg, var(--t4-emerald) 0%, #047857 100%); }
+.sb7-pill-t5.active-pill { background: linear-gradient(135deg, var(--t5-royal) 0%, #1D4ED8 100%); }
+.sb7-pill-t6.active-pill { background: linear-gradient(135deg, var(--t6-purple) 0%, #6D28D9 100%); }
+.sb7-pill-t7.active-pill { background: linear-gradient(135deg, var(--t7-teal) 0%, #0F766E 100%); }
 
-/* NON-ACTIVE PILL LEVEL ACCENTS */
-.sb7-pill-lvl-1:not(.active-pill):hover { border-color: var(--lvl1-red); color: var(--lvl1-red-dark); }
-.sb7-pill-lvl-2:not(.active-pill):hover { border-color: var(--lvl2-orange); color: var(--lvl2-orange-dark); }
-.sb7-pill-lvl-3:not(.active-pill):hover { border-color: var(--lvl3-yellow); color: var(--lvl3-yellow-dark); }
-.sb7-pill-lvl-4:not(.active-pill):hover { border-color: var(--lvl4-green); color: var(--lvl4-green-dark); }
-.sb7-pill-lvl-5:not(.active-pill):hover { border-color: var(--lvl5-blue); color: var(--lvl5-blue-dark); }
-
+/* DOT COLOR ACCENTS FOR 7 THERAPIES */
 .sb7-pill-dot {
   width: 10px;
   height: 10px;
@@ -894,11 +769,13 @@ a {
   flex-shrink: 0;
 }
 
-.dot-lvl-1 { background: var(--lvl1-red); }
-.dot-lvl-2 { background: var(--lvl2-orange); }
-.dot-lvl-3 { background: var(--lvl3-yellow); }
-.dot-lvl-4 { background: var(--lvl4-green); }
-.dot-lvl-5 { background: var(--lvl5-blue); }
+.dot-t1 { background: var(--t1-amber); }
+.dot-t2 { background: var(--t2-crimson); }
+.dot-t3 { background: var(--t3-saffron); }
+.dot-t4 { background: var(--t4-emerald); }
+.dot-t5 { background: var(--t5-royal); }
+.dot-t6 { background: var(--t6-purple); }
+.dot-t7 { background: var(--t7-teal); }
 
 /* SECTION 4: THE GUIDE */
 .section-guide {
@@ -944,7 +821,7 @@ a {
 }
 
 .guide-photo-badge p {
-  color: var(--lvl4-green);
+  color: var(--t4-emerald);
   font-size: 0.9rem;
 }
 
@@ -961,8 +838,8 @@ a {
 }
 
 .agreement-box {
-  background: rgba(56, 161, 105, 0.12);
-  border: 1px solid rgba(56, 161, 105, 0.3);
+  background: rgba(5, 150, 105, 0.12);
+  border: 1px solid rgba(5, 150, 105, 0.3);
   border-radius: var(--radius-md);
   padding: 1.25rem 1.5rem;
   display: flex;
@@ -971,7 +848,7 @@ a {
 }
 
 .agreement-box i {
-  color: var(--lvl4-green);
+  color: var(--t4-emerald);
   font-size: 1.5rem;
   margin-top: 2px;
 }
@@ -1040,7 +917,7 @@ a {
 
 /* SECTION 7: TESTIMONIALS */
 .section-testimonials {
-  background: rgba(56, 161, 105, 0.05);
+  background: rgba(5, 150, 105, 0.05);
 }
 
 .testimonial-card {
@@ -1053,23 +930,6 @@ a {
   border: 1px solid var(--color-border);
 }
 
-.fb-badge-box {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 1.25rem;
-}
-
-.fb-badge-box i.fa-facebook {
-  font-size: 2.4rem;
-  color: #1877F2;
-}
-
-.stars {
-  color: #F59E0B;
-  font-size: 0.85rem;
-}
-
 .quote {
   font-family: var(--font-serif-heading);
   font-style: italic;
@@ -1080,7 +940,7 @@ a {
 
 /* SECTION 8: LEAD MAGNET */
 .section-lead {
-  background: linear-gradient(135deg, rgba(56, 161, 105, 0.08) 0%, rgba(49, 130, 206, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.08) 0%, rgba(37, 99, 235, 0.1) 100%);
   padding: 4rem 0;
 }
 
@@ -1093,7 +953,7 @@ a {
 }
 
 .lead-tag {
-  color: var(--lvl4-green);
+  color: var(--t4-emerald);
   font-family: var(--font-sans-heading);
   font-weight: 800;
   font-size: 0.85rem;
@@ -1157,12 +1017,7 @@ a {
 }
 
 .footer-links a:hover {
-  color: var(--lvl4-green);
-}
-
-/* FLOATING MOBILE CTA (Hidden) */
-.mobile-cta-bar {
-  display: none !important;
+  color: var(--t4-emerald);
 }
 
 /* MODALS */

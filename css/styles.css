@@ -1,34 +1,56 @@
 /* ==========================================================================
-   Cristi Therapy - Classic Stylesheet (V1)
-   Architecture: 5-Layer Chakra Spectrum & Black CTA System
+   Cristi Therapy - Metoda Oglan (Terapie Manuală Integrată)
+   Architecture: 7-Therapy Somatic Spectrum & Full Black CTA System
    Palette: Full Black (#000000) Primary CTAs, Outline Black Secondary CTAs
-            100% Retained VITA 5 Chakra Colors (Red, Orange, Yellow, Green, Blue)
+            7 Somatic Color Tokens (Amber, Crimson, Saffron, Emerald, Royal, Amethyst, Teal)
    Stylesheet: styles.css
    ========================================================================== */
 
 :root {
+  /* Base Neutral & Obsidian Dark Mode */
   --color-navy: #121212;        /* Obsidian Soft Black */
   --color-slate-blue: #18181B;  /* Zinc Soft Black */
-  --color-dark: #09090B;
-  --color-body: #3F3F46;
-  --color-light: #FAFAFA;
+  --color-dark: #09090B;        /* Deep Soft Black */
+  --color-body: #3F3F46;        /* Zinc Body text */
+  --color-light: #FAFAFA;       /* Soft Alabaster Light */
   --color-card: #FFFFFF;
   --color-border: #E4E4E7;
   
-  --color-green: #38A169;
-  --color-green-dark: #2F855A;
+  /* 7 Somatic Therapy Layer Tokens */
+  --t1-amber: #D97706;          /* 1. Masaj Terapeutic */
+  --t1-amber-bg: rgba(217, 119, 6, 0.08);
 
-  --spectrum-gradient: linear-gradient(135deg, #E53E3E 0%, #ED8936 25%, #D69E2E 50%, #38A169 75%, #3182CE 100%);
-  
+  --t2-crimson: #E53E3E;        /* 2. Trigger Point */
+  --t2-crimson-bg: rgba(229, 62, 62, 0.08);
+
+  --t3-saffron: #D69E2E;        /* 3. Tok Sen */
+  --t3-saffron-bg: rgba(214, 158, 46, 0.08);
+
+  --t4-emerald: #059669;        /* 4. Manipulare Miofascială */
+  --t4-emerald-bg: rgba(5, 150, 105, 0.08);
+
+  --t5-royal: #2563EB;          /* 5. Osteopatie Structurală */
+  --t5-royal-bg: rgba(37, 99, 235, 0.08);
+
+  --t6-purple: #7C3AED;         /* 6. Osteopatie Viscerală */
+  --t6-purple-bg: rgba(124, 58, 237, 0.08);
+
+  --t7-teal: #0D9488;           /* 7. Terapie Bowen */
+  --t7-teal-bg: rgba(13, 148, 136, 0.08);
+
+  /* Spectrum Gradients */
+  --oglan-spectrum-gradient: linear-gradient(135deg, #D97706 0%, #E53E3E 16%, #D69E2E 33%, #059669 50%, #2563EB 66%, #7C3AED 83%, #0D9488 100%);
+
+  /* Typography */
   --font-serif-heading: 'Playfair Display', Georgia, serif;
   --font-sans-heading: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Inter', sans-serif;
-  
+
+  /* UI Tokens */
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-pill: 9999px;
-  
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -93,7 +115,7 @@ a {
 
 .section-tag {
   display: inline-block;
-  color: var(--color-green-dark);
+  color: var(--t4-emerald);
   font-family: var(--font-sans-heading);
   font-weight: 800;
   font-size: 0.85rem;
@@ -124,7 +146,7 @@ a {
   gap: 0.5rem;
 }
 
-/* HEADER & NAVIGATION */
+/* HEADER NAVIGATION */
 .header {
   position: sticky;
   top: 0;
@@ -147,25 +169,17 @@ a {
   gap: 0.65rem;
 }
 
-.brand-badge {
-  background: #000000;
-  color: #FFFFFF;
-  font-family: var(--font-sans-heading);
-  font-weight: 800;
-  padding: 0.3rem 0.65rem;
-  border-radius: var(--radius-sm);
-  font-size: 1rem;
-}
-
 .brand-badge-v2 {
-  background: var(--spectrum-gradient);
+  background: var(--oglan-spectrum-gradient);
   color: #FFFFFF;
   font-family: var(--font-sans-heading);
   font-weight: 800;
   padding: 0.35rem 0.75rem;
   border-radius: var(--radius-sm);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .brand-text {
@@ -189,7 +203,7 @@ a {
 }
 
 .nav-menu a:hover {
-  color: var(--color-green-dark);
+  color: var(--t4-emerald);
 }
 
 /* THEME TOGGLE BUTTON */
@@ -217,7 +231,7 @@ a {
 }
 
 .theme-toggle-btn i {
-  color: var(--color-green-dark);
+  color: var(--t4-emerald);
 }
 
 .nav-toggle {
@@ -244,7 +258,7 @@ a {
 }
 
 .breadcrumb-bar a:hover {
-  color: var(--color-green-dark);
+  color: var(--t4-emerald);
 }
 
 /* BUTTON DESIGN SYSTEM */
@@ -322,82 +336,6 @@ a {
   transform: translateY(-2px);
 }
 
-/* REFINED SOPHISTICATED LEVEL GLASS PILL BUTTONS */
-.btn-lvl-1 {
-  background: rgba(229, 62, 62, 0.08);
-  color: #C53030;
-  border: 1px solid rgba(229, 62, 62, 0.3);
-  font-weight: 700;
-}
-
-.btn-lvl-1:hover {
-  background: linear-gradient(135deg, #E53E3E 0%, #C53030 100%);
-  color: #FFFFFF;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(229, 62, 62, 0.35);
-}
-
-.btn-lvl-2 {
-  background: rgba(237, 137, 54, 0.08);
-  color: #DD6B20;
-  border: 1px solid rgba(237, 137, 54, 0.3);
-  font-weight: 700;
-}
-
-.btn-lvl-2:hover {
-  background: linear-gradient(135deg, #ED8936 0%, #DD6B20 100%);
-  color: #FFFFFF;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(237, 137, 54, 0.35);
-}
-
-.btn-lvl-3 {
-  background: rgba(214, 158, 46, 0.08);
-  color: #B7791F;
-  border: 1px solid rgba(214, 158, 46, 0.3);
-  font-weight: 700;
-}
-
-.btn-lvl-3:hover {
-  background: linear-gradient(135deg, #D69E2E 0%, #B7791F 100%);
-  color: #FFFFFF;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(214, 158, 46, 0.35);
-}
-
-.btn-lvl-4 {
-  background: rgba(56, 161, 105, 0.08);
-  color: #2F855A;
-  border: 1px solid rgba(56, 161, 105, 0.3);
-  font-weight: 700;
-}
-
-.btn-lvl-4:hover {
-  background: linear-gradient(135deg, #38A169 0%, #2F855A 100%);
-  color: #FFFFFF;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(56, 161, 105, 0.35);
-}
-
-.btn-lvl-5 {
-  background: rgba(49, 130, 206, 0.08);
-  color: #2B6CB0;
-  border: 1px solid rgba(49, 130, 206, 0.3);
-  font-weight: 700;
-}
-
-.btn-lvl-5:hover {
-  background: linear-gradient(135deg, #3182CE 0%, #2B6CB0 100%);
-  color: #FFFFFF;
-  border-color: transparent;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(49, 130, 206, 0.35);
-}
-
 .w-100 {
   width: 100%;
 }
@@ -409,7 +347,7 @@ a {
 /* SECTION 1: HERO */
 .hero {
   padding: 5rem 0 4rem;
-  background: linear-gradient(135deg, rgba(18, 18, 18, 0.03) 0%, rgba(56, 161, 105, 0.06) 100%);
+  background: linear-gradient(135deg, rgba(18, 18, 18, 0.03) 0%, rgba(5, 150, 105, 0.06) 100%);
 }
 
 .subpage-hero {
@@ -427,8 +365,8 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(56, 161, 105, 0.1);
-  color: var(--color-green-dark);
+  background: rgba(5, 150, 105, 0.12);
+  color: var(--t4-emerald);
   font-family: var(--font-sans-heading);
   font-weight: 700;
   font-size: 0.85rem;
@@ -446,7 +384,7 @@ a {
 }
 
 .hero-text h1 span {
-  color: var(--color-green-dark);
+  color: var(--t4-emerald);
   font-style: italic;
 }
 
@@ -504,9 +442,49 @@ a {
   height: 52px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--color-green);
+  border: 2px solid var(--t4-emerald);
   flex-shrink: 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* 7 THERAPY BANNERS & ACCENTS */
+.chakra-level-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.45rem 1.1rem 0.45rem 0.5rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans-heading);
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: #FFFFFF;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.5px;
+}
+
+.level-banner-1 { background: linear-gradient(135deg, var(--t1-amber) 0%, #B45309 100%); }
+.level-banner-2 { background: linear-gradient(135deg, var(--t2-crimson) 0%, #C53030 100%); }
+.level-banner-3 { background: linear-gradient(135deg, var(--t3-saffron) 0%, #B7791F 100%); }
+.level-banner-4 { background: linear-gradient(135deg, var(--t4-emerald) 0%, #047857 100%); }
+.level-banner-5 { background: linear-gradient(135deg, var(--t5-royal) 0%, #1D4ED8 100%); }
+.level-banner-6 { background: linear-gradient(135deg, var(--t6-purple) 0%, #6D28D9 100%); }
+.level-banner-7 { background: linear-gradient(135deg, var(--t7-teal) 0%, #0F766E 100%); }
+
+.level-tag-num {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.level-tag-name {
+  font-weight: 700;
+  padding-right: 0.25rem;
 }
 
 /* PROOF BAR */
@@ -536,7 +514,7 @@ a {
 }
 
 .proof-item i {
-  color: var(--color-green);
+  color: var(--t4-emerald);
 }
 
 /* SECTION 2: STAKES */
@@ -548,7 +526,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: #ED8936;
+  color: var(--t1-amber);
   font-family: var(--font-sans-heading);
   font-weight: 700;
   font-size: 0.85rem;
@@ -577,7 +555,7 @@ a {
 
 .stake-card i {
   font-size: 2.2rem;
-  color: #ED8936;
+  color: var(--t1-amber);
   margin-bottom: 1rem;
 }
 
@@ -618,8 +596,8 @@ a {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: rgba(56, 161, 105, 0.1);
-  color: var(--color-green);
+  background: rgba(5, 150, 105, 0.1);
+  color: var(--t4-emerald);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -633,48 +611,9 @@ a {
   color: var(--color-navy);
 }
 
-/* CHAKRA COLOR LEVEL BANNERS */
-.chakra-level-banner {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  padding: 0.45rem 1.1rem 0.45rem 0.5rem;
-  border-radius: var(--radius-pill);
-  font-family: var(--font-sans-heading);
-  font-weight: 800;
-  font-size: 0.8rem;
-  color: #FFFFFF;
-  margin-top: 0.25rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-  letter-spacing: 0.5px;
-}
-
-.level-banner-1 { background: linear-gradient(135deg, #E53E3E 0%, #C53030 100%); }
-.level-banner-2 { background: linear-gradient(135deg, #ED8936 0%, #DD6B20 100%); }
-.level-banner-3 { background: linear-gradient(135deg, #D69E2E 0%, #B7791F 100%); }
-.level-banner-4 { background: linear-gradient(135deg, #38A169 0%, #2F855A 100%); }
-.level-banner-5 { background: linear-gradient(135deg, #3182CE 0%, #2B6CB0 100%); }
-
-.level-tag-num {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  padding: 0.25rem 0.75rem;
-  border-radius: var(--radius-pill);
-  font-weight: 800;
-  letter-spacing: 0.8px;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
-}
-
-.level-tag-name {
-  font-weight: 700;
-  padding-right: 0.25rem;
-}
-
-/* DEDICATED VITA 5 SECTION - SINGLE COLUMN VERTICAL SYSTEM CHAIN */
+/* DEDICATED 7-THERAPY INTEGRATED SYSTEM CHAIN */
 .section-vita-system {
-  background: linear-gradient(180deg, #FAFAFA 0%, rgba(56, 161, 105, 0.04) 100%);
+  background: linear-gradient(180deg, #FAFAFA 0%, rgba(5, 150, 105, 0.04) 100%);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
@@ -686,11 +625,12 @@ a {
 }
 
 .vita-vertical-chain {
-  max-width: 800px;
+  max-width: 860px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1.25rem;
 }
 
 .vita-system-card {
@@ -740,21 +680,6 @@ a {
   margin-bottom: 0.75rem;
 }
 
-.vita-arrow-connector {
-  font-size: 2rem;
-  color: var(--color-green);
-  margin: 0.75rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: pulseArrow 2.5s infinite ease-in-out;
-}
-
-@keyframes pulseArrow {
-  0%, 100% { transform: translateY(0); opacity: 0.8; }
-  50% { transform: translateY(5px); opacity: 1; color: var(--color-green); }
-}
-
 /* STORYBRAND (SB7) TRANSITIONAL THERAPY BLOCK */
 .sb7-transitional-block {
   background: #F4F4F5;
@@ -788,8 +713,8 @@ a {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.85rem;
-  max-width: 920px;
+  gap: 0.75rem;
+  max-width: 1040px;
   margin: 0 auto;
 }
 
@@ -815,7 +740,7 @@ a {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* ACTIVE PILL STYLES */
+/* ACTIVE PILL STYLES FOR 7 THERAPIES */
 .sb7-pill.active-pill {
   cursor: default;
   color: #FFFFFF !important;
@@ -828,19 +753,15 @@ a {
   transform: none;
 }
 
-.sb7-pill-lvl-1.active-pill { background: linear-gradient(135deg, #E53E3E 0%, #C53030 100%); }
-.sb7-pill-lvl-2.active-pill { background: linear-gradient(135deg, #ED8936 0%, #DD6B20 100%); }
-.sb7-pill-lvl-3.active-pill { background: linear-gradient(135deg, #D69E2E 0%, #B7791F 100%); }
-.sb7-pill-lvl-4.active-pill { background: linear-gradient(135deg, #38A169 0%, #2F855A 100%); }
-.sb7-pill-lvl-5.active-pill { background: linear-gradient(135deg, #3182CE 0%, #2B6CB0 100%); }
+.sb7-pill-t1.active-pill { background: linear-gradient(135deg, var(--t1-amber) 0%, #B45309 100%); }
+.sb7-pill-t2.active-pill { background: linear-gradient(135deg, var(--t2-crimson) 0%, #C53030 100%); }
+.sb7-pill-t3.active-pill { background: linear-gradient(135deg, var(--t3-saffron) 0%, #B7791F 100%); }
+.sb7-pill-t4.active-pill { background: linear-gradient(135deg, var(--t4-emerald) 0%, #047857 100%); }
+.sb7-pill-t5.active-pill { background: linear-gradient(135deg, var(--t5-royal) 0%, #1D4ED8 100%); }
+.sb7-pill-t6.active-pill { background: linear-gradient(135deg, var(--t6-purple) 0%, #6D28D9 100%); }
+.sb7-pill-t7.active-pill { background: linear-gradient(135deg, var(--t7-teal) 0%, #0F766E 100%); }
 
-/* NON-ACTIVE PILL LEVEL ACCENTS */
-.sb7-pill-lvl-1:not(.active-pill):hover { border-color: #E53E3E; color: #C53030; }
-.sb7-pill-lvl-2:not(.active-pill):hover { border-color: #ED8936; color: #DD6B20; }
-.sb7-pill-lvl-3:not(.active-pill):hover { border-color: #D69E2E; color: #B7791F; }
-.sb7-pill-lvl-4:not(.active-pill):hover { border-color: #38A169; color: #2F855A; }
-.sb7-pill-lvl-5:not(.active-pill):hover { border-color: #3182CE; color: #2B6CB0; }
-
+/* DOT COLOR ACCENTS FOR 7 THERAPIES */
 .sb7-pill-dot {
   width: 10px;
   height: 10px;
@@ -848,11 +769,13 @@ a {
   flex-shrink: 0;
 }
 
-.dot-lvl-1 { background: #E53E3E; }
-.dot-lvl-2 { background: #ED8936; }
-.dot-lvl-3 { background: #D69E2E; }
-.dot-lvl-4 { background: #38A169; }
-.dot-lvl-5 { background: #3182CE; }
+.dot-t1 { background: var(--t1-amber); }
+.dot-t2 { background: var(--t2-crimson); }
+.dot-t3 { background: var(--t3-saffron); }
+.dot-t4 { background: var(--t4-emerald); }
+.dot-t5 { background: var(--t5-royal); }
+.dot-t6 { background: var(--t6-purple); }
+.dot-t7 { background: var(--t7-teal); }
 
 /* SECTION 4: THE GUIDE */
 .section-guide {
@@ -861,7 +784,7 @@ a {
 }
 
 .guide-grid {
-  display grid;
+  display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 4rem;
   align-items: center;
@@ -898,7 +821,7 @@ a {
 }
 
 .guide-photo-badge p {
-  color: var(--color-green);
+  color: var(--t4-emerald);
   font-size: 0.9rem;
 }
 
@@ -915,8 +838,8 @@ a {
 }
 
 .agreement-box {
-  background: rgba(56, 161, 105, 0.12);
-  border: 1px solid rgba(56, 161, 105, 0.3);
+  background: rgba(5, 150, 105, 0.12);
+  border: 1px solid rgba(5, 150, 105, 0.3);
   border-radius: var(--radius-md);
   padding: 1.25rem 1.5rem;
   display: flex;
@@ -925,7 +848,7 @@ a {
 }
 
 .agreement-box i {
-  color: var(--color-green);
+  color: var(--t4-emerald);
   font-size: 1.5rem;
   margin-top: 2px;
 }
@@ -994,7 +917,7 @@ a {
 
 /* SECTION 7: TESTIMONIALS */
 .section-testimonials {
-  background: rgba(56, 161, 105, 0.05);
+  background: rgba(5, 150, 105, 0.05);
 }
 
 .testimonial-card {
@@ -1007,23 +930,6 @@ a {
   border: 1px solid var(--color-border);
 }
 
-.fb-badge-box {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 1.25rem;
-}
-
-.fb-badge-box i.fa-facebook {
-  font-size: 2.4rem;
-  color: #1877F2;
-}
-
-.stars {
-  color: #F59E0B;
-  font-size: 0.85rem;
-}
-
 .quote {
   font-family: var(--font-serif-heading);
   font-style: italic;
@@ -1034,7 +940,7 @@ a {
 
 /* SECTION 8: LEAD MAGNET */
 .section-lead {
-  background: linear-gradient(135deg, rgba(56, 161, 105, 0.08) 0%, rgba(49, 130, 206, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.08) 0%, rgba(37, 99, 235, 0.1) 100%);
   padding: 4rem 0;
 }
 
@@ -1047,7 +953,7 @@ a {
 }
 
 .lead-tag {
-  color: var(--color-green);
+  color: var(--t4-emerald);
   font-family: var(--font-sans-heading);
   font-weight: 800;
   font-size: 0.85rem;
@@ -1111,12 +1017,7 @@ a {
 }
 
 .footer-links a:hover {
-  color: var(--color-green);
-}
-
-/* FLOATING MOBILE CTA (Hidden) */
-.mobile-cta-bar {
-  display: none !important;
+  color: var(--t4-emerald);
 }
 
 /* MODALS */
