@@ -171,3 +171,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+// SB7 Hover interaction: Pain effect on negative hover, Solution focus on positive hover
+document.addEventListener('DOMContentLoaded', () => {
+  const outcomesSection = document.querySelector('.section-sb7-outcomes');
+  
+  document.querySelectorAll('.outcome-failure').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      const section = card.closest('.section-sb7-outcomes');
+      if (section) section.classList.add('is-negative-hovered');
+    });
+    card.addEventListener('mouseleave', () => {
+      const section = card.closest('.section-sb7-outcomes');
+      if (section) section.classList.remove('is-negative-hovered');
+    });
+  });
+
+  document.querySelectorAll('.outcome-success').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      const section = card.closest('.section-sb7-outcomes');
+      if (section) section.classList.add('is-positive-hovered');
+    });
+    card.addEventListener('mouseleave', () => {
+      const section = card.closest('.section-sb7-outcomes');
+      if (section) section.classList.remove('is-positive-hovered');
+    });
+  });
+});
