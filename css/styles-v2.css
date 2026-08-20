@@ -529,15 +529,16 @@ a {
 .chakra-level-banner {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.4rem 0.85rem;
+  gap: 0.65rem;
+  padding: 0.45rem 1.1rem 0.45rem 0.5rem;
   border-radius: var(--radius-pill);
   font-family: var(--font-sans-heading);
   font-weight: 800;
   font-size: 0.8rem;
   color: #FFFFFF;
-  margin-bottom: 0.75rem;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
   letter-spacing: 0.5px;
 }
 
@@ -563,12 +564,18 @@ a {
 
 .level-tag-num {
   background: rgba(255, 255, 255, 0.25);
-  padding: 0.15rem 0.5rem;
-  border-radius: var(--radius-sm);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
 .level-tag-name {
   font-weight: 700;
+  padding-right: 0.25rem;
 }
 
 /* VITA 5 CARD LEFT BORDER INDICATORS */

@@ -572,6 +572,45 @@ a {
   color: var(--color-navy);
 }
 
+/* CHAKRA COLOR LEVEL BANNERS */
+.chakra-level-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.45rem 1.1rem 0.45rem 0.5rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans-heading);
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: #FFFFFF;
+  margin-top: 0.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.5px;
+}
+
+.level-banner-1 { background: linear-gradient(135deg, #E53E3E 0%, #C53030 100%); }
+.level-banner-2 { background: linear-gradient(135deg, #ED8936 0%, #DD6B20 100%); }
+.level-banner-3 { background: linear-gradient(135deg, #D69E2E 0%, #B7791F 100%); }
+.level-banner-4 { background: linear-gradient(135deg, #38A169 0%, #2F855A 100%); }
+.level-banner-5 { background: linear-gradient(135deg, #3182CE 0%, #2B6CB0 100%); }
+
+.level-tag-num {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.level-tag-name {
+  font-weight: 700;
+  padding-right: 0.25rem;
+}
+
 /* DEDICATED VITA 5 SECTION - SINGLE COLUMN VERTICAL SYSTEM CHAIN */
 .section-vita-system {
   background: linear-gradient(180deg, #F8F9FA 0%, rgba(44, 76, 62, 0.04) 100%);
