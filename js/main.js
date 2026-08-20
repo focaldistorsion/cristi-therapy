@@ -1,6 +1,7 @@
 /* ==========================================================================
    Cristi Therapy - Main JavaScript Engine
-   Direct Booking Form, Lead Magnet Engine, and V1 / V2 Theme Switcher
+   Direct Booking Form, Lead Magnet Engine, V1 / V2 Theme Switcher,
+   and Level Pagination Slider Controller
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -46,7 +47,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 2. MODAL CONTROLLERS (Direct Booking & Lead Magnet)
+  // 2. LEVEL PAGINATION SLIDER ENGINE
+  // ==========================================
+  const sliderWrapper = document.querySelector('.level-slider-wrapper');
+  const sliderPrevBtn = document.querySelector('.js-slider-prev');
+  const sliderNextBtn = document.querySelector('.js-slider-next');
+
+  if (sliderWrapper) {
+    const scrollAmount = 340; // Card width + gap
+
+    if (sliderPrevBtn) {
+      sliderPrevBtn.addEventListener('click', () => {
+        sliderWrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+    }
+
+    if (sliderNextBtn) {
+      sliderNextBtn.addEventListener('click', () => {
+        sliderWrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+    }
+  }
+
+  // ==========================================
+  // 3. MODAL CONTROLLERS (Direct Booking & Lead Magnet)
   // ==========================================
   const bookingModal = document.getElementById('bookingModal');
   const leadModal = document.getElementById('leadModal');
@@ -86,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
-  // 3. DIRECT BOOKING FORM SUBMISSION
+  // 4. DIRECT BOOKING FORM SUBMISSION
   // ==========================================
   const bookingForm = document.getElementById('bookingForm');
   if (bookingForm) {
