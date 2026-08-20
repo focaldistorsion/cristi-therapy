@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Quiz Diagnostic Somatic | Cristi Therapy - Metoda RSI</title>
-  <meta name="description" content="Completează quiz-ul somatic RSI de 5 întrebări pentru a descoperi ce nivel din cele 7 terapii complementare este ideal pentru starea ta.">
+  <title>Auto-evaluare Somatică | Cristi Therapy - Metoda RSI</title>
+  <meta name="description" content="Auto-evaluează-te în 5 întrebări pentru a descoperi ce nivel din cele 7 terapii complementare Metoda RSI este ideal pentru tine.">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/styles-v2.css">
   <style>
     .quiz-section {
-      padding: 4rem 0 5rem;
+      padding: 3.5rem 0 5rem;
       background: linear-gradient(135deg, rgba(18, 18, 18, 0.02) 0%, rgba(5, 150, 105, 0.05) 100%);
       min-height: 80vh;
     }
@@ -24,9 +24,26 @@
       border-radius: var(--radius-lg);
       border: 1px solid var(--color-border);
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
-      max-width: 720px;
+      max-width: 740px;
       margin: 0 auto;
       padding: 2.5rem;
+    }
+    .quiz-header-banner {
+      text-align: center;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1.5rem;
+    }
+    .quiz-main-title {
+      font-size: 2.2rem;
+      color: var(--color-navy);
+      margin-bottom: 0.4rem;
+    }
+    .quiz-intro-sub {
+      font-size: 1.05rem;
+      color: var(--color-body);
+      max-width: 580px;
+      margin: 0 auto;
     }
     .quiz-progress-bar-wrap {
       background: #E4E4E7;
@@ -52,7 +69,7 @@
       display: block;
     }
     .quiz-question-title {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       color: var(--color-navy);
       margin-bottom: 1.5rem;
     }
@@ -166,11 +183,11 @@
           <li><a href="index.html#despre">Despre Terapeut</a></li>
           <li><a href="index.html#cum-functioneaza">Cum Funcționează</a></li>
           <li>
-            <a href="../quiz.html" class="brand-switcher-btn" title="Comută la Quiz Metoda T7">
+            <a href="../quiz.html" class="brand-switcher-btn" title="Comută la Auto-evaluare Metoda T7">
               <span>T7</span> <i class="fa-solid fa-arrows-rotate"></i> <span class="switcher-active">RSI</span>
             </a>
           </li>
-          <li><a href="#contact" class="btn btn-header-cta js-open-modal">Programează-te</a></li>
+          <li><a href="#contact" class="btn btn-header-cta js-open-modal">Programează o Consultație</a></li>
         </ul>
       </nav>
       <button class="nav-toggle" aria-label="Meniu Mobile"><i class="fa-solid fa-bars"></i></button>
@@ -180,7 +197,7 @@
   <!-- BREADCRUMB -->
   <div class="breadcrumb-bar">
     <div class="container">
-      <a href="index.html"><i class="fa-solid fa-house"></i> Acasă</a> &gt; <span>Quiz Diagnostic Somatic RSI</span>
+      <a href="index.html"><i class="fa-solid fa-house"></i> Acasă</a> &gt; <span>Auto-evaluare Somatică RSI</span>
     </div>
   </div>
 
@@ -189,6 +206,13 @@
     <div class="container">
       <div class="quiz-card">
         
+        <!-- Header Banner -->
+        <div class="quiz-header-banner" id="quizHeaderBanner">
+          <span class="quiz-step-indicator" id="stepIndicator">PASUL 1 DIN 5 – AUTO-EVALUARE</span>
+          <h1 class="quiz-main-title">Auto-evaluează-te Somatic</h1>
+          <p class="quiz-intro-sub">Răspunde la 5 întrebări rapide pentru a afla ce nivel din Metoda RSI este ideal pentru starea ta corporală.</p>
+        </div>
+
         <!-- Progress Bar -->
         <div class="quiz-progress-bar-wrap" id="progressWrap">
           <div class="quiz-progress-bar" id="progressBar"></div>
@@ -196,7 +220,6 @@
 
         <!-- Question Container -->
         <div id="questionContainer">
-          <span class="quiz-step-indicator" id="stepIndicator">ÎNTREBAREA 1 DIN 5</span>
           <h2 class="quiz-question-title" id="questionTitle">1. Unde simți cel mai frecvent disconfortul sau tensiunea principală?</h2>
           
           <div class="quiz-options-grid" id="optionsGrid">
@@ -212,11 +235,11 @@
         <!-- Result Box -->
         <div class="result-box" id="resultBox">
           <div id="resultBadge" class="result-level-badge level-banner-4">NIVELUL RECOMANDAT</div>
-          <h3 id="resultTitle">Terapie Recomandată</h3>
+          <h3 id="resultTitle">Rezultatul Auto-evaluării Tale</h3>
           <p class="result-description" id="resultDesc">Pe baza răspunsurilor tale, corpul tău indică o nevoie primară de eliberare la acest nivel somatic.</p>
           
           <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-            <button class="btn btn-cta js-open-modal" id="bookRecommendedBtn"><i class="fa-solid fa-calendar-check"></i> Programează Nivelul Recomandat</button>
+            <button class="btn btn-cta js-open-modal" id="bookRecommendedBtn"><i class="fa-solid fa-calendar-check"></i> Programează o Consultație</button>
             <a href="index.html#metoda-rsi" class="btn btn-outline"><i class="fa-solid fa-layer-group"></i> Vezi Toate Cele 7 Niveluri</a>
           </div>
         </div>
@@ -344,28 +367,28 @@
         name: "Nivelul 1: Masaj Terapeutic (Chakra 1 - Roșu)",
         badgeClass: "level-banner-1",
         color: "#E53E3E",
-        desc: "Răspunsurile tale arată că ai nevoie de decontracturare musculară la suprafață, vascularizare și stimularea circulației pentru a pregăti țesuturile.",
+        desc: "Rezultatul auto-evaluării arată că ai nevoie de decontracturare musculară la suprafață, vascularizare și stimularea circulației pentru a pregăti țesuturile.",
         therapyValue: "Masaj Terapeutic RSI 1"
       },
       2: {
         name: "Nivelul 2: Trigger Point Therapy (Chakra 2 - Portocaliu)",
         badgeClass: "level-banner-2",
         color: "#ED8936",
-        desc: "Răspunsurile tale indică prezența unor puncte trigger hipersensibile ce necesită dezactivare prin presiune izometrică țintită.",
+        desc: "Rezultatul auto-evaluării indică prezența unor puncte trigger hipersensibile ce necesită dezactivare prin presiune izometrică țintită.",
         therapyValue: "Trigger Point RSI 2"
       },
       3: {
         name: "Nivelul 3: Tok Sen Therapy (Chakra 3 - Galben)",
         badgeClass: "level-banner-3",
         color: "#D69E2E",
-        desc: "Corpul tău indică o tensiune musculară și fascială profundă ce beneficiază de rezonanța vibrațiilor mecanice ritmice Tok Sen.",
+        desc: "Auto-evaluarea indică o tensiune musculară și fascială profundă ce beneficiază de rezonanța vibrațiilor mecanice ritmice Tok Sen.",
         therapyValue: "Tok Sen RSI 3"
       },
       4: {
         name: "Nivelul 4: Manipulare Miofascială (Chakra 4 - Verde)",
         badgeClass: "level-banner-4",
         color: "#059669",
-        desc: "Analiza somatică arată aderențe fasciale și o restricție tridimensională de mobilitate. Manipularea Miofascială va elibera alunecarea țesuturilor.",
+        desc: "Auto-evaluarea arată aderențe fasciale și o restricție tridimensională de mobilitate. Manipularea Miofascială va elibera alunecarea țesuturilor.",
         therapyValue: "Manipulare Miofascială RSI 4"
       },
       5: {
@@ -386,7 +409,7 @@
         name: "Nivelul 7: Terapie Bowen (Chakra 7 - Teal)",
         badgeClass: "level-banner-7",
         color: "#0D9488",
-        desc: "Corpul tău resimte o suprasolicitare a sistemului nervos vegetativ. Mișcările blânde Bowen activează starea de parasimpatic și autovindecare.",
+        desc: "Auto-evaluarea arată o suprasolicitare a sistemului nervos vegetativ. Mișcările blânde Bowen activează starea de parasimpatic și autovindecare.",
         therapyValue: "Terapie Bowen RSI 7"
       }
     };
@@ -397,7 +420,7 @@
 
     function renderQuestion() {
       const q = questions[currentStep];
-      document.getElementById('stepIndicator').textContent = `ÎNTREBAREA ${currentStep + 1} DIN 5`;
+      document.getElementById('stepIndicator').textContent = `PASUL ${currentStep + 1} DIN 5 – AUTO-EVALUARE`;
       document.getElementById('questionTitle').textContent = q.title;
       document.getElementById('progressBar').style.width = `${((currentStep + 1) / 5) * 100}%`;
 
@@ -423,7 +446,7 @@
       });
 
       document.getElementById('prevBtn').style.visibility = currentStep > 0 ? 'visible' : 'hidden';
-      document.getElementById('nextBtn').textContent = currentStep === 4 ? 'Vezi Nivelul Recomandat' : 'Următoarea Întrebare';
+      document.getElementById('nextBtn').textContent = currentStep === 4 ? 'Vezi Rezultatul Auto-evaluării' : 'Următoarea Întrebare';
     }
 
     document.getElementById('nextBtn').onclick = () => {
@@ -462,6 +485,7 @@
       }
 
       const rec = levelDetails[recommendedLevel];
+      document.getElementById('quizHeaderBanner').style.display = 'none';
       document.getElementById('questionContainer').style.display = 'none';
       document.getElementById('progressWrap').style.display = 'none';
       
