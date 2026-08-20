@@ -755,145 +755,104 @@ a {
   50% { transform: translateY(5px); opacity: 1; color: var(--color-green); }
 }
 
-/* METRO LINE LEVEL MAP (PERFECT HORIZONTAL ALIGNMENT DESKTOP / VERTICAL MOBILE) */
-.compact-level-nav {
+/* STORYBRAND (SB7) TRANSITIONAL THERAPY BLOCK */
+.sb7-transitional-block {
   background: #F4F4F5;
   border-top: 1px solid var(--color-border);
-  padding: 2.5rem 0 2.25rem;
-  font-size: 0.88rem;
-}
-
-.metro-map-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-}
-
-.metro-map-title {
-  font-family: var(--font-sans-heading);
-  font-weight: 800;
-  color: var(--color-dark);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-}
-
-.metro-route-track {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  max-width: 820px;
-}
-
-.metro-line-connector {
-  position: absolute;
-  top: 9px;
-  left: 30px;
-  right: 30px;
-  height: 3px;
-  background: #E4E4E7;
-  z-index: 1;
-}
-
-.metro-stations-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  position: relative;
-  z-index: 2;
-}
-
-.metro-station-node {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  text-decoration: none;
-  color: var(--color-dark);
-  transition: var(--transition);
-  width: 120px;
-}
-
-.metro-station-node:hover {
-  transform: translateY(-2px);
-}
-
-.metro-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: #FFFFFF;
-  border: 3px solid #CBD5E1;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  transition: var(--transition);
-  z-index: 3;
-  flex-shrink: 0;
-  box-sizing: border-box;
-}
-
-.metro-station-label {
-  font-family: var(--font-sans-heading);
-  font-weight: 700;
-  font-size: 0.78rem;
-  margin-top: 0.5rem;
-  white-space: nowrap;
+  padding: 3rem 0 2.75rem;
   text-align: center;
 }
 
-/* LEVEL DOT COLORS */
-.dot-lvl-1 { border-color: #E53E3E; }
-.dot-lvl-2 { border-color: #ED8936; }
-.dot-lvl-3 { border-color: #D69E2E; }
-.dot-lvl-4 { border-color: #38A169; }
-.dot-lvl-5 { border-color: #3182CE; }
-
-/* PERFECT DIMENSION-PRESERVING ACTIVE STATION EMPHASIS */
-.metro-station-node.active-here {
-  cursor: default;
+.sb7-heading-box {
+  max-width: 680px;
+  margin: 0 auto 1.75rem;
 }
 
-.metro-station-node.active-here:hover {
+.sb7-title {
+  font-family: var(--font-serif-heading);
+  font-size: 1.35rem;
+  color: var(--color-navy);
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+}
+
+.sb7-subtitle {
+  font-family: var(--font-sans-heading);
+  font-size: 0.92rem;
+  color: var(--color-body);
+  font-weight: 500;
+}
+
+.sb7-therapy-pills {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.sb7-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.15rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans-heading);
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: var(--transition);
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  color: var(--color-dark);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.sb7-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ACTIVE PILL STYLES */
+.sb7-pill.active-pill {
+  cursor: default;
+  color: #FFFFFF !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  font-weight: 800;
+}
+
+.sb7-pill.active-pill:hover {
   transform: none;
 }
 
-.metro-station-node.active-here .metro-station-label {
-  font-weight: 800;
-  color: #000000;
+.sb7-pill-lvl-1.active-pill { background: linear-gradient(135deg, #E53E3E 0%, #C53030 100%); }
+.sb7-pill-lvl-2.active-pill { background: linear-gradient(135deg, #ED8936 0%, #DD6B20 100%); }
+.sb7-pill-lvl-3.active-pill { background: linear-gradient(135deg, #D69E2E 0%, #B7791F 100%); }
+.sb7-pill-lvl-4.active-pill { background: linear-gradient(135deg, #38A169 0%, #2F855A 100%); }
+.sb7-pill-lvl-5.active-pill { background: linear-gradient(135deg, #3182CE 0%, #2B6CB0 100%); }
+
+/* NON-ACTIVE PILL LEVEL ACCENTS */
+.sb7-pill-lvl-1:not(.active-pill):hover { border-color: #E53E3E; color: #C53030; }
+.sb7-pill-lvl-2:not(.active-pill):hover { border-color: #ED8936; color: #DD6B20; }
+.sb7-pill-lvl-3:not(.active-pill):hover { border-color: #D69E2E; color: #B7791F; }
+.sb7-pill-lvl-4:not(.active-pill):hover { border-color: #38A169; color: #2F855A; }
+.sb7-pill-lvl-5:not(.active-pill):hover { border-color: #3182CE; color: #2B6CB0; }
+
+.sb7-pill-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
-.metro-station-node.active-here.lvl-1-here .metro-dot {
-  background: #E53E3E;
-  border-color: #FFFFFF;
-  box-shadow: 0 0 0 3px #E53E3E, 0 4px 10px rgba(229, 62, 62, 0.35);
-}
-
-.metro-station-node.active-here.lvl-2-here .metro-dot {
-  background: #ED8936;
-  border-color: #FFFFFF;
-  box-shadow: 0 0 0 3px #ED8936, 0 4px 10px rgba(237, 137, 54, 0.35);
-}
-
-.metro-station-node.active-here.lvl-3-here .metro-dot {
-  background: #D69E2E;
-  border-color: #FFFFFF;
-  box-shadow: 0 0 0 3px #D69E2E, 0 4px 10px rgba(214, 158, 46, 0.35);
-}
-
-.metro-station-node.active-here.lvl-4-here .metro-dot {
-  background: #38A169;
-  border-color: #FFFFFF;
-  box-shadow: 0 0 0 3px #38A169, 0 4px 10px rgba(56, 161, 105, 0.35);
-}
-
-.metro-station-node.active-here.lvl-5-here .metro-dot {
-  background: #3182CE;
-  border-color: #FFFFFF;
-  box-shadow: 0 0 0 3px #3182CE, 0 4px 10px rgba(49, 130, 206, 0.35);
-}
+.dot-lvl-1 { background: #E53E3E; }
+.dot-lvl-2 { background: #ED8936; }
+.dot-lvl-3 { background: #D69E2E; }
+.dot-lvl-4 { background: #38A169; }
+.dot-lvl-5 { background: #3182CE; }
 
 /* SECTION 4: THE GUIDE */
 .section-guide {
@@ -1305,43 +1264,14 @@ a {
     padding: 1.75rem;
   }
 
-  /* RESPONSIVE VERTICAL METRO ROUTE ON MOBILE */
-  .metro-route-track {
-    padding: 0.5rem 0;
-    max-width: 290px;
-  }
-
-  .metro-stations-flex {
+  .sb7-therapy-pills {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
-    position: relative;
+    align-items: stretch;
+    gap: 0.65rem;
   }
 
-  .metro-line-connector {
-    position: absolute;
-    top: 9px;
-    bottom: 9px;
-    left: 7.5px;
-    right: auto;
-    width: 3px;
-    height: auto;
-    transform: none;
-    z-index: 1;
-  }
-
-  .metro-station-node {
-    flex-direction: row;
-    align-items: center;
-    gap: 0.85rem;
-    width: 100%;
-    z-index: 2;
-  }
-
-  .metro-station-label {
-    margin-top: 0;
-    font-size: 0.88rem;
-    text-align: left;
-    line-height: 1.2;
+  .sb7-pill {
+    justify-content: flex-start;
+    padding: 0.75rem 1.25rem;
   }
 }
