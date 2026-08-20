@@ -1,11 +1,12 @@
 /**
  * VITA 5 - Cristi Therapy (Cristian Angel Oglan) JavaScript Logic
- * Handles interactive tabs, booking modals, WhatsApp integration, and mobile navigation.
+ * StoryBrand SB7 Framework Enhanced: Handles Direct Booking & Lead Magnet Modals
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initVitaTabs();
   initModal();
+  initLeadModal();
   initMobileNav();
   initWhatsAppBooking();
 });
@@ -31,7 +32,6 @@ function initVitaTabs() {
       panels.forEach((panel) => {
         if (panel.id === `panel-${targetLayer}`) {
           panel.classList.add('active');
-          // Scroll content gently into view on small screens
           if (window.innerWidth <= 992) {
             panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
@@ -44,12 +44,12 @@ function initVitaTabs() {
 }
 
 /**
- * Appointment Modal Manager
+ * Direct Appointment Booking Modal Manager
  */
 function initModal() {
   const modalBackdrop = document.getElementById('bookingModal');
   const openButtons = document.querySelectorAll('.js-open-modal');
-  const closeButton = document.querySelector('.modal-close');
+  const closeButton = modalBackdrop?.querySelector('.modal-close');
   const bookingForm = document.getElementById('bookingForm');
 
   if (!modalBackdrop) return;
@@ -73,14 +73,12 @@ function initModal() {
     if (e.target === modalBackdrop) closeModal();
   });
 
-  // Handle ESC Key to Close
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modalBackdrop.classList.contains('active')) {
       closeModal();
     }
   });
 
-  // Form Submission -> Redirect to WhatsApp pre-filled message
   if (bookingForm) {
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -89,13 +87,65 @@ function initModal() {
       const therapy = document.getElementById('clientTherapy')?.value || 'Evaluare VITA 5';
       const message = document.getElementById('clientMessage')?.value || '';
 
-      const text = `Bună ziua! Numele meu este ${name} (Tel: ${phone}). Doresc o programare la Cristi Therapy pentru: ${therapy}. ${message ? 'Simptome/Zone: ' + message : ''}`;
+      const text = `Bună ziua! Numele meu este ${name} (Tel: ${phone}). Doresc o programare la Cristi Therapy pentru: ${therapy}. ${message ? 'Simptome: ' + message : ''}`;
       
-      // Send via WhatsApp
-      const waNumber = '40700000000'; // Target phone number
+      const waNumber = '40700000000';
       const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
       
       closeModal();
+      window.open(waUrl, '_blank');
+    });
+  }
+}
+
+/**
+ * StoryBrand Transitional CTA (Lead Magnet) Modal Manager
+ */
+function initLeadModal() {
+  const leadModal = document.getElementById('leadModal');
+  const openLeadButtons = document.querySelectorAll('.js-open-lead-modal');
+  const closeLeadButton = leadModal?.querySelector('.modal-lead-close');
+  const leadForm = document.getElementById('leadForm');
+
+  if (!leadModal) return;
+
+  openLeadButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      leadModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  const closeLeadModal = () => {
+    leadModal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  if (closeLeadButton) closeLeadButton.addEventListener('click', closeLeadModal);
+
+  leadModal.addEventListener('click', (e) => {
+    if (e.target === leadModal) closeLeadModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && leadModal.classList.contains('active')) {
+      closeLeadModal();
+    }
+  });
+
+  if (leadForm) {
+    leadForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('leadName')?.value || 'Prieten';
+      const email = document.getElementById('leadEmail')?.value || '';
+
+      const text = `Bună ziua! Numele meu este ${name} (${email}). Doresc să primesc gratuit Ghidul PDF: "5 Exerciții Posturale Pentru Eliberarea Spatelui".`;
+      
+      const waNumber = '40700000000';
+      const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
+      
+      closeLeadModal();
       window.open(waUrl, '_blank');
     });
   }
@@ -114,7 +164,6 @@ function initMobileNav() {
     navLinks.classList.toggle('active');
   });
 
-  // Close menu when link clicked
   navLinks.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('active');
