@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Dynamic Theme Stylesheet (ID for V1/V2 Switcher) -->
+  <!-- Dynamic Theme Stylesheet -->
   <link id="themeStylesheet" rel="stylesheet" href="css/styles-v2.css">
 
   <!-- StoryBrand JSON-LD Schema -->
@@ -383,7 +383,6 @@
       <p>Programează o consultație astăzi și fă primul pas către un corp flexibil și plin de energie.</p>
       <div class="final-btns">
         <button class="btn btn-cta js-open-modal"><i class="fa-solid fa-calendar-plus"></i> Formular Programare</button>
-        <button class="btn btn-whatsapp js-whatsapp-direct"><i class="fa-brands fa-whatsapp"></i> Mesaj Direct WhatsApp</button>
       </div>
     </div>
   </section>
@@ -403,18 +402,12 @@
     </div>
   </footer>
 
-  <!-- Floating Mobile CTA Bar -->
-  <div class="mobile-cta-bar">
-    <a href="https://wa.me/40700000000?text=Buna%20ziua!%20Doresc%20o%20programare%20la%20Cristi%20Therapy." target="_blank" class="m-cta-btn btn-whatsapp" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-    <button class="m-cta-btn btn-cta js-open-modal"><i class="fa-solid fa-calendar-check"></i> Programare</button>
-  </div>
-
   <!-- Direct Booking Modal -->
   <div class="modal-backdrop" id="bookingModal">
     <div class="modal-card">
       <button class="modal-close">&times;</button>
       <h3>Programează o Consultație</h3>
-      <p class="modal-sub">Trimite solicitarea direct pe WhatsApp.</p>
+      <p class="modal-sub">Completează datele tale pentru a solicita o programare.</p>
       <form id="bookingForm">
         <div class="form-group">
           <label for="clientName">Nume și Prenume *</label>
@@ -428,14 +421,14 @@
           <label for="clientTherapy">Terapie Solicitată</label>
           <select id="clientTherapy" class="form-control">
             <option value="Evaluare Integrată VITA 5">Evaluare Integrată VITA 5</option>
-            <option value="Osteopatie">Osteopatie Structurală</option>
+            <option value="Osteopatie Structurală">Osteopatie Structurală</option>
             <option value="Manipulare Viscerală">Manipulare Viscerală</option>
             <option value="Dry Needling">Dry Needling</option>
             <option value="Terapie Bowen">Terapie Bowen</option>
             <option value="Hirudoterapie">Hirudoterapie</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-whatsapp w-100"><i class="fa-brands fa-whatsapp"></i> Trimite Solicitarea pe WhatsApp</button>
+        <button type="submit" class="btn btn-cta w-100"><i class="fa-solid fa-calendar-check"></i> Trimite Solicitarea de Programare</button>
       </form>
     </div>
   </div>
@@ -444,7 +437,7 @@
   <div class="modal-backdrop" id="leadModal">
     <div class="modal-card">
       <button class="modal-close modal-lead-close">&times;</button>
-      <h3><i class="fa-solid fa-file-pdf" style="color: var(--color-gold);"></i> Descarcă Ghidul PDF</h3>
+      <h3><i class="fa-solid fa-file-pdf" style="color: var(--lvl4-green);"></i> Descarcă Ghidul PDF</h3>
       <p class="modal-sub">Primești instant ghidul "5 Exerciții Postural Spate".</p>
       <form id="leadForm">
         <div class="form-group">

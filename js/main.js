@@ -1,7 +1,6 @@
 /* ==========================================================================
    Cristi Therapy - Main JavaScript Engine
-   StoryBrand Interactive Modals, WhatsApp Dynamic Direct Booking,
-   and Dynamic V1 / V2 Theme Switcher with LocalStorage State Persistence
+   Direct Booking Form, Lead Magnet Engine, and V1 / V2 Theme Switcher
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggleLabel = document.getElementById('themeToggleLabel');
   const brandBadges = document.querySelectorAll('.brand-badge, .brand-badge-v2');
 
-  // Read saved theme or default to V2
   let currentTheme = localStorage.getItem('cristi_theme_version') || 'v2';
 
   function applyTheme(theme) {
@@ -37,10 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     currentTheme = theme;
   }
 
-  // Initial application
+  // Initial theme application
   applyTheme(currentTheme);
 
-  // Toggle button event listener
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
       const nextTheme = currentTheme === 'v2' ? 'v1' : 'v2';
@@ -89,22 +86,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================
-  // 3. WHATSAPP DIRECT BOOKING FORM SUBMISSION
+  // 3. DIRECT BOOKING FORM SUBMISSION
   // ==========================================
   const bookingForm = document.getElementById('bookingForm');
   if (bookingForm) {
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('clientName')?.value || 'Client';
-      const phone = document.getElementById('clientPhone')?.value || '';
+      const name = document.getElementById('clientName')?.value || 'Pacient';
       const therapySelect = document.getElementById('clientTherapy');
       const therapy = therapySelect ? therapySelect.value : 'Terapie Integrată VITA 5';
 
-      const message = `Buna ziua! Numele meu este ${name} (Tel: ${phone}). Doresc o programare pentru: ${therapy}.`;
-      const encodedMsg = encodeURIComponent(message);
+      alert(`Vă mulțumim, ${name}!\n\nSolicitarea dumneavoastră pentru "${therapy}" a fost trimisă cu succes. Vă vom contacta în cel mai scurt timp pentru confirmarea programării.`);
       
-      // Target WhatsApp number for Cristian Angel Oglan
-      window.open(`https://wa.me/40700000000?text=${encodedMsg}`, '_blank');
+      bookingForm.reset();
       if (bookingModal) bookingModal.classList.remove('active');
     });
   }
@@ -115,19 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
     leadForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = document.getElementById('leadName')?.value || '';
-      alert(`Mulțumim, ${name}! Ghidul gratuit PDF "5 Exerciții Posturale Spate" a fost generat.`);
+      alert(`Mulțumim, ${name}! Ghidul gratuit PDF "5 Exerciții Posturale Spate" a fost trimis.`);
+      leadForm.reset();
       if (leadModal) leadModal.classList.remove('active');
     });
   }
-
-  // Direct WhatsApp Button Listener
-  document.querySelectorAll('.js-whatsapp-direct').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const message = "Buna ziua! Doresc o programare la cabinetul Cristi Therapy.";
-      window.open(`https://wa.me/40700000000?text=${encodeURIComponent(message)}`, '_blank');
-    });
-  });
 
   // Mobile Navigation Menu Toggle
   const navToggle = document.querySelector('.nav-toggle');
