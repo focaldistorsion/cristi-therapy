@@ -1515,3 +1515,142 @@ a {
     gap: 0.75rem;
   }
 }
+
+
+/* STORYBRAND SB7: FAILED VS SUCCESS OUTCOMES SECTION */
+.section-sb7-outcomes {
+  background: #FAFAFA;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 5rem 0;
+}
+
+.sb7-outcomes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.25rem;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.sb7-outcome-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.sb7-outcome-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
+}
+
+.outcome-failure {
+  border-top: 4px solid #EF4444;
+}
+
+.outcome-success {
+  border-top: 4px solid #10B981;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(16, 185, 129, 0.03) 100%);
+  box-shadow: 0 12px 35px rgba(16, 185, 129, 0.1);
+}
+
+.outcome-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.outcome-icon-failure {
+  font-size: 2.2rem;
+  color: #EF4444;
+}
+
+.outcome-icon-success {
+  font-size: 2.2rem;
+  color: #10B981;
+}
+
+.outcome-badge {
+  display: inline-block;
+  font-family: var(--font-sans-heading);
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.badge-failure {
+  background: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+}
+
+.badge-success {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10B981;
+}
+
+.outcome-header h3 {
+  font-family: var(--font-sans-heading);
+  font-size: 1.35rem;
+  color: var(--color-dark);
+  font-weight: 800;
+}
+
+.outcome-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.outcome-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.outcome-list li i {
+  font-size: 1.1rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.text-danger {
+  color: #EF4444;
+}
+
+.text-success {
+  color: #10B981;
+}
+
+.outcome-list strong {
+  font-family: var(--font-sans-heading);
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--color-dark);
+  display: block;
+}
+
+.outcome-list p {
+  font-size: 0.88rem;
+  color: var(--color-body);
+  margin-top: 0.15rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .sb7-outcomes-grid {
+    grid-template-columns: 1fr;
+  }
+}
