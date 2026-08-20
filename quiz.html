@@ -45,6 +45,7 @@
       margin-bottom: 1.75rem;
       border-bottom: 1px solid var(--color-border);
       padding-bottom: 1.25rem;
+      position: relative;
     }
     .quiz-main-title {
       font-size: 2.2rem;
@@ -70,6 +71,12 @@
       width: 20%;
       transition: width 0.4s ease;
     }
+    .quiz-step-indicator-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
     .quiz-step-indicator {
       font-family: var(--font-sans-heading);
       font-weight: 800;
@@ -77,8 +84,21 @@
       color: var(--t4-green);
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 0.5rem;
-      display: block;
+    }
+    .quiz-restart-link {
+      font-family: var(--font-sans-heading);
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: var(--color-body);
+      background: rgba(18, 18, 18, 0.05);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-pill);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .quiz-restart-link:hover {
+      background: var(--color-dark);
+      color: #FFFFFF;
     }
     .quiz-question-title {
       font-size: 1.45rem;
@@ -242,7 +262,10 @@
         
         <!-- Header Banner -->
         <div class="quiz-header-banner" id="quizHeaderBanner">
-          <span class="quiz-step-indicator" id="stepIndicator">PASUL 1 DIN 5 – AUTO-EVALUARE</span>
+          <div class="quiz-step-indicator-row">
+            <span class="quiz-step-indicator" id="stepIndicator">PASUL 1 DIN 5 – AUTO-EVALUARE</span>
+            <span class="quiz-restart-link" id="headerRestartBtn"><i class="fa-solid fa-rotate-left"></i> Repornește</span>
+          </div>
           <h1 class="quiz-main-title">Auto-evaluează-te Somatic</h1>
           <p class="quiz-intro-sub">Alege opțiunile care descriu cel mai bine starea ta corporală.</p>
         </div>
@@ -275,6 +298,7 @@
           
           <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
             <button class="btn btn-cta js-open-modal" id="bookRecommendedBtn"><i class="fa-solid fa-calendar-check"></i> Programează o Consultație</button>
+            <button class="btn btn-outline" id="restartQuizBtn"><i class="fa-solid fa-rotate-left"></i> Repornește Auto-evaluarea</button>
             <a href="index.html#metoda-t7" class="btn btn-outline"><i class="fa-solid fa-layer-group"></i> Vezi Toate Cele 7 Niveluri</a>
           </div>
         </div>
@@ -565,6 +589,24 @@
         renderQuestion();
       }
     };
+
+    function restartQuiz() {
+      currentStep = 0;
+      selectedAnswers.gender = 'male';
+      selectedAnswers.locations = [];
+      selectedAnswers.sensation = null;
+      selectedAnswers.duration = null;
+      selectedAnswers.goal = null;
+
+      document.getElementById('resultBox').style.display = 'none';
+      document.getElementById('quizHeaderBanner').style.display = 'block';
+      document.getElementById('progressWrap').style.display = 'block';
+      document.getElementById('questionContainer').style.display = 'block';
+      renderQuestion();
+    }
+
+    document.getElementById('restartQuizBtn').onclick = restartQuiz;
+    document.getElementById('headerRestartBtn').onclick = restartQuiz;
 
     function showResults() {
       const scores = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0 };
