@@ -1686,46 +1686,55 @@ html:has(.outcome-success:hover) .outcome-success {
 }
 
 /* VIEWPORT PAIN OVERLAY (STARTS BELOW HEADER WITH TOOTHACHE SOMATIC THROB) */
+
+/* STICKY HEADER RESTORED */
+.header, .header-v2, header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 100001 !important;
+}
+
+/* ELEGANT SOFT SOMATIC PAIN OVERLAY (LOW COLOR INTENSITY) */
 #viewport-pain-overlay {
   position: fixed;
-  top: 76px;
+  top: 0;
   left: 0;
   width: 100vw;
-  height: calc(100vh - 76px);
+  height: 100vh;
   pointer-events: none;
-  z-index: 99999;
+  z-index: 999;
   opacity: 0;
   transition: opacity 0.6s cubic-bezier(0.45, 0.05, 0.55, 0.95);
-  background: radial-gradient(circle at center, transparent 40%, rgba(239, 68, 68, 0.28) 100%);
-  box-shadow: inset 0 0 110px rgba(239, 68, 68, 0.38);
+  background: radial-gradient(circle at center, transparent 45%, rgba(239, 68, 68, 0.14) 100%);
+  box-shadow: inset 0 0 80px rgba(239, 68, 68, 0.2);
 }
 
 body.is-negative-hovered #viewport-pain-overlay,
 body.is-pain-active #viewport-pain-overlay,
 html:has(.outcome-failure:hover) #viewport-pain-overlay {
   opacity: 1;
-  animation: toothacheSomaticThrob 2.2s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  animation: softToothacheThrob 2.4s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
-@keyframes toothacheSomaticThrob {
+@keyframes softToothacheThrob {
   0% {
-    background: radial-gradient(circle at center, transparent 55%, rgba(239, 68, 68, 0.12) 100%);
-    box-shadow: inset 0 0 50px rgba(239, 68, 68, 0.18);
+    background: radial-gradient(circle at center, transparent 55%, rgba(239, 68, 68, 0.06) 100%);
+    box-shadow: inset 0 0 40px rgba(239, 68, 68, 0.1);
   }
-  30% {
-    background: radial-gradient(circle at center, transparent 32%, rgba(239, 68, 68, 0.32) 100%);
-    box-shadow: inset 0 0 120px rgba(239, 68, 68, 0.42);
+  35% {
+    background: radial-gradient(circle at center, transparent 38%, rgba(239, 68, 68, 0.15) 100%);
+    box-shadow: inset 0 0 85px rgba(239, 68, 68, 0.2);
   }
   50% {
-    background: radial-gradient(circle at center, transparent 22%, rgba(220, 38, 38, 0.48) 100%);
-    box-shadow: inset 0 0 160px rgba(220, 38, 38, 0.58);
+    background: radial-gradient(circle at center, transparent 28%, rgba(239, 68, 68, 0.22) 100%);
+    box-shadow: inset 0 0 115px rgba(239, 68, 68, 0.28);
   }
   80% {
-    background: radial-gradient(circle at center, transparent 45%, rgba(239, 68, 68, 0.2) 100%);
-    box-shadow: inset 0 0 80px rgba(239, 68, 68, 0.28);
+    background: radial-gradient(circle at center, transparent 48%, rgba(239, 68, 68, 0.1) 100%);
+    box-shadow: inset 0 0 60px rgba(239, 68, 68, 0.14);
   }
   100% {
-    background: radial-gradient(circle at center, transparent 55%, rgba(239, 68, 68, 0.12) 100%);
-    box-shadow: inset 0 0 50px rgba(239, 68, 68, 0.18);
+    background: radial-gradient(circle at center, transparent 55%, rgba(239, 68, 68, 0.06) 100%);
+    box-shadow: inset 0 0 40px rgba(239, 68, 68, 0.1);
   }
 }
