@@ -1263,140 +1263,121 @@ a {
 /* ==========================================================================
    STORYBRAND SB7 OUTCOMES & VIEWPORT OVERLAY SYSTEM (CLEAN & DEDUPLICATED)
    ========================================================================== */
-.section-sb7-outcomes {
-  background: #FAFAFA !important;
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  padding: 5rem 0;
-  box-shadow: none !important;
-  position: relative;
-}
 
-.sb7-outcomes-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.25rem;
-  max-width: 1040px;
-  margin: 0 auto;
-  background: transparent !important;
-  box-shadow: none !important;
-}
+/* ==========================================================================
+   CARD-LEVEL SOMATIC ANIMATIONS (NEGATIVE SOFT RED PULSE + POSITIVE PLANT BLOOM)
+   ========================================================================== */
 
-/* BOTH CARDS ARE PURE CLEAN WHITE BACKGROUND WITH NO OVERLAYS OR RED GLOW ON CARDS */
-.sb7-outcome-card {
-  background: #FFFFFF !important;
-  border-radius: var(--radius-lg);
-  padding: 2.5rem 2rem;
-  border: 1px solid var(--color-border);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+/* NEGATIVE CARD: SOFT RED PULSE INWARD ON HOVER */
+.sb7-outcome-card.outcome-failure {
   position: relative;
   overflow: hidden;
-}
-
-.outcome-failure {
+  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   border-top: 4px solid #EF4444 !important;
   background: #FFFFFF !important;
 }
 
 .outcome-failure:hover {
-  background: #FFFFFF !important;
-  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08) !important;
+  animation: softRedCardPulse 2.4s infinite ease-in-out !important;
+  border-color: rgba(239, 68, 68, 0.6) !important;
 }
 
-.outcome-success {
+@keyframes softRedCardPulse {
+  0% {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), inset 0 0 15px rgba(239, 68, 68, 0.06);
+  }
+  50% {
+    box-shadow: 0 16px 45px rgba(239, 68, 68, 0.2), inset 0 0 35px rgba(239, 68, 68, 0.15);
+  }
+  100% {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), inset 0 0 15px rgba(239, 68, 68, 0.06);
+  }
+}
+
+/* POSITIVE CARD: SPROUTING & BLOOMING SVG PLANT OVERLAY */
+.sb7-outcome-card.outcome-success {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   border-top: 4px solid #10B981 !important;
   background: #FFFFFF !important;
 }
 
-.outcome-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.75rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--color-border);
+.sprouting-plant-overlay {
+  position: absolute;
+  bottom: 0;
+  right: -20px;
+  width: 220px;
+  height: 280px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-.outcome-icon-failure {
-  font-size: 2.2rem;
-  color: #EF4444;
+.sprouting-plant-overlay svg {
+  width: 100%;
+  height: 100%;
 }
 
-.outcome-icon-success {
-  font-size: 2.2rem;
-  color: #10B981;
+.plant-stem, .plant-branch, .plant-leaf {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.outcome-badge {
-  display: inline-block;
-  font-family: var(--font-sans-heading);
-  font-weight: 800;
-  font-size: 0.72rem;
-  letter-spacing: 1px;
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-pill);
-  margin-bottom: 0.35rem;
-  text-transform: uppercase;
+.plant-bloom {
+  transform-origin: 200px 80px;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s ease;
 }
 
-.badge-failure {
-  background: rgba(239, 68, 68, 0.1);
-  color: #EF4444;
+/* ON HOVER POSITIVE CARD: GROW PLANT & BLOOM */
+.outcome-success:hover .sprouting-plant-overlay {
+  opacity: 0.75;
 }
 
-.badge-success {
-  background: rgba(16, 185, 129, 0.1);
-  color: #10B981;
+.outcome-success:hover .plant-stem {
+  stroke-dashoffset: 0;
+  transition-delay: 0.05s;
 }
 
-.outcome-header h3 {
-  font-family: var(--font-sans-heading);
-  font-size: 1.35rem;
-  color: var(--color-dark);
-  font-weight: 800;
+.outcome-success:hover .branch-1,
+.outcome-success:hover .leaf-1 {
+  stroke-dashoffset: 0;
+  transition-delay: 0.35s;
 }
 
-.outcome-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+.outcome-success:hover .branch-2,
+.outcome-success:hover .leaf-2 {
+  stroke-dashoffset: 0;
+  transition-delay: 0.55s;
 }
 
-.outcome-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.9rem;
+.outcome-success:hover .leaf-3 {
+  stroke-dashoffset: 0;
+  transition-delay: 0.75s;
 }
 
-.outcome-list li i {
-  font-size: 1.1rem;
-  margin-top: 3px;
-  flex-shrink: 0;
+.outcome-success:hover .plant-bloom {
+  transform: scale(1);
+  opacity: 1;
+  transition-delay: 0.95s;
 }
 
-.text-danger { color: #EF4444; }
-.text-success { color: #10B981; }
-
-.outcome-list strong {
-  font-family: var(--font-sans-heading);
-  font-weight: 700;
-  font-size: 0.98rem;
-  color: var(--color-dark);
-  display: block;
+.outcome-success:hover {
+  box-shadow: 0 22px 55px rgba(16, 185, 129, 0.22) !important;
+  transform: translateY(-6px) scale(1.02) !important;
 }
 
-.outcome-list p {
-  font-size: 0.88rem;
-  color: var(--color-body);
-  margin-top: 0.15rem;
-  line-height: 1.5;
+/* ENSURE CONTENT STAYS ABOVE SVG OVERLAYS */
+.outcome-header, .outcome-list {
+  position: relative;
+  z-index: 2;
 }
 
-/* FADE INTERACTION BETWEEN CARDS */
+/* HARD GRAY-OUT OPPOSITE CARD INTERACTION */
 body.is-negative-hovered .outcome-success,
 html:has(.outcome-failure:hover) .outcome-success {
   opacity: 0.18 !important;
@@ -1410,72 +1391,5 @@ html:has(.outcome-success:hover) .outcome-failure {
   opacity: 0.18 !important;
   filter: grayscale(95%) opacity(0.18) !important;
   transform: scale(0.96) !important;
-}
-
-body.is-positive-hovered .outcome-success,
-html:has(.outcome-success:hover) .outcome-success {
-  box-shadow: 0 22px 55px rgba(16, 185, 129, 0.25) !important;
-  transform: translateY(-6px) scale(1.02) !important;
-}
-
-/* ULTRA-SMOOTH VIEWPORT SCREEN-BORDER PULSE (EXCLUSIVELY ON SCREEN VIEWPORT EDGES) */
-
-/* HEADER STAYS STRICTLY ABOVE VIEWPORT OVERLAY */
-.header, .header-v2, header {
-  position: relative;
-  z-index: 100001 !important;
-}
-
-/* VIEWPORT PAIN OVERLAY (STARTS BELOW HEADER WITH TOOTHACHE SOMATIC THROB) */
-
-/* STICKY HEADER RESTORED */
-.header, .header-v2, header {
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 100001 !important;
-}
-
-/* ELEGANT SOFT SOMATIC PAIN OVERLAY (LOW COLOR INTENSITY) */
-#viewport-pain-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 999;
-  opacity: 0;
-  transition: opacity 0.6s cubic-bezier(0.45, 0.05, 0.55, 0.95);
-  background: radial-gradient(circle at center, transparent 45%, rgba(239, 68, 68, 0.14) 100%);
-  box-shadow: inset 0 0 80px rgba(239, 68, 68, 0.2);
-}
-
-body.is-negative-hovered #viewport-pain-overlay,
-body.is-pain-active #viewport-pain-overlay,
-html:has(.outcome-failure:hover) #viewport-pain-overlay {
-  opacity: 1;
-  animation: softToothacheThrob 2.4s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
-}
-
-@keyframes softToothacheThrob {
-  0% {
-    background: radial-gradient(circle at center, transparent 55%, rgba(239, 68, 68, 0.06) 100%);
-    box-shadow: inset 0 0 40px rgba(239, 68, 68, 0.1);
-  }
-  35% {
-    background: radial-gradient(circle at center, transparent 38%, rgba(239, 68, 68, 0.15) 100%);
-    box-shadow: inset 0 0 85px rgba(239, 68, 68, 0.2);
-  }
-  50% {
-    background: radial-gradient(circle at center, transparent 28%, rgba(239, 68, 68, 0.22) 100%);
-    box-shadow: inset 0 0 115px rgba(239, 68, 68, 0.28);
-  }
-  80% {
-    background: radial-gradient(circle at center, transparent 48%, rgba(239, 68, 68, 0.1) 100%);
-    box-shadow: inset 0 0 60px rgba(239, 68, 68, 0.14);
-  }
-  100% {
-    background: radial-gradient(circle at center, transparent 55%, rgba(239, 68, 68, 0.06) 100%);
-    box-shadow: inset 0 0 40px rgba(239, 68, 68, 0.1);
-  }
+  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
