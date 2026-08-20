@@ -1395,3 +1395,17 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* HOVER INTERACTION: GRAY OUT NEGATIVE CARD WHEN HOVERING OVER POSITIVE CARD */
+.sb7-outcomes-grid:has(.outcome-success:hover) .outcome-failure,
+.sb7-outcomes-grid.is-positive-hovered .outcome-failure {
+  opacity: 0.25 !important;
+  filter: grayscale(90%) opacity(0.25) !important;
+  transform: scale(0.97) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.sb7-outcome-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}

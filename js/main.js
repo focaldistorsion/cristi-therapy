@@ -156,3 +156,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
+// SB7 Hover interaction: Gray out negative card when positive card is hovered
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.outcome-success').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      const grid = card.closest('.sb7-outcomes-grid');
+      if (grid) grid.classList.add('is-positive-hovered');
+    });
+    card.addEventListener('mouseleave', () => {
+      const grid = card.closest('.sb7-outcomes-grid');
+      if (grid) grid.classList.remove('is-positive-hovered');
+    });
+  });
+});
