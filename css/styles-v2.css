@@ -256,8 +256,8 @@ a {
 }
 
 .btn-sm {
-  padding: 0.5rem 1rem;
-  font-size: 0.82rem;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.85rem;
 }
 
 .btn-header-cta {
@@ -291,6 +291,67 @@ a {
   background: var(--color-gold-hover);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(200, 155, 60, 0.45);
+}
+
+/* LEVEL SPECIFIC CTA BUTTON BACKGROUND COLORS */
+.btn-lvl-1 {
+  background: linear-gradient(135deg, var(--lvl1-red) 0%, var(--lvl1-red-dark) 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3) !important;
+}
+
+.btn-lvl-1:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(229, 62, 62, 0.45) !important;
+}
+
+.btn-lvl-2 {
+  background: linear-gradient(135deg, var(--lvl2-orange) 0%, var(--lvl2-orange-dark) 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(237, 137, 54, 0.3) !important;
+}
+
+.btn-lvl-2:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(237, 137, 54, 0.45) !important;
+}
+
+.btn-lvl-3 {
+  background: linear-gradient(135deg, var(--lvl3-yellow) 0%, var(--lvl3-yellow-dark) 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(214, 158, 46, 0.3) !important;
+}
+
+.btn-lvl-3:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(214, 158, 46, 0.45) !important;
+}
+
+.btn-lvl-4 {
+  background: linear-gradient(135deg, var(--lvl4-green) 0%, var(--lvl4-green-dark) 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(56, 161, 105, 0.3) !important;
+}
+
+.btn-lvl-4:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(56, 161, 105, 0.45) !important;
+}
+
+.btn-lvl-5 {
+  background: linear-gradient(135deg, var(--lvl5-blue) 0%, var(--lvl5-blue-dark) 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3) !important;
+}
+
+.btn-lvl-5:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(49, 130, 206, 0.45) !important;
 }
 
 .btn-outline {
