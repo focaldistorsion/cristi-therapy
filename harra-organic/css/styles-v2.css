@@ -818,10 +818,49 @@ a {
 /* BIO-INTEGRATIVE CIRCULAR MATRIX ECOSYSTEM (HARRA ORGANIC) */
 .vita-integrative-matrix {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.75rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.25rem;
   max-width: 1140px;
-  margin: 2.5rem auto 0;
+  margin: 3rem auto 0;
+}
+
+@media (max-width: 850px) {
+  .vita-integrative-matrix {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+/* CATEGORY FILTER PILLS BAR */
+.matrix-filter-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin: 2.5rem 0 0.5rem;
+}
+
+.filter-pill {
+  background: #FFFFFF;
+  color: #525262;
+  font-family: var(--font-sans-heading);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.6rem 1.35rem;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid #E8E0D6;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(43, 43, 58, 0.03);
+}
+
+.filter-pill:hover,
+.filter-pill.active {
+  background: #2B2B3A;
+  color: #FFFFFF;
+  border-color: #2B2B3A;
+  box-shadow: 0 6px 18px rgba(43, 43, 58, 0.15);
 }
 
 /* INTERACTIVE CIRCULAR THERAPY WHEEL (UI DESIGNER & UX ARCHITECT) */
@@ -863,6 +902,10 @@ a {
 }
 
 .wheel-center-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 120px;
   height: 120px;
   background: #F8F4EF;
@@ -880,7 +923,7 @@ a {
 }
 
 .wheel-center-core:hover {
-  transform: scale(1.05);
+  transform: translate(-50%, -50%) scale(1.05);
   box-shadow: 0 0 35px rgba(196, 105, 75, 0.28);
 }
 
@@ -897,6 +940,7 @@ a {
   justify-content: center;
   cursor: pointer;
   z-index: 6;
+  transform: translate(-50%, -50%);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 6px 16px rgba(43, 43, 58, 0.08);
 }
@@ -921,7 +965,7 @@ a {
 .wheel-node-item:hover {
   background: #2B2B3A;
   border-color: #C4694B;
-  transform: scale(1.18);
+  transform: translate(-50%, -50%) scale(1.18);
   box-shadow: 0 10px 25px rgba(196, 105, 75, 0.3);
 }
 
@@ -933,6 +977,60 @@ a {
 .wheel-node-item.active span,
 .wheel-node-item:hover span {
   color: #FFFFFF;
+}
+
+/* MOBILE RESPONSIVE AUDIT (< 640px) */
+@media (max-width: 640px) {
+  .harra-wheel-section-wrap {
+    padding: 1.75rem 1rem;
+    margin: 2rem 0;
+  }
+  
+  .harra-wheel-visualizer {
+    width: 310px;
+    height: 310px;
+    margin: 0 auto;
+  }
+  
+  .wheel-center-core {
+    width: 90px;
+    height: 90px;
+    padding: 0.35rem;
+  }
+  
+  .wheel-center-core span:first-child {
+    font-size: 0.9rem !important;
+    letter-spacing: 2px !important;
+  }
+  
+  .wheel-center-core span:last-child {
+    font-size: 0.44rem !important;
+  }
+  
+  .wheel-node-item {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .wheel-node-item i {
+    font-size: 0.88rem;
+  }
+  
+  .wheel-node-item span {
+    font-size: 0.45rem;
+  }
+  
+  .wheel-detail-panel {
+    padding: 1.5rem 1.15rem;
+  }
+  
+  .wheel-detail-title {
+    font-size: 1.35rem;
+  }
+  
+  .wheel-detail-desc {
+    font-size: 0.9rem;
+  }
 }
 
 /* WHEEL FOCUS DETAIL PANEL */
