@@ -165,8 +165,8 @@ function initHarraGlosarPopover() {
   // Attach popover events to elements with .harra-glosar-term
   const termElements = document.querySelectorAll('.harra-glosar-term');
   termElements.forEach(el => {
-    // STRICT RULE: Skip popovers if the term is inside any Heading (H1-H6) or Title element
-    if (el.closest('h1, h2, h3, h4, h5, h6, .popover-title, .glosar-card-item, .section-title-box')) {
+    // STRICT RULE: Skip popovers if the term is inside any Heading (H1-H6), Title, Strong, B, or Badge element
+    if (el.closest('h1, h2, h3, h4, h5, h6, strong, b, .popover-title, .glosar-card-item, .section-title-box, .section-tag, .filter-pill, nav, header, .logo')) {
       el.classList.remove('harra-glosar-term');
       el.style.borderBottom = 'none';
       el.style.cursor = 'inherit';
