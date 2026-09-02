@@ -154,16 +154,17 @@ a {
 }
 
 .brand-badge-v2 {
-  background: linear-gradient(135deg, #C4694B 0%, #8B7355 33%, #5F8A65 66%, #2B2B3A 100%);
+  background: #2B2B3A;
   color: #FFFFFF;
+  border-left: 3px solid #C4694B;
   font-family: var(--font-sans-heading);
   font-weight: 800;
-  padding: 0.4rem 0.85rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.95rem;
-  letter-spacing: 0.6px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 14px rgba(43, 43, 58, 0.12);
+  text-transform: uppercase;
 }
 
 .brand-text {
@@ -608,20 +609,21 @@ a {
   font-weight: 800;
   font-size: 0.8rem;
   color: #FFFFFF;
+  background: #2B2B3A;
+  border: 1px solid rgba(196, 105, 75, 0.4);
   margin-top: 0.25rem;
   margin-bottom: 1rem;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 14px rgba(43, 43, 58, 0.1);
   letter-spacing: 0.5px;
 }
 
 .level-banner-1, .level-banner-2, .level-banner-3, .level-banner-4, .level-banner-5, .level-banner-6, .level-banner-7 {
-  background: linear-gradient(135deg, #C4694B 0%, #2B2B3A 100%);
+  background: #2B2B3A;
 }
 
 .level-tag-num {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: #C4694B;
+  color: #FFFFFF;
   padding: 0.25rem 0.75rem;
   border-radius: var(--radius-pill);
   font-weight: 800;
