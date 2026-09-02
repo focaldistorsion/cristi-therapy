@@ -189,8 +189,8 @@
 
           <!-- WHEEL DETAIL PANEL -->
           <div class="wheel-detail-panel" id="wheelDetailPanel">
-            <span class="wheel-detail-badge" id="wheelDetailBadge"><span class="harra-glosar-term" data-term="homeostazie">homeostazie</span></span>
-            <h4>Masaj Terapeutic Integrativ</h4>
+            <span class="wheel-detail-badge" id="wheelDetailBadge">HOMEOSTAZIE</span>
+            <h4 id="wheelDetailTitle">Masaj Terapeutic Integrativ</h4>
             <p class="wheel-detail-desc" id="wheelDetailDesc">Vascularizare tisulară și decontracturare musculară profundă – pregătește mușchii și reactivează circulația sanguină tisulară, punând bazele echilibrului biologic.</p>
             <a href="masaj-terapeutic.html" class="btn btn-cta btn-sm" id="wheelDetailLink"><i class="fa-solid fa-arrow-right"></i> Vezi Detalii Terapie</a>
           </div>
@@ -202,13 +202,13 @@
         document.addEventListener('DOMContentLoaded', function() {
           const therapiesData = [
             {
-              badge: "<span class="harra-glosar-term" data-term="homeostazie">homeostazie</span>",
+              badge: "HOMEOSTAZIE",
               title: "Masaj Terapeutic Integrativ",
               desc: "Vascularizare tisulară și decontracturare musculară profundă – pregătește mușchii și reactivează circulația sanguină tisulară, punând bazele echilibrului biologic.",
               link: "masaj-terapeutic.html"
             },
             {
-              badge: "<span class="harra-glosar-term" data-term="homeostazie">homeostazie</span>",
+              badge: "HOMEOSTAZIE",
               title: "Terapie Trigger Point",
               desc: "Dezactivarea focarelor hipersensibile din mușchi – elimină prin presiune izometrică ghidată punctele fixe care radiază durere în restul corpului.",
               link: "trigger-point.html"
@@ -216,7 +216,7 @@
             {
               badge: "ALINIERE",
               title: "Terapie Tok Sen",
-              desc: "Vibrație acustică mecanică în profunzime – relaxează tendoanele și celulele profunde prin <span class="harra-glosar-term" data-term="mecanotransductie">mecanotransducție</span> acustică ritmică din unelte medicinale de tec.",
+              desc: "Vibrație acustică mecanică în profunzime – relaxează tendoanele și celulele profunde prin mecanotransducție acustică ritmică din unelte medicinale de tec.",
               link: "tok-sen.html"
             },
             {
@@ -258,10 +258,10 @@
             }
             const data = therapiesData[index];
             if (data) {
-              badgeEl.textContent = data.badge;
-              titleEl.textContent = data.title;
-              descEl.textContent = data.desc;
-              linkEl.href = data.link;
+              if (badgeEl) badgeEl.textContent = data.badge;
+              if (titleEl) titleEl.textContent = data.title;
+              if (descEl) descEl.textContent = data.desc;
+              if (linkEl) linkEl.href = data.link;
             }
           }
 
@@ -275,7 +275,7 @@
           });
 
           // MATRIX CATEGORY FILTERING LOGIC
-          const filterPills = document.querySelectorAll('.filter-pill');
+          const filterPills = document.querySelectorAll('.matrix-filter-bar .filter-pill');
           const matrixCards = document.querySelectorAll('.vita-matrix-card');
 
           filterPills.forEach(pill => {
@@ -301,7 +301,7 @@
       <!-- CATEGORY FILTER PILLS BAR -->
       <div class="matrix-filter-bar">
         <button class="filter-pill active" data-filter="all">Toate Terapiile</button>
-        <button class="filter-pill" data-filter="<span class="harra-glosar-term" data-term="homeostazie">homeostazie</span>"><span class="harra-glosar-term" data-term="homeostazie">homeostazie</span></button>
+        <button class="filter-pill" data-filter="homeostazie">Homeostazie</button>
         <button class="filter-pill" data-filter="aliniere">Aliniere & Reinițializare</button>
         <button class="filter-pill" data-filter="autovindecare">Reabilitare & Autovindecare</button>
       </div>
@@ -310,13 +310,13 @@
       <div class="vita-integrative-matrix">
         
         <!-- Masaj Terapeutic -->
-        <div class="vita-matrix-card" data-category="<span class="harra-glosar-term" data-term="homeostazie">homeostazie</span>">
+        <div class="vita-matrix-card" data-category="homeostazie">
           <div class="vita-matrix-img-box">
             <img src="assets/images/hero_therapy_session.png" alt="Masaj Terapeutic HARRA">
           </div>
           <div class="vita-matrix-content">
             <div>
-              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;"><span class="harra-glosar-term" data-term="homeostazie">homeostazie</span></span>
+              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">HOMEOSTAZIE</span>
               <h3>Masaj Terapeutic Integrativ</h3>
               <p>Vascularizare tisulară și decontracturare musculară profundă – pregătește mușchii și reactivează circulația sanguină tisulară.</p>
             </div>
@@ -325,13 +325,13 @@
         </div>
 
         <!-- Trigger Point -->
-        <div class="vita-matrix-card" data-category="<span class="harra-glosar-term" data-term="homeostazie">homeostazie</span>">
+        <div class="vita-matrix-card" data-category="homeostazie">
           <div class="vita-matrix-img-box">
             <img src="assets/images/dry_needling_bowen.png" alt="Trigger Point Therapy HARRA">
           </div>
           <div class="vita-matrix-content">
             <div>
-              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;"><span class="harra-glosar-term" data-term="homeostazie">homeostazie</span></span>
+              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">HOMEOSTAZIE</span>
               <h3>Terapie Trigger Point</h3>
               <p>Dezactivarea focarelor hipersensibile din mușchi – eliberează punctele fixe care iradiază durere în restul corpului.</p>
             </div>
