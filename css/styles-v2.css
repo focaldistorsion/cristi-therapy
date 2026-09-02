@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Metoda T7 - Cristian Angel Oglan & Metoda RSI (Terapie Manuală Integrată)
+   Metoda T7 - Cristian Angel Oglan & Metoda HARRA (Terapie Manuală Integrată)
    Architecture: 1:1 7-Chakra Spectrum & Full Black CTA System
    Palette: Full Black (#000000) Primary CTAs, Outline Black Secondary CTAs
             7 Chakra Color Tokens (Red, Orange, Yellow, Green, Royal Blue, Purple, Teal)
@@ -39,7 +39,7 @@
   --t7-teal-bg: rgba(13, 148, 136, 0.08);
 
   /* Spectrum Gradients */
-  --rsi-spectrum-gradient: linear-gradient(135deg, #E53E3E 0%, #ED8936 16%, #D69E2E 33%, #059669 50%, #2563EB 66%, #7C3AED 83%, #0D9488 100%);
+  --harra-spectrum-gradient: linear-gradient(135deg, #E53E3E 0%, #ED8936 16%, #D69E2E 33%, #059669 50%, #2563EB 66%, #7C3AED 83%, #0D9488 100%);
   --t7-spectrum-gradient: linear-gradient(135deg, #E53E3E 0%, #ED8936 16%, #D69E2E 33%, #059669 50%, #2563EB 66%, #7C3AED 83%, #0D9488 100%);
 
   /* Typography */
@@ -190,7 +190,7 @@ a {
   color: var(--t4-green);
 }
 
-/* BRAND METHOD SWITCHER TOGGLE (T7 ⇄ RSI) */
+/* BRAND METHOD SWITCHER TOGGLE (T7 ⇄ HARRA) */
 .brand-switcher-btn {
   display: inline-flex;
   align-items: center;
