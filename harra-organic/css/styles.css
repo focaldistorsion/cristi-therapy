@@ -154,7 +154,7 @@ a {
 }
 
 .brand-badge-v2 {
-  background: linear-gradient(135deg, #E53E3E 0%, #ED8936 16%, #D69E2E 33%, #059669 50%, #2563EB 66%, #7C3AED 83%, #0D9488 100%);
+  background: linear-gradient(135deg, #C4694B 0%, #8B7355 33%, #5F8A65 66%, #2B2B3A 100%);
   color: #FFFFFF;
   font-family: var(--font-sans-heading);
   font-weight: 800;
@@ -394,7 +394,7 @@ a {
 }
 
 .hero-text-light h1 span {
-  color: #059669 !important;
+  color: #C4694B !important;
   font-style: italic;
 }
 
@@ -406,7 +406,7 @@ a {
 
 .badge-tag-light {
   background: rgba(5, 150, 105, 0.12) !important;
-  color: #059669 !important;
+  color: #C4694B !important;
   border: 1px solid rgba(5, 150, 105, 0.25);
 }
 
@@ -448,7 +448,7 @@ a {
   max-height: 60vh;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #059669;
+  border: 4px solid #C4694B;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
   transition: var(--transition);
 }
@@ -467,7 +467,7 @@ a {
 
 .hero-profile-card-floating p {
   font-size: 0.92rem;
-  color: #059669;
+  color: #C4694B;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
@@ -614,13 +614,9 @@ a {
   letter-spacing: 0.5px;
 }
 
-.level-banner-1 { background: linear-gradient(135deg, var(--t1-red) 0%, #C53030 100%); }
-.level-banner-2 { background: linear-gradient(135deg, var(--t2-orange) 0%, #DD6B20 100%); }
-.level-banner-3 { background: linear-gradient(135deg, var(--t3-yellow) 0%, #B7791F 100%); }
-.level-banner-4 { background: linear-gradient(135deg, var(--t4-green) 0%, #047857 100%); }
-.level-banner-5 { background: linear-gradient(135deg, var(--t5-blue) 0%, #1D4ED8 100%); }
-.level-banner-6 { background: linear-gradient(135deg, var(--t6-purple) 0%, #6D28D9 100%); }
-.level-banner-7 { background: linear-gradient(135deg, var(--t7-teal) 0%, #0F766E 100%); }
+.level-banner-1, .level-banner-2, .level-banner-3, .level-banner-4, .level-banner-5, .level-banner-6, .level-banner-7 {
+  background: linear-gradient(135deg, #C4694B 0%, #2B2B3A 100%);
+}
 
 .level-tag-num {
   background: rgba(255, 255, 255, 0.25);
