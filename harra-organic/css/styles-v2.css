@@ -815,6 +815,72 @@ a {
   gap: 1.25rem;
 }
 
+/* BIO-INTEGRATIVE CIRCULAR MATRIX ECOSYSTEM (HARRA ORGANIC) */
+.vita-integrative-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+  max-width: 1140px;
+  margin: 2.5rem auto 0;
+}
+
+.vita-matrix-card {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--color-border);
+  box-shadow: 0 10px 30px rgba(43, 43, 58, 0.05);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.vita-matrix-card:hover {
+  transform: translateY(-4px);
+  border-color: #C4694B;
+  box-shadow: 0 20px 40px rgba(43, 43, 58, 0.12);
+}
+
+.vita-matrix-img-box {
+  width: 100%;
+  height: 190px;
+  position: relative;
+  overflow: hidden;
+}
+
+.vita-matrix-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.vita-matrix-card:hover .vita-matrix-img-box img {
+  transform: scale(1.05);
+}
+
+.vita-matrix-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.vita-matrix-content h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--color-navy);
+}
+
+.vita-matrix-content p {
+  font-size: 0.92rem;
+  color: var(--color-body);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
 .vita-system-card {
   display: grid;
   grid-template-columns: 240px 1fr;
@@ -872,8 +938,7 @@ a {
 }
 
 .vita-arrow-connector {
-  color: #A1A1AA;
-  font-size: 1.2rem;
+  display: none;
 }
 
 /* STORYBRAND (SB7) TRANSITIONAL THERAPY BLOCK */
