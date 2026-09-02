@@ -42,8 +42,8 @@
   --harra-spectrum-gradient: linear-gradient(135deg, #C4694B 0%, #8B7355 25%, #5F8A65 50%, #4A6FA5 75%, #2B2B3A 100%);
   --t7-spectrum-gradient: linear-gradient(135deg, #C4694B 0%, #8B7355 25%, #5F8A65 50%, #4A6FA5 75%, #2B2B3A 100%);
 
-  /* Typography */
-  --font-serif-heading: 'Playfair Display', Georgia, serif;
+  /* Typography (Unified with Logo Font) */
+  --font-serif-heading: 'Plus Jakarta Sans', sans-serif;
   --font-sans-heading: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Inter', sans-serif;
 
