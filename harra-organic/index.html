@@ -192,7 +192,6 @@
             <span class="wheel-detail-badge" id="wheelDetailBadge">HOMEOSTAZIE</span>
             <h4 id="wheelDetailTitle">Masaj Terapeutic Integrativ</h4>
             <p class="wheel-detail-desc" id="wheelDetailDesc">Vascularizare tisulară și decontracturare musculară profundă – pregătește mușchii și reactivează circulația sanguină tisulară, punând bazele echilibrului biologic.</p>
-            <a href="masaj-terapeutic.html" class="btn btn-cta btn-sm" id="wheelDetailLink"><i class="fa-solid fa-arrow-right"></i> Vezi Detalii Terapie</a>
           </div>
 
         </div>
@@ -204,44 +203,37 @@
             {
               badge: "HOMEOSTAZIE",
               title: "Masaj Terapeutic Integrativ",
-              desc: "Vascularizare tisulară și decontracturare musculară profundă – pregătește mușchii și reactivează circulația sanguină tisulară, punând bazele echilibrului biologic.",
-              link: "masaj-terapeutic.html"
+              desc: "Vascularizare tisulară și decontracturare musculară profundă – pregătește mușchii și reactivează circulația sanguină tisulară, punând bazele echilibrului biologic."
             },
             {
               badge: "HOMEOSTAZIE",
               title: "Terapie Trigger Point",
-              desc: "Dezactivarea focarelor hipersensibile din mușchi – elimină prin presiune izometrică ghidată punctele fixe care radiază durere în restul corpului.",
-              link: "trigger-point.html"
+              desc: "Dezactivarea focarelor hipersensibile din mușchi – elimină prin presiune izometrică ghidată punctele fixe care radiază durere în restul corpului."
             },
             {
               badge: "ALINIERE",
               title: "Terapie Tok Sen",
-              desc: "Vibrație acustică mecanică în profunzime – relaxează tendoanele și celulele profunde prin mecanotransducție acustică ritmică din unelte medicinale de tec.",
-              link: "tok-sen.html"
+              desc: "Vibrație acustică mecanică în profunzime – relaxează tendoanele și celulele profunde prin mecanotransducție acustică ritmică din unelte medicinale de tec."
             },
             {
               badge: "REINIȚIALIZARE",
               title: "Manipulare Miofascială",
-              desc: "Redă alunecarea tridimensională a tecii conjunctive (fascia) – restabilește flexibilitatea tisulară, propriocepția și elimină tiparele vechi de durere.",
-              link: "manipulare-miofasciala.html"
+              desc: "Redă alunecarea tridimensională a tecii conjunctive (fascia) – restabilește flexibilitatea tisulară, propriocepția și elimină tiparele vechi de durere."
             },
             {
               badge: "ALINIERE",
               title: "Osteopatie Structurală",
-              desc: "Realiniere biomecanică a coloanei și articulațiilor – corectează desaxializările vertebrale prin decompresie blândă pentru o mișcare stabilă și fără efort.",
-              link: "osteopatie.html"
+              desc: "Realiniere biomecanică a coloanei și articulațiilor – corectează desaxializările vertebrale prin decompresie blândă pentru o mișcare stabilă și fără efort."
             },
             {
               badge: "REABILITARE",
               title: "Osteopatie Viscerală",
-              desc: "Detensionare abdominală și eliberare peritoneală – calmează restricțiile ligamentoase ale organelor interne și elimină durerile de spate iradiate.",
-              link: "osteopatie-viscerala.html"
+              desc: "Detensionare abdominală și eliberare peritoneală – calmează restricțiile ligamentoase ale organelor interne și elimină durerile de spate iradiate."
             },
             {
               badge: "AUTOVINDECARE",
               title: "Terapie Bowen",
-              desc: "Reset autonomic neuro-vegetativ – stimulează prin mișcări pauzate componenta vagală ventrală, permițându-i creierului să inițieze autovindecarea durabilă.",
-              link: "terapie-bowen.html"
+              desc: "Reset autonomic neuro-vegetativ – stimulează prin mișcări pauzate componenta vagală ventrală, permițându-i creierului să inițieze autovindecarea durabilă."
             }
           ];
 
@@ -249,7 +241,6 @@
           const badgeEl = document.getElementById('wheelDetailBadge');
           const titleEl = document.getElementById('wheelDetailTitle');
           const descEl = document.getElementById('wheelDetailDesc');
-          const linkEl = document.getElementById('wheelDetailLink');
 
           function selectTherapy(index) {
             nodes.forEach(node => node.classList.remove('active'));
@@ -261,7 +252,6 @@
               if (badgeEl) badgeEl.textContent = data.badge;
               if (titleEl) titleEl.textContent = data.title;
               if (descEl) descEl.textContent = data.desc;
-              if (linkEl) linkEl.href = data.link;
             }
           }
 
