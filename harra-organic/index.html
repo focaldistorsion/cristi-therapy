@@ -120,114 +120,266 @@
     <div class="container">
       <div class="section-title-box">
         <span class="section-tag" style="background: rgba(196, 105, 75, 0.12); color: #C4694B;">Metodă Integrativă, Nu Structurată Rigid</span>
-        <h2>Sfera Bio-Integrativă HARRA: 7 Dimensiuni în Sinergie Circulară</h2>
-        <p class="vita-intro-text">Metoda HARRA nu este un traseu liniar sau o listă fixă de parcurs secvențial, ci un <strong>ecosistem bio-integrativ circular</strong>. Cele 7 terapii complementare acționează în sinergie organică, fiind îmbinate și ajustate fluid în funcție de răspunsul somatic al corpului tău în fiecare ședință:</p>
+        <h2>Sfera Bio-Integrativă HARRA: Terapiile în Sinergie Circulară</h2>
+        <p class="vita-intro-text">Metoda HARRA nu este un traseu liniar sau o listă fixă de parcurs secvențial, ci un <strong>ecosistem bio-integrativ circular</strong>. Terapiile acționează în sinergie organică, fiind îmbinate și ajustate fluid în funcție de răspunsul somatic al corpului tău în fiecare ședință:</p>
       </div>
+
+      <!-- INTERACTIVE CIRCULAR THERAPY WHEEL (UI DESIGNER & UX ARCHITECT) -->
+      <div class="harra-wheel-section-wrap">
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <span style="font-family: var(--font-sans-heading); font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #C4694B;">Diagrama Sferică a Metodei</span>
+          <h3 style="font-family: var(--font-sans-heading); font-size: 1.5rem; font-weight: 800; color: #2B2B3A; margin-top: 0.3rem;">Ecosistemul Bio-Integrativ HARRA</h3>
+          <p style="font-size: 0.9rem; color: #6B6B7B;">Apasă sau trece cu cursorul peste orice terapie din cerc pentru a explora sinergia somatică:</p>
+        </div>
+
+        <div class="harra-wheel-layout">
+          
+          <!-- CIRCULAR WHEEL VISUALIZER -->
+          <div class="harra-wheel-visualizer" id="harraWheelVisualizer">
+            <svg class="wheel-orbit-svg" viewBox="0 0 440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Tightened Outer Orbit Ring (r=135) -->
+              <circle cx="220" cy="220" r="135" stroke="#E8E0D6" stroke-width="2" stroke-dasharray="4 6"/>
+              <!-- Inner Core Orbit Ring (r=60) -->
+              <circle cx="220" cy="220" r="60" stroke="#C4694B" stroke-width="1.5" opacity="0.35"/>
+            </svg>
+
+            <!-- CORE CENTER NODE (CLEAN BRAND LOGO MARK) -->
+            <div class="wheel-center-core">
+              <span style="font-family: var(--font-sans-heading); font-size: 1.15rem; font-weight: 800; letter-spacing: 3px; color: #2B2B3A;">HARRA</span>
+              <div style="width: 24px; height: 2px; background: #C4694B; margin: 3px auto 4px;"></div>
+              <span style="font-family: var(--font-sans-heading); font-size: 0.52rem; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: #C4694B;">BIO-INTEGRATIV</span>
+            </div>
+
+            <!-- 7 RADIAL THERAPY NODES POSITIONED ON TIGHTENED ORBIT (r=135px) -->
+            <div class="wheel-node-item active" data-index="0" style="top: 53px; left: 188px;">
+              <i class="fa-solid fa-hands-holding-child"></i>
+              <span>MASAJ</span>
+            </div>
+
+            <div class="wheel-node-item" data-index="1" style="top: 104px; left: 294px;">
+              <i class="fa-solid fa-bullseye"></i>
+              <span>TRIGGER</span>
+            </div>
+
+            <div class="wheel-node-item" data-index="2" style="top: 218px; left: 320px;">
+              <i class="fa-solid fa-wave-square"></i>
+              <span>TOK SEN</span>
+            </div>
+
+            <div class="wheel-node-item" data-index="3" style="top: 310px; left: 247px;">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>MIOFASCIAL</span>
+            </div>
+
+            <div class="wheel-node-item" data-index="4" style="top: 310px; left: 129px;">
+              <i class="fa-solid fa-bone"></i>
+              <span>STRUCTURAL</span>
+            </div>
+
+            <div class="wheel-node-item" data-index="5" style="top: 218px; left: 56px;">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span>VISCERAL</span>
+            </div>
+
+            <div class="wheel-node-item" data-index="6" style="top: 104px; left: 82px;">
+              <i class="fa-solid fa-feather"></i>
+              <span>BOWEN</span>
+            </div>
+          </div>
+
+          <!-- WHEEL DETAIL PANEL -->
+          <div class="wheel-detail-panel" id="wheelDetailPanel">
+            <span class="wheel-detail-badge" id="wheelDetailBadge">HOMEOSTAZIE</span>
+            <h4 class="wheel-detail-title" id="wheelDetailTitle">Masaj Terapeutic Integrativ</h4>
+            <p class="wheel-detail-desc" id="wheelDetailDesc">Vascularizare tisulară și decontracturare musculară profundă – pregătește mușchii și reactivează circulația sanguină tisulară, punând bazele echilibrului biologic.</p>
+            <a href="masaj-terapeutic.html" class="btn btn-cta btn-sm" id="wheelDetailLink"><i class="fa-solid fa-arrow-right"></i> Vezi Detalii Terapie</a>
+          </div>
+
+        </div>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const therapiesData = [
+            {
+              badge: "HOMEOSTAZIE",
+              title: "Masaj Terapeutic Integrativ",
+              desc: "Vascularizare tisulară și decontracturare musculară profundă – pregătește mușchii și reactivează circulația sanguină tisulară, punând bazele echilibrului biologic.",
+              link: "masaj-terapeutic.html"
+            },
+            {
+              badge: "HOMEOSTAZIE",
+              title: "Terapie Trigger Point",
+              desc: "Dezactivarea focarelor hipersensibile din mușchi – elimină prin presiune izometrică ghidată punctele fixe care radiază durere în restul corpului.",
+              link: "trigger-point.html"
+            },
+            {
+              badge: "ALINIERE",
+              title: "Terapie Tok Sen",
+              desc: "Vibrație acustică mecanică în profunzime – relaxează tendoanele și celulele profunde prin mecanotransducție acustică ritmică din unelte medicinale de tec.",
+              link: "tok-sen.html"
+            },
+            {
+              badge: "REINIȚIALIZARE",
+              title: "Manipulare Miofascială",
+              desc: "Redă alunecarea tridimensională a tecii conjunctive (fascia) – restabilește flexibilitatea tisulară, propriocepția și elimină tiparele vechi de durere.",
+              link: "manipulare-miofasciala.html"
+            },
+            {
+              badge: "ALINIERE",
+              title: "Osteopatie Structurală",
+              desc: "Realiniere biomecanică a coloanei și articulațiilor – corectează desaxializările vertebrale prin decompresie blândă pentru o mișcare stabilă și fără efort.",
+              link: "osteopatie.html"
+            },
+            {
+              badge: "REABILITARE",
+              title: "Osteopatie Viscerală",
+              desc: "Detensionare abdominală și eliberare peritoneală – calmează restricțiile ligamentoase ale organelor interne și elimină durerile de spate iradiate.",
+              link: "osteopatie-viscerala.html"
+            },
+            {
+              badge: "AUTOVINDECARE",
+              title: "Terapie Bowen",
+              desc: "Reset autonomic neuro-vegetativ – stimulează prin mișcări pauzate componenta vagală ventrală, permițându-i creierului să inițieze autovindecarea durabilă.",
+              link: "terapie-bowen.html"
+            }
+          ];
+
+          const nodes = document.querySelectorAll('.wheel-node-item');
+          const badgeEl = document.getElementById('wheelDetailBadge');
+          const titleEl = document.getElementById('wheelDetailTitle');
+          const descEl = document.getElementById('wheelDetailDesc');
+          const linkEl = document.getElementById('wheelDetailLink');
+
+          function selectTherapy(index) {
+            nodes.forEach(node => node.classList.remove('active'));
+            if (nodes[index]) {
+              nodes[index].classList.add('active');
+            }
+            const data = therapiesData[index];
+            if (data) {
+              badgeEl.textContent = data.badge;
+              titleEl.textContent = data.title;
+              descEl.textContent = data.desc;
+              linkEl.href = data.link;
+            }
+          }
+
+          nodes.forEach((node, idx) => {
+            node.addEventListener('click', function() {
+              selectTherapy(idx);
+            });
+            node.addEventListener('mouseenter', function() {
+              selectTherapy(idx);
+            });
+          });
+        });
+      </script>
 
       <div class="vita-integrative-matrix">
         
-        <!-- Dimensiunea 1: Masaj Terapeutic -->
+        <!-- Masaj Terapeutic -->
         <div class="vita-matrix-card">
           <div class="vita-matrix-img-box">
             <img src="assets/images/hero_therapy_session.png" alt="Masaj Terapeutic HARRA">
           </div>
           <div class="vita-matrix-content">
             <div>
-              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">DIMENSIUNEA 1 • HOMEOSTAZIE</span>
+              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">HOMEOSTAZIE</span>
               <h3>Masaj Terapeutic Integrativ</h3>
               <p>Vascularizare tisulară și decontracturare musculară profundă – pregătește mușchii și reactivează circulația sanguină tisulară.</p>
             </div>
-            <a href="masaj-terapeutic.html" class="btn btn-outline btn-sm">Explorează Dimensiunea 1 <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="masaj-terapeutic.html" class="btn btn-outline btn-sm">Descoperă Masajul Terapeutic <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
 
-        <!-- Dimensiunea 2: Trigger Point -->
+        <!-- Trigger Point -->
         <div class="vita-matrix-card">
           <div class="vita-matrix-img-box">
             <img src="assets/images/dry_needling_bowen.png" alt="Trigger Point Therapy HARRA">
           </div>
           <div class="vita-matrix-content">
             <div>
-              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">DIMENSIUNEA 2 • HOMEOSTAZIE</span>
+              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">HOMEOSTAZIE</span>
               <h3>Terapie Trigger Point</h3>
               <p>Dezactivarea focarelor hipersensibile din mușchi – eliberează punctele fixe care iradiază durere în restul corpului.</p>
             </div>
-            <a href="trigger-point.html" class="btn btn-outline btn-sm">Explorează Dimensiunea 2 <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="trigger-point.html" class="btn btn-outline btn-sm">Descoperă Trigger Point <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
 
-        <!-- Dimensiunea 3: Tok Sen -->
+        <!-- Tok Sen -->
         <div class="vita-matrix-card">
           <div class="vita-matrix-img-box">
             <img src="assets/images/hirudotherapy_natural.png" alt="Tok Sen Therapy HARRA">
           </div>
           <div class="vita-matrix-content">
             <div>
-              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">DIMENSIUNEA 3 • ALINIERE</span>
+              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">ALINIERE</span>
               <h3>Terapie Tok Sen</h3>
               <p>Vibrație acustică mecanică în profunzime – relaxează tendoanele și celulele profunde prin mecanotransducție acustică.</p>
             </div>
-            <a href="tok-sen.html" class="btn btn-outline btn-sm">Explorează Dimensiunea 3 <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="tok-sen.html" class="btn btn-outline btn-sm">Descoperă Tok Sen <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
 
-        <!-- Dimensiunea 4: Manipulare Miofascială -->
+        <!-- Manipulare Miofascială -->
         <div class="vita-matrix-card">
           <div class="vita-matrix-img-box">
             <img src="assets/images/hero_therapy_session.png" alt="Manipulare Miofascială HARRA">
           </div>
           <div class="vita-matrix-content">
             <div>
-              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">DIMENSIUNEA 4 • REINIȚIALIZARE</span>
+              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">REINIȚIALIZARE</span>
               <h3>Manipulare Miofascială</h3>
               <p>Redă alunecarea tridimensională a tecii conjunctive (fascia) – restabilește flexibilitatea naturală și propriocepția.</p>
             </div>
-            <a href="manipulare-miofasciala.html" class="btn btn-outline btn-sm">Explorează Dimensiunea 4 <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="manipulare-miofasciala.html" class="btn btn-outline btn-sm">Descoperă Miofascial <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
 
-        <!-- Dimensiunea 5: Osteopatie Structurală -->
+        <!-- Osteopatie Structurală -->
         <div class="vita-matrix-card">
           <div class="vita-matrix-img-box">
             <img src="assets/images/osteopathy_visceral.png" alt="Osteopatie Structurală HARRA">
           </div>
           <div class="vita-matrix-content">
             <div>
-              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">DIMENSIUNEA 5 • ALINIERE</span>
+              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">ALINIERE</span>
               <h3>Osteopatie Structurală</h3>
               <p>Realiniere biomecanică a coloanei și articulațiilor – decompresie blândă pentru o mișcare stabilă și fără efort.</p>
             </div>
-            <a href="osteopatie.html" class="btn btn-outline btn-sm">Explorează Dimensiunea 5 <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="osteopatie.html" class="btn btn-outline btn-sm">Descoperă Osteopatia Structurală <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
 
-        <!-- Dimensiunea 6: Osteopatie Viscerală -->
+        <!-- Osteopatie Viscerală -->
         <div class="vita-matrix-card">
           <div class="vita-matrix-img-box">
             <img src="assets/images/osteopathy_visceral.png" alt="Osteopatie Viscerală HARRA">
           </div>
           <div class="vita-matrix-content">
             <div>
-              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">DIMENSIUNEA 6 • REABILITARE</span>
+              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">REABILITARE</span>
               <h3>Osteopatie Viscerală</h3>
               <p>Detensionare abdominală și eliberare peritoneală – calmează restricțiile viscerosomatice și durerile iradiate.</p>
             </div>
-            <a href="osteopatie-viscerala.html" class="btn btn-outline btn-sm">Explorează Dimensiunea 6 <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="osteopatie-viscerala.html" class="btn btn-outline btn-sm">Descoperă Osteopatia Viscerală <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
 
-        <!-- Dimensiunea 7: Terapie Bowen -->
+        <!-- Terapie Bowen -->
         <div class="vita-matrix-card">
           <div class="vita-matrix-img-box">
             <img src="assets/images/dry_needling_bowen.png" alt="Terapie Bowen HARRA">
           </div>
           <div class="vita-matrix-content">
             <div>
-              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">DIMENSIUNEA 7 • AUTOVINDECARE</span>
+              <span class="level-tag-num" style="background: #2B2B3A; color: #FFF; padding: 0.25rem 0.65rem; border-radius: 6px; font-size: 0.72rem; font-weight: 800; display: inline-block; margin-bottom: 0.6rem;">AUTOVINDECARE</span>
               <h3>Terapie Bowen</h3>
               <p>Reset autonomic neuro-vegetativ – stimulează componenta vagală ventrală și permite creierului să preia autovindecarea.</p>
             </div>
-            <a href="terapie-bowen.html" class="btn btn-outline btn-sm">Explorează Dimensiunea 7 <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="terapie-bowen.html" class="btn btn-outline btn-sm">Descoperă Terapia Bowen <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </div>
 
@@ -412,7 +564,7 @@
             <li>
               <i class="fa-solid fa-check text-success"></i>
               <div>
-                <strong>Autovindecare & Reset Nervos (Etapa A - Dimensiunea 7)</strong>
+                <strong>Autovindecare & Reset Nervos (Etapa A - )</strong>
                 <p>Sistemul nervos este resetat din starea de alertă prin Terapie Bowen, permițându-i corpului tău să se regenereze și să funcționeze fără durere.</p>
               </div>
             </li>
@@ -480,13 +632,13 @@
           <label for="clientTherapySelect">Terapia Dorită din Metoda HARRA</label>
           <select id="clientTherapySelect" class="form-control">
             <option value="Evaluare Metoda HARRA">Evaluare Completă Metoda HARRA (Recomandat)</option>
-            <option value="Masaj Terapeutic (Dimensiunea 1 - Etapa H)">Dimensiunea 1: Masaj Terapeutic (Etapa H – Homeostazie)</option>
-            <option value="Trigger Point (Dimensiunea 2 - Etapa H)">Dimensiunea 2: Trigger Point (Etapa H – Homeostazie)</option>
-            <option value="Tok Sen (Dimensiunea 3 - Etapa A)">Dimensiunea 3: Tok Sen (Etapa A – Aliniere)</option>
-            <option value="Manipulare Miofasciala (Dimensiunea 4 - Etapa R1)">Dimensiunea 4: Manipulare Miofascială (Etapa R¹ – Reinițializare)</option>
-            <option value="Osteopatie Structurala (Dimensiunea 5 - Etapa A)">Dimensiunea 5: Osteopatie Structurală (Etapa A – Aliniere)</option>
-            <option value="Osteopatie Viscerala (Dimensiunea 6 - Etapa R2)">Dimensiunea 6: Osteopatie Viscerală (Etapa R² – Reabilitare)</option>
-            <option value="Terapie Bowen (Dimensiunea 7 - Etapa A)">Dimensiunea 7: Terapie Bowen (Etapa A – Autovindecare)</option>
+            <option value="Masaj Terapeutic (- Etapa H)">: Masaj Terapeutic (Etapa H – Homeostazie)</option>
+            <option value="Trigger Point (- Etapa H)">: Trigger Point (Etapa H – Homeostazie)</option>
+            <option value="Tok Sen (- Etapa A)">: Tok Sen (Etapa A – Aliniere)</option>
+            <option value="Manipulare Miofasciala (- Etapa R1)">: Manipulare Miofascială (Etapa R¹ – Reinițializare)</option>
+            <option value="Osteopatie Structurala (- Etapa A)">: Osteopatie Structurală (Etapa A – Aliniere)</option>
+            <option value="Osteopatie Viscerala (- Etapa R2)">: Osteopatie Viscerală (Etapa R² – Reabilitare)</option>
+            <option value="Terapie Bowen (- Etapa A)">: Terapie Bowen (Etapa A – Autovindecare)</option>
           </select>
         </div>
         <button type="submit" class="btn btn-cta w-100"><i class="fa-solid fa-calendar-check"></i> Trimite Solicitarea de Programare</button>

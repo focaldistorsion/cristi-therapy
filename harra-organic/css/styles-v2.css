@@ -824,6 +824,181 @@ a {
   margin: 2.5rem auto 0;
 }
 
+/* INTERACTIVE CIRCULAR THERAPY WHEEL (UI DESIGNER & UX ARCHITECT) */
+.harra-wheel-section-wrap {
+  position: relative;
+  background: #FFFFFF;
+  border: 1.5px solid #E8E0D6;
+  border-radius: var(--radius-lg);
+  padding: 3rem 2rem;
+  margin: 2.5rem 0;
+  box-shadow: 0 15px 45px rgba(43, 43, 58, 0.05);
+}
+
+.harra-wheel-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.harra-wheel-visualizer {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wheel-orbit-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.wheel-center-core {
+  width: 120px;
+  height: 120px;
+  background: #F8F4EF;
+  border: 2.5px solid #C4694B;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.75rem;
+  z-index: 5;
+  box-shadow: 0 0 25px rgba(196, 105, 75, 0.15);
+  transition: var(--transition);
+}
+
+.wheel-center-core:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 35px rgba(196, 105, 75, 0.28);
+}
+
+.wheel-node-item {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  background: #FFFFFF;
+  border: 2px solid #E8E0D6;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 6;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 16px rgba(43, 43, 58, 0.08);
+}
+
+.wheel-node-item i {
+  font-size: 1.25rem;
+  color: #2B2B3A;
+  transition: var(--transition);
+}
+
+.wheel-node-item span {
+  font-family: var(--font-sans-heading);
+  font-size: 0.58rem;
+  font-weight: 800;
+  color: #525262;
+  margin-top: 2px;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.wheel-node-item.active,
+.wheel-node-item:hover {
+  background: #2B2B3A;
+  border-color: #C4694B;
+  transform: scale(1.18);
+  box-shadow: 0 10px 25px rgba(196, 105, 75, 0.3);
+}
+
+.wheel-node-item.active i,
+.wheel-node-item:hover i {
+  color: #C4694B;
+}
+
+.wheel-node-item.active span,
+.wheel-node-item:hover span {
+  color: #FFFFFF;
+}
+
+/* WHEEL FOCUS DETAIL PANEL */
+.wheel-detail-panel {
+  background: #F8F4EF;
+  border: 1.5px solid #E8E0D6;
+  border-radius: 18px;
+  padding: 2rem 1.75rem;
+  transition: var(--transition);
+}
+
+.wheel-detail-badge {
+  display: inline-block;
+  font-family: var(--font-sans-heading);
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: #2B2B3A;
+  color: #FFFFFF;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.85rem;
+}
+
+.wheel-detail-title {
+  font-family: var(--font-sans-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #2B2B3A;
+  margin-bottom: 0.65rem;
+}
+
+.wheel-detail-desc {
+  font-size: 0.98rem;
+  color: #525262;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .harra-wheel-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .harra-wheel-visualizer {
+    max-width: 340px;
+    height: 340px;
+  }
+  .wheel-center-core {
+    width: 100px;
+    height: 100px;
+    padding: 0.4rem;
+  }
+  .wheel-node-item {
+    width: 58px;
+    height: 58px;
+  }
+  .wheel-node-item i {
+    font-size: 1rem;
+  }
+  .wheel-node-item span {
+    font-size: 0.5rem;
+  }
+}
+
 .vita-matrix-card {
   display: flex;
   flex-direction: column;
