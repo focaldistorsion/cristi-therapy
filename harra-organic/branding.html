@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Brand Guide & Sistem de Design | Metoda HARRA – Cristian Angel Oglan</title>
+  <meta name="description" content="Ghidul Oficial de Brand, Sistemul de Design și cele 2 variante de culoare ale Metodei HARRA (Homeostazie, Aliniere, Reinițializare, Reabilitare, Autovindecare) pe 7 Niveluri Terapeutice. Cristian Angel Oglan.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Dynamic Theme Stylesheet -->
+  <link rel="stylesheet" href="css/styles-v2.css">
+  
+  <style>
+    /* =========================================================
+       HARRA BRAND GUIDE – Extended Styles
+       ========================================================= */
+
+    /* CODE SNIPPET DISPLAY */
+    .code-block-container {
+      background: #09090B;
+      border-radius: var(--radius-lg);
+      border: 1px solid #27272A;
+      overflow: hidden;
+      margin-top: 1.5rem;
+      position: relative;
+    }
+    .code-block-header {
+      background: #18181B;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #27272A;
+    }
+    .code-block-title {
+      font-family: var(--font-sans-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #A1A1AA;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .copy-btn {
+      background: #27272A;
+      color: #F4F4F5;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .copy-btn:hover { background: #3F3F46; color: #FFFFFF; }
+    .code-block-body { padding: 1.25rem; overflow-x: auto; }
+    .code-block-body pre {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.88rem;
+      color: #E4E4E7;
+      line-height: 1.6;
+    }
+    .keyword { color: #F472B6; }
+    .string { color: #34D399; }
+    .attribute { color: #60A5FA; }
+    .tag { color: #F87171; }
+    .comment { color: #71717A; font-style: italic; }
+    
+    .live-demo-box {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+
+    /* SECTION DIVIDER */
+    .harra-section-divider {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin: 4rem 0 3rem;
+    }
+    .harra-section-divider::before,
+    .harra-section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+    }
+    .harra-divider-label {
+      font-family: var(--font-sans-heading);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #A1A1AA;
+      white-space: nowrap;
+    }
+
+    /* =========================================================
+       VERSIUNEA A – HARRA cu Culorile Cele 7 Niveluri (Chakra Spectrum)
+       ========================================================= */
+    .harra-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .harra-step-card {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .harra-step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .harra-step-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+
+    /* Chakra accent bars – 7 Niveluri */
+    .harra-step-card.lvl1-card::before { background: #E53E3E; }
+    .harra-step-card.lvl2-card::before { background: #ED8936; }
+    .harra-step-card.lvl3-card::before { background: #D69E2E; }
+    .harra-step-card.lvl4-card::before { background: #059669; }
+    .harra-step-card.lvl5-card::before { background: #2563EB; }
+    .harra-step-card.lvl6-card::before { background: #7C3AED; }
+    .harra-step-card.lvl7-card::before { background: #0D9488; }
+
+    .harra-step-letter {
+      font-family: var(--font-sans-heading);
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 1rem;
+      opacity: 0.12;
+      position: absolute;
+      top: 1.25rem;
+      right: 1.5rem;
+    }
+    .harra-step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-sans-heading);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-pill);
+      margin-bottom: 1rem;
+    }
+
+    /* Badge colors – 7 Niveluri */
+    .harra-step-card.lvl1-card .harra-step-badge { background: rgba(229,62,62,0.1); color: #E53E3E; }
+    .harra-step-card.lvl2-card .harra-step-badge { background: rgba(237,137,54,0.1); color: #ED8936; }
+    .harra-step-card.lvl3-card .harra-step-badge { background: rgba(214,158,46,0.1); color: #B5850C; }
+    .harra-step-card.lvl4-card .harra-step-badge { background: rgba(5,150,105,0.1); color: #059669; }
+    .harra-step-card.lvl5-card .harra-step-badge { background: rgba(37,99,235,0.1); color: #2563EB; }
+    .harra-step-card.lvl6-card .harra-step-badge { background: rgba(124,58,237,0.1); color: #7C3AED; }
+    .harra-step-card.lvl7-card .harra-step-badge { background: rgba(13,148,136,0.1); color: #0D9488; }
+
+    .harra-step-icon {
+      width: 52px; height: 52px;
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+    .harra-step-card.lvl1-card .harra-step-icon { background: rgba(229,62,62,0.08); color: #E53E3E; }
+    .harra-step-card.lvl2-card .harra-step-icon { background: rgba(237,137,54,0.08); color: #ED8936; }
+    .harra-step-card.lvl3-card .harra-step-icon { background: rgba(214,158,46,0.08); color: #B5850C; }
+    .harra-step-card.lvl4-card .harra-step-icon { background: rgba(5,150,105,0.08); color: #059669; }
+    .harra-step-card.lvl5-card .harra-step-icon { background: rgba(37,99,235,0.08); color: #2563EB; }
+    .harra-step-card.lvl6-card .harra-step-icon { background: rgba(124,58,237,0.08); color: #7C3AED; }
+    .harra-step-card.lvl7-card .harra-step-icon { background: rgba(13,148,136,0.08); color: #0D9488; }
+
+    .harra-step-card h3 {
+      font-family: var(--font-serif-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 0.6rem;
+    }
+    .harra-step-card p {
+      font-size: 0.92rem;
+      color: #52525B;
+      line-height: 1.65;
+    }
+
+    /* HARRA Flow Formula Bar */
+    .harra-formula-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 1.75rem 2rem;
+      background: var(--color-dark);
+      border-radius: var(--radius-lg);
+      margin-top: 3rem;
+    }
+    .harra-formula-pill {
+      font-family: var(--font-sans-heading);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 0.5rem 1.1rem;
+      border-radius: var(--radius-pill);
+      color: #FFFFFF;
+    }
+    .harra-formula-arrow {
+      font-size: 1rem;
+      color: #52525B;
+    }
+    .pill-h  { background: #E53E3E; }
+    .pill-a1 { background: #D69E2E; }
+    .pill-r1 { background: #059669; }
+    .pill-r2 { background: #2563EB; }
+    .pill-a2 { background: #0D9488; }
+
+    /* =========================================================
+       VERSIUNEA B – HARRA cu Culorile Logo (Organic Palette)
+       ========================================================= */
+    :root {
+      --harra-cream:      #F8F4EF;
+      --harra-charcoal:   #2B2B3A;
+      --harra-terracotta: #C4694B;
+      --harra-warm-brown: #8B7355;
+      --harra-sage:       #5F8A65;
+      --harra-muted-blue: #4A6FA5;
+      --harra-deep:       #2B2B3A;
+    }
+
+    .version-b-wrapper {
+      background: var(--harra-cream);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      border: 1px solid #E8E0D6;
+    }
+
+    .harra-organic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .harra-organic-card {
+      background: #FFFFFF;
+      border: 1px solid #E8E0D6;
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .harra-organic-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(43,43,58,0.08);
+    }
+    .harra-organic-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    .harra-organic-card.oc-lvl1::before,
+    .harra-organic-card.oc-lvl2::before { background: var(--harra-terracotta); }
+    .harra-organic-card.oc-lvl3::before,
+    .harra-organic-card.oc-lvl5::before { background: var(--harra-warm-brown); }
+    .harra-organic-card.oc-lvl4::before { background: var(--harra-sage); }
+    .harra-organic-card.oc-lvl6::before { background: var(--harra-muted-blue); }
+    .harra-organic-card.oc-lvl7::before { background: var(--harra-deep); }
+
+    .harra-organic-step-num {
+      font-family: var(--font-sans-heading);
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .harra-organic-card.oc-lvl1 .harra-organic-step-num,
+    .harra-organic-card.oc-lvl2 .harra-organic-step-num { color: var(--harra-terracotta); }
+    .harra-organic-card.oc-lvl3 .harra-organic-step-num,
+    .harra-organic-card.oc-lvl5 .harra-organic-step-num { color: var(--harra-warm-brown); }
+    .harra-organic-card.oc-lvl4 .harra-organic-step-num { color: var(--harra-sage); }
+    .harra-organic-card.oc-lvl6 .harra-organic-step-num { color: var(--harra-muted-blue); }
+    .harra-organic-card.oc-lvl7 .harra-organic-step-num { color: var(--harra-deep); }
+
+    .harra-organic-step-num .step-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .harra-organic-card.oc-lvl1 .step-dot,
+    .harra-organic-card.oc-lvl2 .step-dot { background: var(--harra-terracotta); }
+    .harra-organic-card.oc-lvl3 .step-dot,
+    .harra-organic-card.oc-lvl5 .step-dot { background: var(--harra-warm-brown); }
+    .harra-organic-card.oc-lvl4 .step-dot { background: var(--harra-sage); }
+    .harra-organic-card.oc-lvl6 .step-dot { background: var(--harra-muted-blue); }
+    .harra-organic-card.oc-lvl7 .step-dot { background: var(--harra-deep); }
+
+    .harra-organic-card h3 {
+      font-family: var(--font-serif-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--harra-charcoal);
+      margin-bottom: 0.5rem;
+    }
+    .harra-organic-card p {
+      font-size: 0.91rem;
+      color: #6B6B7B;
+      line-height: 1.65;
+    }
+
+    /* Organic Formula */
+    .harra-organic-formula {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      margin-top: 2.5rem;
+      border: 1px solid #E8E0D6;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .harra-formula-segment {
+      flex: 1;
+      min-width: 100px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      border-right: 1px solid #E8E0D6;
+      position: relative;
+    }
+    .harra-formula-segment:last-child { border-right: none; }
+    .harra-formula-seg-letter {
+      font-family: var(--font-sans-heading);
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .harra-formula-seg-name {
+      font-family: var(--font-body);
+      font-size: 0.68rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #8A8A99;
+    }
+    .seg-h  .harra-formula-seg-letter { color: var(--harra-terracotta); }
+    .seg-a1 .harra-formula-seg-letter { color: var(--harra-warm-brown); }
+    .seg-r1 .harra-formula-seg-letter { color: var(--harra-sage); }
+    .seg-r2 .harra-formula-seg-letter { color: var(--harra-muted-blue); }
+    .seg-a2 .harra-formula-seg-letter { color: var(--harra-deep); }
+
+    /* Palette swatches */
+    .harra-palette-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .harra-palette-chip {
+      flex: 1;
+      min-width: 130px;
+    }
+    .harra-color-box {
+      height: 80px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .harra-color-box::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.08), transparent);
+    }
+    .harra-palette-chip-label {
+      font-family: var(--font-sans-heading);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--harra-charcoal);
+      margin-bottom: 0.2rem;
+    }
+    .harra-palette-chip-hex {
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      color: #71717A;
+    }
+
+    .version-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-sans-heading);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius-pill);
+      margin-bottom: 1.5rem;
+    }
+    .version-badge-a {
+      background: linear-gradient(135deg, #E53E3E 0%, #ED8936 16%, #D69E2E 33%, #059669 50%, #2563EB 66%, #7C3AED 83%, #0D9488 100%);
+      color: #FFFFFF;
+    }
+    .version-badge-b {
+      background: var(--harra-cream);
+      color: var(--harra-charcoal);
+      border: 1.5px solid #C4694B;
+    }
+
+    .version-section-header {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .harra-steps-grid,
+      .harra-organic-grid { grid-template-columns: 1fr; }
+      .harra-formula-bar { flex-direction: column; align-items: center; }
+      .harra-organic-formula { flex-direction: column; }
+      .harra-formula-segment { border-right: none; border-bottom: 1px solid #E8E0D6; }
+      .version-b-wrapper { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <span class="brand-badge-v2">METODA HARRA</span>
+      </a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#sb7-story">Arhitectura SB7</a></li>
+          <li><a href="#logo-system">Logo & Identitate</a></li>
+          <li><a href="#harra-version-a">HARRA – Varianta A</a></li>
+          <li><a href="#harra-version-b">HARRA – Varianta B</a></li>
+          <li><a href="#typography">Tipografie</a></li>
+          <li><a href="#brand-rules">Reguli Brand</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-label="Meniu Mobile"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- BRANDING HERO -->
+  <section class="branding-hero">
+    <div class="container">
+      <span class="section-tag" style="color: #6EE7B7;">Manual Oficial de Identitate Vizuală & Sistem de Design</span>
+      <h1>Metoda HARRA – Ghid de Brand & Cele 7 Niveluri</h1>
+      <p>Ghidul vizual complet, regulile de copywriting StoryBrand SB7 și harta celor 7 terapii manuale integrate pe cele 5 etape ale Metodei HARRA – <strong>Cristian Angel Oglan</strong>.</p>
+      <p style="margin-top: 1rem; font-size: 0.92rem; color: #A1A1AA;">
+        <strong style="color: #E8E8E8;">Formula HARRA:</strong> Echilibrezi mediul (H) ➔ Corectezi axele (A) ➔ Resetezi circuitele (R) ➔ Redobândești mișcarea (R) ➔ Corpul preia controlul (A)
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 1: STORYBRAND SB7 FRAMEWORK -->
+  <section class="section" id="sb7-story">
+    <div class="container">
+      <div class="section-title-box">
+        <span class="section-tag">Arhitectura Poveștii</span>
+        <h2>1. Poziționarea StoryBrand (SB7) – Pacientul Este Eroul</h2>
+        <p class="vita-intro-text">În comunicarea Metodei HARRA, pacientul este întotdeauna Eroul care parcurge un traseu pe cele 7 niveluri terapeutice – de la prima evaluare până la recuperarea autonomă. Metoda HARRA este Soluția, iar Cristian Angel Oglan este Ghidul empatic.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="value-card">
+          <div class="value-icon" style="color: var(--t1-red); background: var(--t1-red-bg);"><i class="fa-solid fa-user-ninja"></i></div>
+          <h3>1. Eroul (Pacientul)</h3>
+          <p>Persoană activă, determinată să își recapete flexibilitatea și somnul odihnitor. Refuză amânarea și analgezicele de moment.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" style="color: var(--t4-green); background: var(--t4-green-bg);"><i class="fa-solid fa-user-doctor"></i></div>
+          <h3>2. Ghidul (Cristian Angel Oglan)</h3>
+          <p>Terapeut specialist empatic și autoritar care înțelege rețeaua somatică integrată și ghidează corpul prin cele 7 terapii manuale.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon" style="color: var(--t5-blue); background: var(--t5-blue-bg);"><i class="fa-solid fa-diagram-project"></i></div>
+          <h3>3. Soluția & Planul (Metoda HARRA)</h3>
+          <p>Protocolul integrat în 7 Niveluri: Masaj ➔ Trigger Point ➔ Tok Sen ➔ Miofascial ➔ Structural ➔ Visceral ➔ Bowen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: LOGO & BADGE SYSTEM -->
+  <section class="section section-dark" id="logo-system">
+    <div class="container">
+      <div class="section-title-box">
+        <span class="section-tag" style="color: #6EE7B7;">Identitate Vizuală Core</span>
+        <h2>2. Logo & Identitate Vizuală HARRA</h2>
+        <p style="color: #A1A1AA; max-width: 680px; margin: 0.5rem auto 0;">Logo-ul oficial al Metodei HARRA: un arc subțire în charcoal (#2B2B3A) și un punct terracotta (#C4694B) – simbolizând echilibrul dinamic dintre structură și vitalitate.</p>
+      </div>
+
+      <div class="live-demo-box" style="background: #F8F4EF; border-color: #E8E0D6; text-align: center;">
+        <div style="display: inline-block; padding: 1.5rem;">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 60 40 A 24 24 0 1 1 40 16" stroke="#2B2B3A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <circle cx="45" cy="34" r="7" fill="#C4694B" opacity="0.9"/>
+          </svg>
+          <span style="display:block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.6rem; font-weight: 800; letter-spacing: 6px; color: #2B2B3A; margin-top: 0.6rem;">HARRA</span>
+          <span style="display:block; font-family: 'Inter', sans-serif; font-size: 0.65rem; letter-spacing: 2.5px; text-transform: uppercase; color: #8A8A99; margin-top: 0.15rem;">METODA BIO-INTEGRATIVĂ</span>
+          <span style="display:block; font-family: 'Inter', sans-serif; font-size: 0.6rem; letter-spacing: 1px; color: #B0B0BB; margin-top: 0.1rem; font-style: italic;">by Cristian Oglan</span>
+        </div>
+        <p style="color: #6B6B7B; font-size: 0.85rem; margin-top: 1.5rem;">Arc charcoal + punct terracotta = echilibru structural & energie organică.</p>
+      </div>
+
+      <div class="live-demo-box" style="background: #121212; border-color: #27272A; text-align: center; margin-top: 0;">
+        <span class="brand-badge-v2" style="font-size: 1.2rem; padding: 0.6rem 1.8rem;">METODA HARRA</span>
+        <p style="color: #A1A1AA; font-size: 0.85rem; margin-top: 1rem;">Badge pe fundal dark – gradient spectru cele 7 niveluri (compatibil ambele variante).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: HARRA – VARIANTA A (Chakra Spectrum & 7 Niveluri) -->
+  <section class="section" id="harra-version-a">
+    <div class="container">
+      <div class="section-title-box">
+        <span class="section-tag">Varianta de Culori A</span>
+        <h2>3. Metoda HARRA – Varianta A (Spectru 7 Chakra)</h2>
+        <p class="vita-intro-text">Cele 7 terapii manuale integrate pe codul de culori 1:1 al celor 7 Chakra, mapate pe etapele HARRA (Homeostazie, Aliniere, Reinițializare, Reabilitare, Autovindecare):</p>
+      </div>
+
+      <div class="version-section-header">
+        <span class="version-badge version-badge-a"><i class="fa-solid fa-circle-half-stroke"></i> Varianta A – Cele 7 Niveluri pe Spectrul Chakra</span>
+      </div>
+
+      <div class="harra-steps-grid">
+
+        <!-- Nivelul 1 -->
+        <div class="harra-step-card lvl1-card">
+          <span class="harra-step-letter" style="color: #E53E3E;">H</span>
+          <div class="harra-step-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <span class="harra-step-badge"><i class="fa-solid fa-circle-dot fa-xs"></i> Nivelul 1 • Etapa H</span>
+          <h3>Masaj Terapeutic</h3>
+          <p><strong>Homeostazie (Fundația Internă).</strong> Vascularizare tisulară și decontracturare musculară de suprafață, pregătind terenul biologic.</p>
+        </div>
+
+        <!-- Nivelul 2 -->
+        <div class="harra-step-card lvl2-card">
+          <span class="harra-step-letter" style="color: #ED8936;">H</span>
+          <div class="harra-step-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <span class="harra-step-badge"><i class="fa-solid fa-circle-dot fa-xs"></i> Nivelul 2 • Etapa H</span>
+          <h3>Trigger Point Therapy</h3>
+          <p><strong>Homeostazie (Dezactivare).</strong> Eliminarea nodurilor dureroase hipersensibile din mușchi care iradiază durere și restricționează mișcarea.</p>
+        </div>
+
+        <!-- Nivelul 3 -->
+        <div class="harra-step-card lvl3-card">
+          <span class="harra-step-letter" style="color: #D69E2E;">A</span>
+          <div class="harra-step-icon"><i class="fa-solid fa-drum"></i></div>
+          <span class="harra-step-badge"><i class="fa-solid fa-circle-dot fa-xs"></i> Nivelul 3 • Etapa A</span>
+          <h3>Tok Sen Therapy</h3>
+          <p><strong>Aliniere (Vibrație Profundă).</strong> Percuție acustico-mecanică pe traseul liniilor energetice și tendoanelor pentru relaxare tisulară profundă.</p>
+        </div>
+
+        <!-- Nivelul 4 -->
+        <div class="harra-step-card lvl4-card">
+          <span class="harra-step-letter" style="color: #059669;">R</span>
+          <div class="harra-step-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <span class="harra-step-badge"><i class="fa-solid fa-circle-dot fa-xs"></i> Nivelul 4 • Etapa R¹</span>
+          <h3>Manipulare Miofascială</h3>
+          <p><strong>Reinițializare (Reset Fascial).</strong> Eliberarea tecii conjunctivale (fascia) și restabilirea alunecării tridimensionale a țesuturilor.</p>
+        </div>
+
+        <!-- Nivelul 5 -->
+        <div class="harra-step-card lvl5-card">
+          <span class="harra-step-letter" style="color: #2563EB;">A</span>
+          <div class="harra-step-icon"><i class="fa-solid fa-bone"></i></div>
+          <span class="harra-step-badge"><i class="fa-solid fa-circle-dot fa-xs"></i> Nivelul 5 • Etapa A</span>
+          <h3>Osteopatie Structurală</h3>
+          <p><strong>Aliniere (Corecție Biomecanică).</strong> Readucerea articulațiilor, coloanei și bazinului pe axele biomecanice corecte.</p>
+        </div>
+
+        <!-- Nivelul 6 -->
+        <div class="harra-step-card lvl6-card">
+          <span class="harra-step-letter" style="color: #7C3AED;">R</span>
+          <div class="harra-step-icon"><i class="fa-solid fa-stethoscope"></i></div>
+          <span class="harra-step-badge"><i class="fa-solid fa-circle-dot fa-xs"></i> Nivelul 6 • Etapa R²</span>
+          <h3>Osteopatie Viscerală</h3>
+          <p><strong>Reabilitare (Detensionare Abdominală).</strong> Mobilizarea fasciei organelor interne și eliminarea durerilor referite de spate.</p>
+        </div>
+
+        <!-- Nivelul 7 -->
+        <div class="harra-step-card lvl7-card">
+          <span class="harra-step-letter" style="color: #0D9488;">A</span>
+          <div class="harra-step-icon"><i class="fa-solid fa-brain"></i></div>
+          <span class="harra-step-badge"><i class="fa-solid fa-circle-dot fa-xs"></i> Nivelul 7 • Etapa A</span>
+          <h3>Terapie Bowen</h3>
+          <p><strong>Autovindecare (Reset Nervos).</strong> Mișcări reflexe pe fasciă ce activează sistemul parasimpatic și capacitatea autonomă de vindecare.</p>
+        </div>
+
+      </div>
+
+      <!-- HARRA Formula Bar -->
+      <div class="harra-formula-bar">
+        <span class="harra-formula-pill pill-h">H – Homeostazie (L1-L2)</span>
+        <span class="harra-formula-arrow">➔</span>
+        <span class="harra-formula-pill pill-a1">A – Aliniere (L3, L5)</span>
+        <span class="harra-formula-arrow">➔</span>
+        <span class="harra-formula-pill pill-r1">R – Reinițializare (L4)</span>
+        <span class="harra-formula-arrow">➔</span>
+        <span class="harra-formula-pill pill-r2">R – Reabilitare (L6)</span>
+        <span class="harra-formula-arrow">➔</span>
+        <span class="harra-formula-pill pill-a2">A – Autovindecare (L7)</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: HARRA – VARIANTA B (Organic Logo Palette pe cele 7 Niveluri) -->
+  <section class="section section-plan" id="harra-version-b">
+    <div class="container">
+      <div class="section-title-box">
+        <span class="section-tag">Varianta de Culori B</span>
+        <h2>4. Metoda HARRA – Varianta B (Paleta Organică din Logo)</h2>
+        <p class="vita-intro-text">Cele 7 terapii manuale prezentate în paleta organică extrasă direct din logo-ul HARRA (cream, terracotta, warm brown, sage green, muted blue și charcoal):</p>
+      </div>
+
+      <div class="version-section-header">
+        <span class="version-badge version-badge-b"><i class="fa-solid fa-leaf"></i> Varianta B – Cele 7 Niveluri pe Paleta Organică Logo</span>
+      </div>
+
+      <div class="version-b-wrapper">
+
+        <div class="harra-organic-grid">
+
+          <div class="harra-organic-card oc-lvl1">
+            <div class="harra-organic-step-num"><span class="step-dot"></span>Nivelul 1 • Etapa H</div>
+            <h3>Masaj Terapeutic</h3>
+            <p><strong>Homeostazie.</strong> Vascularizare tisulară și decontracturare musculară de suprafață pe fundal cald organic.</p>
+          </div>
+
+          <div class="harra-organic-card oc-lvl2">
+            <div class="harra-organic-step-num"><span class="step-dot"></span>Nivelul 2 • Etapa H</div>
+            <h3>Trigger Point Therapy</h3>
+            <p><strong>Homeostazie.</strong> Dezactivarea nodurilor dureroase hipersensibile din mușchi.</p>
+          </div>
+
+          <div class="harra-organic-card oc-lvl3">
+            <div class="harra-organic-step-num"><span class="step-dot"></span>Nivelul 3 • Etapa A</div>
+            <h3>Tok Sen Therapy</h3>
+            <p><strong>Aliniere.</strong> Vibrație mecanică ritmică pentru eliberarea tendoanelor și fasciilor adânci.</p>
+          </div>
+
+          <div class="harra-organic-card oc-lvl4">
+            <div class="harra-organic-step-num"><span class="step-dot"></span>Nivelul 4 • Etapa R¹</div>
+            <h3>Manipulare Miofascială</h3>
+            <p><strong>Reinițializare.</strong> Reset neuromuscular și restabilirea alunecării fasciale tridimensionale.</p>
+          </div>
+
+          <div class="harra-organic-card oc-lvl5">
+            <div class="harra-organic-step-num"><span class="step-dot"></span>Nivelul 5 • Etapa A</div>
+            <h3>Osteopatie Structurală</h3>
+            <p><strong>Aliniere.</strong> Readucerea coloanei vertebrale și articulațiilor pe axele biomecanice corecte.</p>
+          </div>
+
+          <div class="harra-organic-card oc-lvl6">
+            <div class="harra-organic-step-num"><span class="step-dot"></span>Nivelul 6 • Etapa R²</div>
+            <h3>Osteopatie Viscerală</h3>
+            <p><strong>Reabilitare.</strong> Detensionarea organelor abdominale și eliminarea durerilor referite de spate.</p>
+          </div>
+
+          <div class="harra-organic-card oc-lvl7">
+            <div class="harra-organic-step-num"><span class="step-dot"></span>Nivelul 7 • Etapa A</div>
+            <h3>Terapie Bowen</h3>
+            <p><strong>Autovindecare.</strong> Resetarea autonomă a sistemului nervos și stimularea resurselor proprii ale corpului.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Color Swatches – Version B -->
+      <div class="harra-section-divider"><span class="harra-divider-label">Paleta de Culori – Varianta B (Logo Organic)</span></div>
+
+      <div class="harra-palette-row">
+        <div class="harra-palette-chip">
+          <div class="harra-color-box" style="background: #F8F4EF;border:1px solid #E8E0D6;"></div>
+          <div class="harra-palette-chip-label">Cream Background</div>
+          <div class="harra-palette-chip-hex">#F8F4EF</div>
+        </div>
+        <div class="harra-palette-chip">
+          <div class="harra-color-box" style="background: #C4694B;"></div>
+          <div class="harra-palette-chip-label">Terracotta (L1-L2)</div>
+          <div class="harra-palette-chip-hex">#C4694B</div>
+        </div>
+        <div class="harra-palette-chip">
+          <div class="harra-color-box" style="background: #8B7355;"></div>
+          <div class="harra-palette-chip-label">Warm Brown (L3, L5)</div>
+          <div class="harra-palette-chip-hex">#8B7355</div>
+        </div>
+        <div class="harra-palette-chip">
+          <div class="harra-color-box" style="background: #5F8A65;"></div>
+          <div class="harra-palette-chip-label">Sage Green (L4)</div>
+          <div class="harra-palette-chip-hex">#5F8A65</div>
+        </div>
+        <div class="harra-palette-chip">
+          <div class="harra-color-box" style="background: #4A6FA5;"></div>
+          <div class="harra-palette-chip-label">Muted Blue (L6)</div>
+          <div class="harra-palette-chip-hex">#4A6FA5</div>
+        </div>
+        <div class="harra-palette-chip">
+          <div class="harra-color-box" style="background: #2B2B3A;"></div>
+          <div class="harra-palette-chip-label">Deep Charcoal (L7)</div>
+          <div class="harra-palette-chip-hex">#2B2B3A</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: TYPOGRAPHY HIERARCHY -->
+  <section class="section section-dark" id="typography">
+    <div class="container">
+      <div class="section-title-box">
+        <span class="section-tag" style="color: #6EE7B7;">Ghid de Stil Tipografic</span>
+        <h2 style="color: #FFFFFF;">5. Ierarhia Tipografică & Regulile de Formatare</h2>
+      </div>
+
+      <table class="type-scale-table">
+        <thead>
+          <tr>
+            <th>Element UI</th>
+            <th>Familie Font</th>
+            <th>Stil / Cazul Literei</th>
+            <th>Dimensiune Desktop</th>
+            <th>Exemplu Vizual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Titlu Principal (H1)</strong></td>
+            <td><code>Playfair Display</code></td>
+            <td>Mixed Case (Majuscule/Minuscule)</td>
+            <td>3.2rem (51px)</td>
+            <td><span style="font-family: var(--font-serif-heading); font-size: 1.4rem; font-weight: 700; color: #FFF;">Homeostazie, Aliniere, Reinițializare</span></td>
+          </tr>
+          <tr>
+            <td><strong>Titlu Secțiune (H2)</strong></td>
+            <td><code>Playfair Display</code></td>
+            <td>Mixed Case (Majuscule/Minuscule)</td>
+            <td>2.3rem (37px)</td>
+            <td><span style="font-family: var(--font-serif-heading); font-size: 1.2rem; font-weight: 700; color: #FFF;">Cele 7 Niveluri Terapeutice HARRA</span></td>
+          </tr>
+          <tr>
+            <td><strong>Subtitluri & Badges (H3)</strong></td>
+            <td><code>Plus Jakarta Sans</code></td>
+            <td>ALL CAPS (Doar pentru badges)</td>
+            <td>0.75rem - 1.35rem</td>
+            <td><span style="font-family: var(--font-sans-heading); font-size: 0.9rem; font-weight: 800; color: #34D399; letter-spacing: 1px;">METODA HARRA & CONSULTAȚIE</span></td>
+          </tr>
+          <tr>
+            <td><strong>Text de Corp (Body)</strong></td>
+            <td><code>Inter</code> / <code>Plus Jakarta Sans</code></td>
+            <td>Regular 400 / 500</td>
+            <td>1.0rem (16px)</td>
+            <td><span style="font-family: var(--font-body); font-size: 0.95rem; color: #A1A1AA;">Programezi o consultație pentru a identifica nivelurile HARRA potrivite.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 6: BRAND RULES -->
+  <section class="section section-dark" id="brand-rules">
+    <div class="container">
+      <div class="section-title-box">
+        <span class="section-tag" style="color: #6EE7B7;">Bune Practici & Reguli Mandatorii</span>
+        <h2 style="color: #FFFFFF;">6. Reguli de Brand HARRA (Do's & Don'ts)</h2>
+      </div>
+
+      <div class="grid-3" style="margin-top: 2rem;">
+        <div class="stake-card" style="border-color: rgba(5, 150, 105, 0.4); background: rgba(5, 150, 105, 0.08);">
+          <i class="fa-solid fa-circle-check" style="color: #10B981;"></i>
+          <h4 style="color: #FFFFFF;">AȘA DA (Do's)</h4>
+          <ul style="text-align: left; font-size: 0.9rem; color: #E2E8F0; margin-top: 0.75rem; padding-left: 1.2rem; line-height: 1.6;">
+            <li>Poziționează pacientul ca Erou și Metoda HARRA ca Soluție.</li>
+            <li>Păstrează structura pe cele 7 Niveluri Terapeutice cu badge-urile etapelor HARRA (H-A-R-R-A).</li>
+            <li>Folosește doar <code>Playfair Display</code> în Mixed Case pentru titluri mari.</li>
+            <li>Utilizează butonul Negru Absolut (<code>#000000</code>) pentru CTA de conversie.</li>
+          </ul>
+        </div>
+
+        <div class="stake-card" style="border-color: rgba(229, 62, 62, 0.4); background: rgba(229, 62, 62, 0.08);">
+          <i class="fa-solid fa-circle-xmark" style="color: #EF4444;"></i>
+          <h4 style="color: #FFFFFF;">AȘA NU (Don'ts)</h4>
+          <ul style="text-align: left; font-size: 0.9rem; color: #E2E8F0; margin-top: 0.75rem; padding-left: 1.2rem; line-height: 1.6;">
+            <li>NU șterge legăturile către cele 7 pagini individuale de terapii.</li>
+            <li>NU amesteca Varianta A (Chakra) cu Varianta B (Organic) pe aceeași pagină.</li>
+            <li>NU folosi titluri mari scrise integral cu MAJUSCULE.</li>
+            <li>NU modifica denumirile celor 7 terapii manuale.</li>
+          </ul>
+        </div>
+
+        <div class="stake-card" style="border-color: rgba(196, 105, 75, 0.4); background: rgba(196, 105, 75, 0.06);">
+          <i class="fa-solid fa-circle-info" style="color: #C4694B;"></i>
+          <h4 style="color: #FFFFFF;">GHID DE ALEGERE A VARIANTEI</h4>
+          <ul style="text-align: left; font-size: 0.9rem; color: #E2E8F0; margin-top: 0.75rem; padding-left: 1.2rem; line-height: 1.6;">
+            <li><strong style="color: #6EE7B7;">Varianta A</strong> – pentru pagini cu background dark (obsidian), publicuri medicale sau contexte clinice.</li>
+            <li><strong style="color: #C4694B;">Varianta B</strong> – pentru landing pages wellness, emailuri, social media și publicuri orientate spre bine-estar natural.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="brand-badge-v2">METODA HARRA</span>
+        <p>Cabinet de Terapie Manuală Integrată – Cristian Angel Oglan</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.facebook.com/cristian.angel.oglan" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i> Facebook</a>
+        <a href="https://www.instagram.com/cristian.angel.oglan" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        <a href="https://www.tiktok.com/@cristian.angel.oglan" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+        <a href="branding.html"><i class="fa-solid fa-book-bookmark"></i> Brand Guide</a>
+        <span>&copy; 2026 Cristian Angel Oglan. Toate drepturile rezervate.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

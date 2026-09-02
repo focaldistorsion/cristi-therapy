@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cabinet Terapie Manuală – Cristian Angel Oglan | Cristian Angel Oglan</title>
-  <meta name="description" content="Cabinet de Terapie Manuală Integrată – Cristian Angel Oglan. Alege între Metoda T7 și Metoda HARRA.">
+  <title>Cabinet Terapie Manuală – Cristian Angel Oglan | Metoda HARRA</title>
+  <meta name="description" content="Cabinet de Terapie Manuală Integrată – Cristian Angel Oglan. Alege între cele două versiuni ale Metodei HARRA: Paleta Crescendo (Chakra Spectrum) sau Paleta Organică (Logo Inspired).">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,12 +28,12 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 2rem 1.5rem;
+      padding: 2.5rem 1.5rem;
       overflow-x: hidden;
     }
 
     .selection-wrapper {
-      max-width: 960px;
+      max-width: 980px;
       width: 100%;
       text-align: center;
     }
@@ -58,12 +58,13 @@
     }
 
     .sub-heading {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: #D4D4D8;
       margin-bottom: 3.5rem;
-      max-width: 600px;
+      max-width: 680px;
       margin-left: auto;
       margin-right: auto;
+      line-height: 1.6;
     }
 
     .cards-grid {
@@ -109,46 +110,46 @@
       width: fit-content;
     }
 
-    .badge-t7 {
-      background: linear-gradient(135deg, rgba(229, 62, 62, 0.2) 0%, rgba(5, 150, 105, 0.2) 100%);
+    .badge-crescendo {
+      background: linear-gradient(135deg, rgba(229, 62, 62, 0.25) 0%, rgba(13, 148, 136, 0.25) 100%);
       color: #F87171;
-      border: 1px solid rgba(248, 113, 113, 0.3);
+      border: 1px solid rgba(248, 113, 113, 0.4);
     }
 
-    .badge-harra {
-      background: rgba(52, 211, 153, 0.18);
-      color: #34D399;
-      border: 1px solid rgba(52, 211, 153, 0.3);
+    .badge-organic {
+      background: rgba(196, 105, 75, 0.2);
+      color: #F6AD55;
+      border: 1px solid rgba(196, 105, 75, 0.4);
     }
 
     .card-title {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 800;
       margin-bottom: 0.75rem;
       color: #FFFFFF;
     }
 
     .card-desc {
-      font-size: 0.98rem;
+      font-size: 0.95rem;
       color: #A1A1AA;
       line-height: 1.65;
       margin-bottom: 2rem;
     }
 
     .spectrum-bar {
-      height: 4px;
+      height: 5px;
       border-radius: 9999px;
       margin-bottom: 2rem;
       width: 100%;
     }
 
-    .spectrum-t7 {
+    .spectrum-crescendo {
       background: linear-gradient(135deg, #E53E3E 0%, #ED8936 16%, #D69E2E 33%, #059669 50%, #2563EB 66%, #7C3AED 83%, #0D9488 100%);
     }
 
-    .spectrum-harra {
-      background: linear-gradient(135deg, #34D399 0%, #059669 50%, #10B981 100%);
+    .spectrum-organic {
+      background: linear-gradient(135deg, #C4694B 0%, #8B7355 25%, #5F8A65 50%, #4A6FA5 75%, #2B2B3A 100%);
     }
 
     .card-btn {
@@ -166,16 +167,26 @@
       transition: all 0.3s ease;
     }
 
-    .selection-card:hover .card-btn {
-      background: #34D399;
-      color: #09090B;
-      box-shadow: 0 4px 15px rgba(52, 211, 153, 0.4);
+    .selection-card-crescendo:hover .card-btn {
+      background: #E53E3E;
+      color: #FFFFFF;
+      box-shadow: 0 4px 15px rgba(229, 62, 62, 0.4);
     }
 
-    .selection-card-t7:hover .card-btn {
-      background: #EF4444;
+    .selection-card-organic:hover .card-btn {
+      background: #C4694B;
       color: #FFFFFF;
-      box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+      box-shadow: 0 4px 15px rgba(196, 105, 75, 0.4);
+    }
+
+    .footer-note {
+      margin-top: 3.5rem;
+      font-size: 0.85rem;
+      color: #71717A;
+    }
+    .footer-note a {
+      color: #A1A1AA;
+      text-decoration: underline;
     }
 
     @media (max-width: 768px) {
@@ -195,43 +206,47 @@
 
   <div class="selection-wrapper">
     <div class="brand-title">Cristian Angel Oglan</div>
-    <h1 class="main-heading">Alege Metoda Somatică</h1>
-    <p class="sub-heading">Selectează sistemul terapeutic pe care dorești să îl explorezi:</p>
+    <h1 class="main-heading">Metoda HARRA – Alege Versiunea Vizuală</h1>
+    <p class="sub-heading">Homeostazie ➔ Aliniere ➔ Reinițializare ➔ Reabilitare ➔ Autovindecare.<br>Explorează cele două interpretări de design pentru site-ul complet:</p>
 
     <div class="cards-grid">
       
-      <!-- CARD 1: METODA T7 -->
-      <a href="t7/index.html" class="selection-card selection-card-t7">
+      <!-- VERSIUNEA 1: HARRA CULORI CRESCENDO -->
+      <a href="harra/index.html" class="selection-card selection-card-crescendo">
         <div>
-          <span class="card-badge badge-t7">7 NIVELURI COMPLEMENTARE</span>
-          <h2 class="card-title">Metoda T7</h2>
-          <p class="card-desc">Sistemul integrat de Terapie Manuală pe 7 Niveluri (Masaj Terapeutic, Trigger Point, Tok Sen, Manipulare Miofascială, Osteopatie Structurală, Viscerală și Bowen).</p>
+          <span class="card-badge badge-crescendo">VERSIUNEA 1 • PALETĂ CRESCENDO</span>
+          <h2 class="card-title">HARRA Spectrum</h2>
+          <p class="card-desc">Site-ul complet cu spectru cromatic progresiv pe 7 niveluri (Roșu ➔ Portocaliu ➔ Galben ➔ Verde ➔ Albastru ➔ Violet ➔ Teal), de la vascularizare la reset neuro-vegetativ.</p>
         </div>
         <div>
-          <div class="spectrum-bar spectrum-t7"></div>
+          <div class="spectrum-bar spectrum-crescendo"></div>
           <div class="card-btn">
-            <span>Explorează Metoda T7</span>
+            <span>Deschide Versiunea Crescendo</span>
             <i class="fa-solid fa-arrow-right"></i>
           </div>
         </div>
       </a>
 
-      <!-- CARD 2: METODA HARRA -->
-      <a href="harra/index.html" class="selection-card">
+      <!-- VERSIUNEA 2: HARRA CULORI LOGO (ORGANIC) -->
+      <a href="harra-organic/index.html" class="selection-card selection-card-organic">
         <div>
-          <span class="card-badge badge-harra">TERAPIE BIO-INTEGRATIVĂ</span>
-          <h2 class="card-title">Metoda HARRA</h2>
-          <p class="card-desc">Abordare restaurativă pe 7 niveluri somatice ce eliberează blocajele de la musculatură și fasciă până la realiniere osteopatică și sistemul nervos.</p>
+          <span class="card-badge badge-organic">VERSIUNEA 2 • PALETĂ LOGO ORGANIC</span>
+          <h2 class="card-title">HARRA Organic</h2>
+          <p class="card-desc">Site-ul complet inspirat din culorile logo-ului (Terracotta #C4694B, Warm Brown, Sage Green, Muted Blue, Deep Charcoal pe fond organic Cream #F8F4EF).</p>
         </div>
         <div>
-          <div class="spectrum-bar spectrum-harra"></div>
+          <div class="spectrum-bar spectrum-organic"></div>
           <div class="card-btn">
-            <span>Explorează Metoda HARRA</span>
+            <span>Deschide Versiunea Organică</span>
             <i class="fa-solid fa-arrow-right"></i>
           </div>
         </div>
       </a>
 
+    </div>
+
+    <div class="footer-note">
+      Ghidul oficial de brand și specificațiile tehnice pot fi consultate în <a href="branding.html">Manualul de Brand HARRA</a>.
     </div>
   </div>
 
