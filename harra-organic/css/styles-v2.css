@@ -2163,3 +2163,131 @@ body.is-positive-hovered .outcome-failure {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   HARRA ORGANIC - GLOSAR MEDICAL & POPOVER STYLES
+   ========================================================================== */
+.harra-glosar-term {
+  border-bottom: 1.5px dotted #C4694B;
+  cursor: help;
+  position: relative;
+  color: #2B2B3A;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.harra-glosar-term:hover {
+  color: #C4694B;
+  background: rgba(196, 105, 75, 0.08);
+  border-radius: 4px;
+  padding: 0 3px;
+}
+
+.harra-popover-card {
+  position: absolute;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid #E8E0D6;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 16px 45px rgba(43, 43, 58, 0.16);
+  max-width: 340px;
+  width: calc(100vw - 30px);
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.harra-popover-card.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.popover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.popover-badge {
+  background: rgba(196, 105, 75, 0.12);
+  color: #C4694B;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.popover-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #8A8A99;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 4px;
+}
+
+.popover-close-btn:hover {
+  color: #2B2B3A;
+}
+
+.popover-title {
+  font-family: var(--font-sans-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #2B2B3A;
+  margin: 0 0 0.5rem 0;
+}
+
+.popover-body {
+  font-size: 0.88rem;
+  color: #525262;
+  line-height: 1.55;
+}
+
+.popover-simple-def {
+  margin: 0 0 0.5rem 0;
+  background: #F8F4EF;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border-left: 3px solid #C4694B;
+}
+
+.popover-clinical-def {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #6B6B7B;
+}
+
+.popover-footer {
+  margin-top: 0.8rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid #F0EADF;
+  text-align: right;
+}
+
+.popover-link {
+  color: #C4694B;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.popover-link:hover {
+  color: #2B2B3A;
+  transform: translateX(2px);
+}
+
