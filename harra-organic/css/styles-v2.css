@@ -817,17 +817,16 @@ a {
 
 /* BIO-INTEGRATIVE CIRCULAR MATRIX ECOSYSTEM (HARRA ORGANIC) */
 .vita-integrative-matrix {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.25rem;
-  max-width: 1140px;
-  margin: 3rem auto 0;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.5rem !important;
+  max-width: 980px !important;
+  margin: 3rem auto 0 !important;
 }
 
 @media (max-width: 850px) {
   .vita-integrative-matrix {
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
+    gap: 1.25rem !important;
   }
 }
 
@@ -1099,24 +1098,26 @@ a {
 
 .vita-matrix-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   background: #FFFFFF;
-  border-radius: var(--radius-lg);
+  border-radius: 20px;
   border: 1.5px solid var(--color-border);
-  box-shadow: 0 10px 30px rgba(43, 43, 58, 0.05);
+  box-shadow: 0 8px 25px rgba(43, 43, 58, 0.04);
   overflow: hidden;
-  transition: var(--transition);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .vita-matrix-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   border-color: #C4694B;
-  box-shadow: 0 20px 40px rgba(43, 43, 58, 0.12);
+  box-shadow: 0 16px 36px rgba(43, 43, 58, 0.09);
 }
 
 .vita-matrix-img-box {
-  width: 100%;
-  height: 190px;
+  width: 240px;
+  min-width: 240px;
+  height: 180px;
   position: relative;
   overflow: hidden;
 }
@@ -1125,33 +1126,72 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: var(--transition);
+  transition: transform 0.4s ease;
 }
 
 .vita-matrix-card:hover .vita-matrix-img-box img {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .vita-matrix-content {
-  padding: 1.75rem;
+  padding: 1.75rem 2rem;
   display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  gap: 2rem;
+  flex-grow: 1;
+}
+
+.vita-matrix-info {
+  flex: 1;
 }
 
 .vita-matrix-content h3 {
   font-size: 1.25rem;
   font-weight: 800;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   color: var(--color-navy);
 }
 
 .vita-matrix-content p {
-  font-size: 0.92rem;
+  font-size: 0.93rem;
   color: var(--color-body);
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
   line-height: 1.6;
+}
+
+.vita-matrix-action {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .vita-matrix-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .vita-matrix-img-box {
+    width: 100%;
+    min-width: 100%;
+    height: 160px;
+  }
+
+  .vita-matrix-content {
+    padding: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .vita-matrix-action {
+    width: 100%;
+  }
+
+  .vita-matrix-action .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .vita-system-card {
