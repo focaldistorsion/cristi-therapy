@@ -129,6 +129,33 @@ const HARRA_GLOSAR_DATA = {
     simpleDef: "Membrana ultrasensibilă care îmbracă oasele și care răspunde excepțional la vibrațiile ritmice blânde de lemn dăltuit (Tok Sen).",
     clinicalDef: "Țesut conjunctiv fibros puternic vascularizat și inervat ce acoperă corticala osoasă. Preluarea vibrațiilor de frecvență joasă declanșează reflexe de inhibiție miotatică profundă.",
     therapies: ["Tok Sen", "Osteopatie Structurală"]
+  },
+  "autoreglare": {
+    id: "autoreglare",
+    term: "Principiul Autoreglării Somatice",
+    category: "Neuro-Fiziologie & Reset",
+    categoryBadge: "FILOZOFIE HARRA",
+    simpleDef: "Capacitatea naturală a corpului de a-și căuta singur echilibrul o dată ce tensiunile și blocajele dominanței musculare sunt îndepărtate.",
+    clinicalDef: "Mecanismul de homeostazie neuro-vegetativă prin care stimularea vagală și eliberarea fascială permit creierului reorganizarea tiparelor motorii.",
+    therapies: ["Metoda HARRA", "Terapie Bowen"]
+  },
+  "disfunctie-dominanta": {
+    id: "disfunctie-dominanta",
+    term: "Disfuncție Dominantă (Prioritate)",
+    category: "Biomecanică & Articulații",
+    categoryBadge: "FILOZOFIE HARRA",
+    simpleDef: "Tensiunea sau blocajul principal din corp care forțează alte zone să sufere și să compenseze. Este prima abordată de terapeutul HARRA.",
+    clinicalDef: "Factorul etiologic primar din lanțul lezional miofascial sau articular ce determină reacția de adaptare tensională secundară.",
+    therapies: ["Metoda HARRA", "Osteopatie Structurală", "Miofascial"]
+  },
+  "autonomie-somatica": {
+    id: "autonomie-somatica",
+    term: "Autonomie Somatică Pacient",
+    category: "Sistem Autonom Vegetativ",
+    categoryBadge: "FILOZOFIE HARRA",
+    simpleDef: "Scopul final al Metodei HARRA: starea în care corpul tău își menține singur flexibilitatea și nu mai depinde de vizite frecvente la cabinet.",
+    clinicalDef: "Stabilizarea capacității de autoreglare și integrarea noilor tipare miofasciale în mers, respirație și activitățile cotidiene.",
+    therapies: ["Metoda HARRA", "Bowen"]
   }
 };
 
